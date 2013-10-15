@@ -1,0 +1,16 @@
+A Beginners Source to Node.js
+
+1. http://nodeguide.com/beginner.html  [1/2 hour - 1 hour]
+2. http://net.tutsplus.com/tutorials/javascript-ajax/node-js-for-beginners/
+3. http://project70.com/nodejs/beginners-tutorial-node-js/
+4. http://howtonode.org/express-mongodb
+
+Express.js - Node Web Framework
+Wheat.js - Blogging framework that runs on node and has git
+
+Sources for Python
+
+1. http://www.ibm.com/developerworks/cloud/library/cl-openstack-pythonapis/index.html?ca=drs-&utm_source=dlvr.it&utm_medium=twitter
+
+
+

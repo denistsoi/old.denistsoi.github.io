@@ -5,10 +5,18 @@
         <description>Denis Tsoi - Denis Tsoi</description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2013-09-20T23:35:26+08:00</lastBuildDate>
-        <pubDate>2013-09-20T23:35:26+08:00</pubDate>
+        <lastBuildDate>2013-10-15T23:15:36+08:00</lastBuildDate>
+        <pubDate>2013-10-15T23:15:36+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>The Birth of Denistsoi.github.io</title>
+                <description></description>
+                <link>http://username.github.io/2013/09/21/the-birth-of-denistsoigithubio</link>
+                <guid>http://username.github.io/2013/09/21/the-birth-of-denistsoigithubio</guid>
+                <pubDate>2013-09-21T00:00:00+08:00</pubDate>
+        </item>
 
 
 </channel>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Birth of Denistsoi.github.io"
+title: "First Post!"
 description: ""
 category: 
 tags: []

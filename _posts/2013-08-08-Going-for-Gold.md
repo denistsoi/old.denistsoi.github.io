@@ -1,3 +1,13 @@
+---
+layout: post
+title: "Going for Gold"
+description: ""
+category: 
+tags: []
+excerpt: 
+---
+{% include JB/setup %}
+
 Going for Gold...
 
 Today I handed my resignation letter.

@@ -4,3 +4,44 @@ title: "Agencies"
 description: ""
 ---
 {% include JB/setup %}
+
+
+Resources of Digital Agencies
+
+http://weareadaptable.com/
+http://www.pixopunch.com/
+http://www.possible.com/
+http://www.wearepapertiger.com/
+http://creative-jar.com/
+http://www.f-i.com/fi/airlines/
+http://playbook.thoughtbot.com/
+
+http://www.html5rocks.com/en/tutorials/
+
+
+http://www.html5rocks.com/en/tutorials/masking/adobe/
+https://twitter.com/dirkschulze
+
+http://www.html5rocks.com/en/tutorials/canvas/inspection/
+https://twitter.com/PaulLewis
+
+http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-201/
+https://twitter.com/ebidel
+
+
+http://addyosmani.com/blog/
+https://twitter.com/addyosmani
+
+http://zomigi.com/blog/
+https://twitter.com/zomigi
+
+http://www.rachelandrew.co.uk/
+https://twitter.com/rachelandrew
+
+
+http://www.html5rocks.com/en/tutorials/developertools/revolutions2013/
+
+http://www.ngenworks.com/speakers/carl-smith/
+
+
+http://bradfrostweb.com/blog/post/float-label-pattern/

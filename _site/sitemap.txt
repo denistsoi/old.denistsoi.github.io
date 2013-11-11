@@ -9,4 +9,4 @@ http://username.github.io/sitemap.txt
 http://username.github.io/tags.html
 
 http://username.github.io/2013/10/12/first-post
-http://username.github.io/2013/09/21/the-birth-of-denistsoigithubio
+http://username.github.io/2013/07/02/Going-for-Gold

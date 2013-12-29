@@ -1,4 +1,31 @@
 /* Custom container */
+body{
+  background-color: #333;
+  color: #d6d6d6;}
+
+hr {
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;}
+
+.navbar .brand, .navbar .nav>li>a {
+  text-shadow: none;}
+
+.navbar-inner{
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-bottom: #d6d6d6;
+  border-radius: 0;}
+
+.pagination ul>li>a, .pagination ul>li>span {
+  float: left;
+  padding: 4px 12px;
+  line-height: 20px;
+  text-decoration: none;
+  background-color: #d6d6d6;
+  border: 1px solid #dddddd;
+  border-left-width: 0;}
+
 .container-narrow {
   margin: 0 auto;
   max-width: 700px; }

@@ -8,7 +8,7 @@ excerpt:
 ---
 {% include JB/setup %}
 
-# Relection
+# Reflection
 
 It's been a while since my last post.
 

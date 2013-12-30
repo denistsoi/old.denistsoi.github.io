@@ -3,7 +3,7 @@ layout: post
 title: "Getting Started with Yeoman, Grunt and everything inbetween"
 description: ""
 category: 
-tags: []
+tags: [Grunt]
 excerpt: 
 ---
 {% include JB/setup %}

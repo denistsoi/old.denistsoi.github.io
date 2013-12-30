@@ -4,7 +4,7 @@
  <title>Denis Tsoi</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2013-12-30T17:16:13+08:00</updated>
+ <updated>2013-12-30T21:27:56+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name>Denis Tsoi</name>
@@ -57,18 +57,7 @@
    <link href="http://username.github.io/2013/12/30/getting-started-with-gruntjs"/>
    <updated>2013-12-30T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/12/30/getting-started-with-gruntjs</id>
-   <content type="html">&lt;h4 id='referencing_article'&gt;Referencing Article&lt;/h4&gt;
-
-&lt;h4 id='up_and_running_with_gruntjs'&gt;&lt;a href='http://coding.smashingmagazine.com/2013/10/29/get-up-running-grunt/'&gt;Up and Running with GruntJS&lt;/a&gt;&lt;/h4&gt;
-
-&lt;h4 id='gruntjs_primer'&gt;GruntJS Primer&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;Built on top of Node.js, Grunt is a task-based command-line tool that speeds up workflows by reducing the effort required to prepare assets for production.  
-It does this by wrapping up jobs into tasks that are compiled automatically as you go along. Basically, you can use Grunt on most tasks that you consider to be grunt work and would normally have to manually configure and run yourself.&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Simply put - it helps when you&amp;#8217;re doing commands like&lt;br /&gt;&lt;code&gt;sass --watch main.sass:main.css&lt;/code&gt;&lt;br /&gt;or&lt;br /&gt;&lt;code&gt;coffee --compile --watch main.coffee:main.js &lt;/code&gt;&lt;br /&gt;or even&lt;br /&gt;&lt;code&gt;python -h SimpleHTTPServer&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;and depending on what you put in your grunt file&amp;#8230;&lt;br /&gt;&amp;#8230; replace them all with&lt;br /&gt;&lt;code&gt;grunt server&lt;/code&gt;&lt;/p&gt;</content>
+   <content type="html"></content>
  </entry>
  
  <entry>

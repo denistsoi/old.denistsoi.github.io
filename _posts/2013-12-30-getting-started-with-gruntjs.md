@@ -34,7 +34,7 @@ and depending on what you put in your grunt file...
 ---
 Let's get started!
 
-Follow the repo [here]()
+Follow the repo [here](https://github.com/denistsoi/port-js)
 
 ---
 

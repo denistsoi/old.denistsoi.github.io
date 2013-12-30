@@ -18,7 +18,7 @@ I always knew that this job as a web dev was going to be tough, but I never knew
 
 Admittantly, I began to feel exhausted before Christmas, where most of the deadlines were due. I had the mental approach of giving as much time as possible towards work, to the detrement of my social and family life. I had felt like I hadn't enjoyed my time since most of it was dedicated to work. I realised that I can't do that if I were to come back after the New Year, and my lifestyle (life choices) had to change.
 
-I've had a lot of conversations with Vladimir over the past few months about what I should be focusing when it came to my learning process. And although there are a lot of things that I do not know, I realised yesterday that I have to dedicate time towards study.
+I've had a lot of conversations with [Vladimir](https://twitter.com/rusintez) over the past few months about what I should be focusing when it came to my learning process. And although there are a lot of things that I do not know, I realised yesterday that I have to dedicate time towards study.
 
 This means, having the same approach of "going back to school", when it came to improving my programming skills.
 

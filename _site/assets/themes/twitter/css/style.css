@@ -7,6 +7,7 @@ hr {
   border-top: 1px solid #d6d6d6;
   border-bottom: 1px solid #d6d6d6;}
 
+/* Remove text-shadow */
 .navbar .brand, .navbar .nav>li>a {
   text-shadow: none;}
 
@@ -16,6 +17,14 @@ hr {
   border: none;
   border-bottom: #d6d6d6;
   border-radius: 0;}
+
+/* justify code block "quote block" */
+
+pre{
+  text-align: justify;}
+pre code{
+  white-space: normal;
+  word-break: break-word;}
 
 .pagination ul>li>a, .pagination ul>li>span {
   float: left;

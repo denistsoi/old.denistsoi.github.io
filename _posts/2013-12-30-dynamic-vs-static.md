@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "dynamic vs static?"
+title: "Dynamic vs static?"
 description: ""
 category: 
 tags: []

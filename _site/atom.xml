@@ -4,7 +4,7 @@
  <title>Denis Tsoi</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2013-12-29T19:33:28+08:00</updated>
+ <updated>2013-12-30T15:17:53+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name>Denis Tsoi</name>
@@ -13,7 +13,47 @@
 
  
  <entry>
-   <title>Relfection</title>
+   <title>Getting Started with Yeoman, Grunt and everything inbetween</title>
+   <link href="http://username.github.io/2013/12/30/getting-started-with-yeoman-grunt-and-everything-inbetween"/>
+   <updated>2013-12-30T00:00:00+08:00</updated>
+   <id>http://username.github.io/2013/12/30/getting-started-with-yeoman-grunt-and-everything-inbetween</id>
+   <content type="html">&lt;p&gt;It&amp;#8217;s day one of Getting Started with Yeoman, something that I&amp;#8217;ve needed to do that is long overdue.&lt;/p&gt;
+
+&lt;p&gt;The reason for documenting all this stuff is due to the fact that I&amp;#8217;ve felt completely lost when knowing where to begin, so I wish to document all the good, bad and ugly things that I&amp;#8217;ve encountered.&lt;/p&gt;
+
+&lt;p&gt;For some of you reading, if you are already familiar with the above technologies, this is not intended as supplementary learning material&amp;#8230; but rather for myself to document, from start to some place in the future as a feedback loop on what I observed and the challenges in learning something new.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Intro over.&lt;/p&gt;
+
+&lt;p&gt;Lets jump right into the deep end.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Sources I&amp;#8217;ve found so far.&lt;/p&gt;
+
+&lt;h3 id='addy_osmanis_fowa_2013_london_slides'&gt;&lt;a href='https://speakerdeck.com/addyosmani/automating-front-end-workflow'&gt;Addy Osmani&amp;#8217;s FOWA 2013 London Slides&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;This slidedeck is an incredible source to see what a good frontend web developer should be using today to stay ahead of the curve. Not only does &lt;a href='http://addyosmani.com/blog/'&gt;Addy Osmani&lt;/a&gt; provide such an overview of what a frontend should be using in terms of faster iteration, but by using Javascript.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id='wtf_is_grunt'&gt;&lt;a href='http://coding.smashingmagazine.com/2013/10/29/get-up-running-grunt/'&gt;WTF is Grunt?&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id='grunt_from_the_grunts_mouth'&gt;&lt;a href='http://gruntjs.com/getting-started'&gt;Grunt from the Grunt&amp;#8217;s mouth&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id='more_grunt_in_your_face'&gt;&lt;a href='http://gruntjs.com/configuring-tasks'&gt;More Grunt in your face?&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id='shut_the_grunt_up__sample_gruntfile'&gt;&lt;a href='http://gruntjs.com/sample-gruntfile'&gt;Shut the grunt up - sample gruntfile&lt;/a&gt;&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h3 id='tips_and_tricks_with_alfred'&gt;&lt;a href='http://coding.smashingmagazine.com/2013/10/25/hidden-productivity-secrets-with-alfred/'&gt;Tips and Tricks with Alfred&lt;/a&gt;&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;h3 id='wtf_is_yeoman'&gt;&lt;a href='http://yeoman.io/'&gt;WTF is Yeoman?&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id='ok_yeoman_is_my_friend_now_what'&gt;&lt;a href='http://yeoman.io/gettingstarted.html'&gt;Ok Yeoman is my friend&amp;#8230; now what?&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id='i_wanna_use_angular_with_yeoman'&gt;&lt;a href='http://www.sitepoint.com/kickstart-your-angularjs-development-with-yeoman-grunt-and-bower/'&gt;I wanna use Angular with Yeoman!&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id='build_shit_with_yeoman'&gt;&lt;a href='http://net.tutsplus.com/tutorials/javascript-ajax/building-apps-with-the-yeoman-workflow/'&gt;Build shit with Yeoman!&lt;/a&gt;&lt;/h3&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Reflection</title>
    <link href="http://username.github.io/2013/12/29/relfection"/>
    <updated>2013-12-29T00:00:00+08:00</updated>
    <id>http://username.github.io/2013/12/29/relfection</id>

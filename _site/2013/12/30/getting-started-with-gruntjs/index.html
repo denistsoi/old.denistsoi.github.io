@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>getting started with gruntjs</title>
+    <title>Getting started with gruntjs</title>
     <meta name="description" content="">
     <meta name="author" content="Denis Tsoi">
 
@@ -109,7 +109,7 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>getting started with gruntjs </h1>
+  <h1>Getting started with gruntjs </h1>
 </div>
 
 <div class="row-fluid post-full">
@@ -127,48 +127,85 @@
 <pre><code>Built on top of Node.js, Grunt is a task-based command-line tool that speeds up workflows by reducing the effort required to prepare assets for production.  
 It does this by wrapping up jobs into tasks that are compiled automatically as you go along. Basically, you can use Grunt on most tasks that you consider to be grunt work and would normally have to manually configure and run yourself.</code></pre>
 
-<p>Simply put - it helps when you&#8217;re doing commands like<br /><code>sass --watch main.sass:main.css</code><br />or<br /><code>coffee --compile --watch main.coffee:main.js</code><br />or even<br /><code>python -h SimpleHTTPServer</code></p>
+<p>Simply put - it helps when you&#8217;re doing commands like</p>
 
-<p>and depending on what you put in your grunt file&#8230;<br />&#8230; replace them all with<br /><code>grunt server</code></p>
-<hr />
-<p>Let&#8217;s get started!</p>
+<pre><code>$ sass --watch main.sass:main.css  </code></pre>
 
-<p>Follow the repo <a href='https://github.com/denistsoi/port-js'>here</a></p>
+<p>or</p>
+
+<pre><code>$ coffee --compile --watch main.coffee:main.js  </code></pre>
+
+<p>or even</p>
+
+<pre><code>$ python -h SimpleHTTPServer  </code></pre>
+
+<p>However, depending on your Gruntfile, you could just&#8230;</p>
+
+<pre><code>$ grunt server  </code></pre>
 <hr />
+<h2 id='ok_lets_get_started_follow_the_repo_here'>Ok Let&#8217;s get started&#8230; Follow the repo <a href='https://github.com/denistsoi/port-js'>here</a></h2>
+
 <p>Update: 20:00 30-12-2013</p>
 
-<p>OMG, This was a complete pain in the ass. Ok one of the MOST FRUSTRATING thing you should be aware about is if you have previously had node/npm install, you may need to use the command in your terminal.<br /><code>$ sudo npm cache clean </code></p>
+<p>OMG, This was a complete pain in the ass. Ok one of the MOST FRUSTRATING thing you should be aware about is if you have previously had node/npm install, you may need to use the command in your terminal.</p>
 
-<p>Why?</p>
+<pre><code>$ sudo npm cache clean  </code></pre>
 
-<p>Well, apparently, if you don&#8217;t clean/clear your cache, some dependancies will give you some errors like &#8230;</p>
+<p>Why?<br />Well, apparently, if you don&#8217;t clean/clear your cache, some dependancies will give you some errors like&#8230;</p>
 
-<p><code>npm ERR! cb() never called!  
-npm ERR! not ok code 0</code></p>
+<p><code>
+    npm ERR! cb() never called!  
+</code></p>
 
-<ul>
-<li>I ended up using the yeoman generator, which I will outline below after I&#8217;ve worked tried Yeoman with Angular.</li>
-</ul>
+<p><code>
+    npm ERR! not ok code 0  
+</code><br />I ended up using the yeoman generator, which I will outline below after I&#8217;ve worked tried Yeoman with Angular.<br />if you are using terminal and keep having the password prompting then the following seems to help</p>
 
-<p>if you are using terminal and keep having the password prompting then the following seems to help <code>sudo chown -R </code>whoami<code> ~/.npm
-</code>sudo chown -R <code>whoami</code> /usr/local/lib/node_modules</p>
+<p><code>
+$ sudo chown -R `whoami` ~/.npm  
+</code></p>
+
+<p><code>
+$ sudo chown -R `whoami` /usr/local/lib/node_modules  
+</code></p>
 
 <p>There&#8217;s another command, which I will update at a later date which also seems to the same thing.</p>
 <hr />
-<h5 id='continuing_onwards'>Continuing onwards</h5>
+<h3 id='continuing_onwards'>Continuing onwards</h3>
 
-<p>Using Yeoman with Angular-Generator<br /><a href='http://www.youtube.com/watch?v=iUQ1fvdO9GY#t=113'>Link</a></p>
+<p>Using Yeoman with Angular-Generator <a href='http://www.youtube.com/watch?v=iUQ1fvdO9GY#t=113'>Link</a></p>
 
-<p>Install Yeoman globally with<br /><code>npm install -g yo&#39;  
-</code>npm install -g generator-angular&#8217;</p>
+<p>Install Yeoman globally with</p>
 
-<p>Make a new directory of where you want to put your app <code>mkdir todo</code><br /><code>cd todo</code><br /><code>yo angular</code></p>
+<p><code>
+    $ npm install -g yo  
+</code><br /><code>
+    $ npm install -g generator-angular  
+</code></p>
 
-<p>If everything went well, then run<br /><code>grunt server</code></p>
+<p>Make a new directory of where you want to put your app</p>
 
-<p>Update SUCCESS!</p>
+<p><code>   
+    $ mkdir todo  
+</code><br /><code>
+    $ cd todo
+</code><br /><code>
+    $ yo angular  
+</code></p>
+
+<p>If everything went well, then run</p>
+
+<p><code>   
+    $ grunt server
+</code></p>
+
+<h3 id='update_success'>Update SUCCESS!</h3>
 <hr />
-<p>Footnotes:</p>
+<p>If you&#8217;d like to read more about how I got on with using Yeoman with Angular, I write an extension of this post with a relevant link later.</p>
+
+<p>Thanks for reading!</p>
+
+<h3 id='footnotes'>Footnotes:</h3>
 
 <h3 id='yomobile'><a href='https://github.com/yeoman/generator-mobile'>Yo-Mobile?</a></h3>
     </div>
@@ -185,7 +222,7 @@ npm ERR! not ok code 0</code></p>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/2013/12/30/getting-started-with-yeoman-grunt-and-everything-inbetween" title="Getting Started with Yeoman, Grunt and everything inbetween">Next &rarr;</a></li>
+        <li class="next"><a href="/2013/12/31/getting-started-with-yeoman-grunt-and-everything-inbetween" title="Getting Started with Yeoman, Grunt and everything inbetween">Next &rarr;</a></li>
       
       </ul>
     </div>

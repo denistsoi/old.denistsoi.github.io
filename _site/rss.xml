@@ -5,8 +5,8 @@
         <description>Denis Tsoi - Denis Tsoi</description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2013-12-31T19:38:18+08:00</lastBuildDate>
-        <pubDate>2013-12-31T19:38:18+08:00</pubDate>
+        <lastBuildDate>2013-12-31T19:48:39+08:00</lastBuildDate>
+        <pubDate>2013-12-31T19:48:39+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -23,19 +23,19 @@ It does this by wrapping up jobs into tasks that are compiled automatically as y
 
 &lt;p&gt;Simply put - it helps when you&amp;#8217;re doing commands like&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ sass --watch main.sass:main.css  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;$ sass --watch main.sass:main.css&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;or&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ coffee --compile --watch main.coffee:main.js  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;$ coffee --compile --watch main.coffee:main.js&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;or even&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ python -h SimpleHTTPServer  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;$ python -h SimpleHTTPServer&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;However, depending on your Gruntfile, you could just&amp;#8230;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ grunt server  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;$ grunt server&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2 id='ok_lets_get_started_follow_the_repo_here'&gt;Ok Let&amp;#8217;s get started&amp;#8230; Follow the repo &lt;a href='https://github.com/denistsoi/port-js'&gt;here&lt;/a&gt;&lt;/h2&gt;
 
@@ -43,25 +43,15 @@ It does this by wrapping up jobs into tasks that are compiled automatically as y
 
 &lt;p&gt;OMG, This was a complete pain in the ass. Ok one of the MOST FRUSTRATING thing you should be aware about is if you have previously had node/npm install, you may need to use the command in your terminal.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ sudo npm cache clean  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;$ sudo npm cache clean&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Why?&lt;br /&gt;Well, apparently, if you don&amp;#8217;t clean/clear your cache, some dependancies will give you some errors like&amp;#8230;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-    npm ERR! cb() never called!  
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;npm ERR! cb() never called!&lt;/code&gt;&lt;br /&gt;&lt;code&gt;npm ERR! not ok code 0&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-    npm ERR! not ok code 0  
-&lt;/code&gt;&lt;br /&gt;I ended up using the yeoman generator, which I will outline below after I&amp;#8217;ve worked tried Yeoman with Angular.&lt;br /&gt;if you are using terminal and keep having the password prompting then the following seems to help&lt;/p&gt;
+&lt;p&gt;I ended up using the yeoman generator, which I will outline below after I&amp;#8217;ve worked tried Yeoman with Angular.&lt;br /&gt;if you are using terminal and keep having the password prompting then the following seems to help&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-$ sudo chown -R `whoami` ~/.npm  
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;
-$ sudo chown -R `whoami` /usr/local/lib/node_modules  
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ sudo chown -R `whoami` ~/.npm&lt;/code&gt;&lt;br /&gt;&lt;code&gt;$ sudo chown -R `whoami` /usr/local/lib/node_modules&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;There&amp;#8217;s another command, which I will update at a later date which also seems to the same thing.&lt;/p&gt;
 &lt;hr /&gt;
@@ -71,27 +61,15 @@ $ sudo chown -R `whoami` /usr/local/lib/node_modules
 
 &lt;p&gt;Install Yeoman globally with&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-    $ npm install -g yo  
-&lt;/code&gt;&lt;br /&gt;&lt;code&gt;
-    $ npm install -g generator-angular  
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ npm install -g yo&lt;/code&gt;&lt;br /&gt;&lt;code&gt;$ npm install -g generator-angular&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Make a new directory of where you want to put your app&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;   
-    $ mkdir todo  
-&lt;/code&gt;&lt;br /&gt;&lt;code&gt;
-    $ cd todo
-&lt;/code&gt;&lt;br /&gt;&lt;code&gt;
-    $ yo angular  
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ mkdir todo&lt;/code&gt;&lt;br /&gt;&lt;code&gt;$ cd todo&lt;/code&gt;&lt;br /&gt;&lt;code&gt;$ yo angular&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;If everything went well, then run&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;   
-    $ grunt server
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ grunt server&lt;/code&gt;&lt;/p&gt;
 
 &lt;h3 id='update_success'&gt;Update SUCCESS!&lt;/h3&gt;
 &lt;hr /&gt;

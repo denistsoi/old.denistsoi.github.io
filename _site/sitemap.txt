@@ -9,7 +9,6 @@ http://username.github.io/rss.xml
 http://username.github.io/sitemap.txt
 http://username.github.io/tags.html
 
-http://username.github.io/2013/12/31/getting-started-with-yeoman-grunt-and-everything-inbetween
 http://username.github.io/2013/12/30/getting-started-with-gruntjs
 http://username.github.io/2013/12/30/Dynamic-vs-static
 http://username.github.io/2013/12/29/relfection

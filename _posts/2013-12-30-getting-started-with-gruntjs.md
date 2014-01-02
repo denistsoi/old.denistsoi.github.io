@@ -3,7 +3,7 @@ layout: post
 title: "Getting started with gruntjs"
 description: ""
 category: 
-tags: [Grunt, Yeoman, npm, sudo]
+tags: [Grunt, Yeoman, npm ,sudo]
 excerpt: 
 ---
 {% include JB/setup %}
@@ -72,4 +72,4 @@ Update - Here is the terminal command to allow global installation via npm
 ---  
 
 I got pretty fed up with trying to generate a stand alone grunt project and ended up with using yeoman - which is further detailed in the following post  
-[]
+[relevant post](http://denistsoi.github.io/2014/01/01/getting-started-with-yeoman/)

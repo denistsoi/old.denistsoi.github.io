@@ -3,7 +3,7 @@ layout: post
 title: "Getting started with Yeoman"
 description: ""
 category: 
-tags: []
+tags: [Yeoman, Angular, Grunt]
 excerpt: 
 ---
 {% include JB/setup %}

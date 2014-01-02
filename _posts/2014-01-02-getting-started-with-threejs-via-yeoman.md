@@ -3,7 +3,7 @@ layout: post
 title: "Getting started with Threejs via Yeoman"
 description: ""
 category: 
-tags: []
+tags: [Yeoman, Threejs]
 excerpt: 
 ---
 {% include JB/setup %}

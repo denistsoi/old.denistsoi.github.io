@@ -5,8 +5,8 @@
         <description>Denis Tsoi - Denis Tsoi</description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2013-12-31T19:48:39+08:00</lastBuildDate>
-        <pubDate>2013-12-31T19:48:39+08:00</pubDate>
+        <lastBuildDate>2014-01-02T12:56:22+08:00</lastBuildDate>
+        <pubDate>2014-01-02T12:56:22+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -54,6 +54,10 @@ It does this by wrapping up jobs into tasks that are compiled automatically as y
 &lt;p&gt;&lt;code&gt;$ sudo chown -R `whoami` ~/.npm&lt;/code&gt;&lt;br /&gt;&lt;code&gt;$ sudo chown -R `whoami` /usr/local/lib/node_modules&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;There&amp;#8217;s another command, which I will update at a later date which also seems to the same thing.&lt;/p&gt;
+
+&lt;p&gt;Update - Here is the terminal command to allow global installation via npm&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sudo chown -R $USER /usr/local&lt;/code&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h3 id='continuing_onwards'&gt;Continuing onwards&lt;/h3&gt;
 
@@ -102,8 +106,8 @@ It does this by wrapping up jobs into tasks that are compiled automatically as y
 &lt;p&gt;Well - there&amp;#8217;s a couple of good arguments for both in the article above &lt;a href='http://coding.smashingmagazine.com/2013/04/18/introduction-to-programming-type-systems/'&gt;link again&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I don&amp;#8217;t have much to add to the topic, but hope you enjoy the above article.&lt;/p&gt;</description>
-                <link>http://username.github.io/2013/12/30/Dynamic-vs-static</link>
-                <guid>http://username.github.io/2013/12/30/Dynamic-vs-static</guid>
+                <link>http://username.github.io/2013/12/30/dynamic-vs-static</link>
+                <guid>http://username.github.io/2013/12/30/dynamic-vs-static</guid>
                 <pubDate>2013-12-30T00:00:00+08:00</pubDate>
         </item>
 

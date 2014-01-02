@@ -63,6 +63,10 @@ if you are using terminal and keep having the password prompting then the follow
 
 There's another command, which I will update at a later date which also seems to the same thing.  
 
+Update - Here is the terminal command to allow global installation via npm
+
+``sudo chown -R $USER /usr/local``
+
 ---  
 
 ### Continuing onwards  

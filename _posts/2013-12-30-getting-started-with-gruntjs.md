@@ -67,6 +67,8 @@ Update - Here is the terminal command to allow global installation via npm
 
 ``sudo chown -R $USER /usr/local``
 
+[source](http://foohack.com/2010/08/intro-to-npm/)
+
 ---  
 
 ### Continuing onwards  

@@ -3,7 +3,7 @@ layout: post
 title: "Getting started with gruntjs"
 description: ""
 category: 
-tags: [Grunt, Yeoman, npm ,sudo]
+tags: [Grunt, Yeoman, npm, sudo]
 excerpt: 
 ---
 {% include JB/setup %}

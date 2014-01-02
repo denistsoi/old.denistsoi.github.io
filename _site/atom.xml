@@ -4,7 +4,7 @@
  <title>Denis Tsoi</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2014-01-02T16:25:29+08:00</updated>
+ <updated>2014-01-02T22:25:16+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name>Denis Tsoi</name>
@@ -44,6 +44,36 @@
 &lt;p&gt;If you just want a stock threejs project, then this should get you going.&lt;/p&gt;
 
 &lt;p&gt;Run &lt;code&gt;grunt serve&lt;/code&gt; in your terminal to init a grunt server to view your project in browser.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>agencies</title>
+   <link href="http://username.github.io/2014/01/02/agencies"/>
+   <updated>2014-01-02T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/01/02/agencies</id>
+   <content type="html">&lt;p&gt;Resources of Digital Agencies&lt;/p&gt;
+
+&lt;p&gt;http://weareadaptable.com/ http://www.pixopunch.com/ http://www.possible.com/ http://www.wearepapertiger.com/ http://creative-jar.com/ http://www.f-i.com/fi/airlines/ http://playbook.thoughtbot.com/&lt;/p&gt;
+
+&lt;p&gt;http://www.html5rocks.com/en/tutorials/&lt;/p&gt;
+
+&lt;p&gt;http://www.html5rocks.com/en/tutorials/masking/adobe/ https://twitter.com/dirkschulze&lt;/p&gt;
+
+&lt;p&gt;http://www.html5rocks.com/en/tutorials/canvas/inspection/ https://twitter.com/PaulLewis&lt;/p&gt;
+
+&lt;p&gt;http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-201/ https://twitter.com/ebidel&lt;/p&gt;
+
+&lt;p&gt;http://addyosmani.com/blog/ https://twitter.com/addyosmani&lt;/p&gt;
+
+&lt;p&gt;http://zomigi.com/blog/ https://twitter.com/zomigi&lt;/p&gt;
+
+&lt;p&gt;http://www.rachelandrew.co.uk/ https://twitter.com/rachelandrew&lt;/p&gt;
+
+&lt;p&gt;http://www.html5rocks.com/en/tutorials/developertools/revolutions2013/&lt;/p&gt;
+
+&lt;p&gt;http://www.ngenworks.com/speakers/carl-smith/&lt;/p&gt;
+
+&lt;p&gt;http://bradfrostweb.com/blog/post/float-label-pattern/&lt;/p&gt;</content>
  </entry>
  
  <entry>

@@ -35,4 +35,4 @@ Note: If you're unfamiliar with AMD, like I am at this current moment, then I im
 
 If you just want a stock threejs project, then this should get you going.
 
-Run ``grunt`` in your terminal to init a grunt server to view your project in browser.
+Run ``grunt serve`` in your terminal to init a grunt server to view your project in browser.

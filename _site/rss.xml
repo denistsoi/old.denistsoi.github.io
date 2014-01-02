@@ -5,8 +5,8 @@
         <description>Denis Tsoi - Denis Tsoi</description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-01-02T13:46:14+08:00</lastBuildDate>
-        <pubDate>2014-01-02T13:46:14+08:00</pubDate>
+        <lastBuildDate>2014-01-02T13:51:28+08:00</lastBuildDate>
+        <pubDate>2014-01-02T13:51:28+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -38,7 +38,7 @@
 
 &lt;p&gt;If you just want a stock threejs project, then this should get you going.&lt;/p&gt;
 
-&lt;p&gt;Run &lt;code&gt;grunt&lt;/code&gt; in your terminal to init a grunt server to view your project in browser.&lt;/p&gt;</description>
+&lt;p&gt;Run &lt;code&gt;grunt serve&lt;/code&gt; in your terminal to init a grunt server to view your project in browser.&lt;/p&gt;</description>
                 <link>http://username.github.io/2014/01/02/getting-started-with-threejs-via-yeoman</link>
                 <guid>http://username.github.io/2014/01/02/getting-started-with-threejs-via-yeoman</guid>
                 <pubDate>2014-01-02T00:00:00+08:00</pubDate>

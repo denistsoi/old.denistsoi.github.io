@@ -5,8 +5,8 @@
         <description>Denis Tsoi - Denis Tsoi</description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-01-06T19:28:41+08:00</lastBuildDate>
-        <pubDate>2014-01-06T19:28:41+08:00</pubDate>
+        <lastBuildDate>2014-01-06T19:30:55+08:00</lastBuildDate>
+        <pubDate>2014-01-06T19:30:55+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -99,14 +99,6 @@ font-family: myAwesomeFont;
 &lt;p&gt;Run &lt;code&gt;grunt serve&lt;/code&gt; in your terminal to init a grunt server to view your project in browser.&lt;/p&gt;</description>
                 <link>http://username.github.io/2014/01/02/getting-started-with-threejs-via-yeoman</link>
                 <guid>http://username.github.io/2014/01/02/getting-started-with-threejs-via-yeoman</guid>
-                <pubDate>2014-01-02T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
-                <title>Getting Started with threejs, D3 and yeoman</title>
-                <description></description>
-                <link>http://username.github.io/2014/01/02/getting-started-with-threejs-d3-and-yeoman</link>
-                <guid>http://username.github.io/2014/01/02/getting-started-with-threejs-d3-and-yeoman</guid>
                 <pubDate>2014-01-02T00:00:00+08:00</pubDate>
         </item>
 

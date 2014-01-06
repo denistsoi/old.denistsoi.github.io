@@ -8,6 +8,7 @@ http://username.github.io/rss.xml
 http://username.github.io/sitemap.txt
 http://username.github.io/tags.html
 
+http://username.github.io/2014/01/03/big-trouble-in-little-chinese-language-files
 http://username.github.io/2014/01/02/getting-started-with-threejs-via-yeoman
 http://username.github.io/2014/01/02/getting-started-with-threejs-d3-and-yeoman
 http://username.github.io/2014/01/02/agencies

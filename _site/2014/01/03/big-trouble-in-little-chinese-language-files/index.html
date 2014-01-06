@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Big Trouble in Little Chinese Language Files</title>
+    <meta name="description" content="">
+    <meta name="author" content="Denis Tsoi">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">Denis Tsoi</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>Big Trouble in Little Chinese Language Files </h1>
+</div>
+
+<div class="row-fluid post-full">
+  <div class="span12">
+    <div class="date">
+      <span>03 January 2014</span>
+    </div>
+    <div class="content">
+      <p>Today was a bit of stange day -</p>
+<!-- ...I encountered  file and I hope I can outline some scenarios so you too can avoid the eventual faceplant same pitfalls that I almost faceplanted.
+ -->
+<p>Basically, from GA FEWD and in Frontend, you will want to import custom font files that are either hosted locally or on a CDN like <a href='http://www.google.com/fonts'>google fonts</a>.</p>
+
+<p>If you want to include a open font type, you will need to include the <code>@font face</code> within your CSS. Thereafter, you&#8217;ll be able to control what elements you want that font style applied into your webpage.</p>
+
+<p>Below is an example of how you&#8217;ll go about doing that.</p>
+
+<pre><code>@font-face
+{
+font-family: myAwesomeFont;  
+src: url(awesomeFont.ttf), local(awesomeFont);  
+}</code></pre>
+
+<p>Then in your stylesheet under your specified class, id or element, you&#8217;ll need to add this onto your choice of element. (I&#8217;ve used body as the example)</p>
+
+<pre><code>body
+{
+font-family: myAwesomeFont;
+}</code></pre>
+
+<p>Caveat: Font face is not supported on ie8 and under.</p>
+<hr />
+<h4 id='so_whats_the_problem'>So what&#8217;s the problem?</h4>
+
+<p>Well, the problem was as follows - Traditional Chinese was being rendered onto the DOM, along with the Simplified Chinese - so what was the problem?</p>
+
+<p>Whenever I looked at the Mac version of the site, the Simplified Chinese was being rendered with a system font which looked incredibly similar to the desired style that I wanted to render. However, whenever this was rendered on a Windows Machine on Chrome (running the exact same browser), the Windows system font would actually a very different font style?</p>
+
+<p>So what was actually happening?</p>
+
+<p>I had hypothesized that the Traditional Chinese font file was renderering <em>SOME</em> of the Simplified Chinese, but the curious case was why was it rendering only some and not <em>ALL</em> of the characters?</p>
+
+<p>This lead me onto a deep and dark rabbit hole which would inevitably lead me to some very intereresting caveats about using font types.</p>
+
+<p>As Web Developers, we all know that the openness of the web was not created for font foundries in mind. That being said, any font that isn&#8217;t openly licensed or legally purchased will be liable to some bad times&#8230;</p>
+
+<p><img alt='Bad Time' src='http://cdn.memegenerator.net/instances/500x/44606316.jpg' /></p>
+
+<h4 id='update'>Update</h4>
+
+<p>Anyways - that Tangent aside, my colleague Ethan had a quick look around at the most popular only font foundaries about why the font files had specific naming.</p>
+
+<p>There was a peculiar naming scheme of &#8220;Simplified on Traditional&#8221;&#8230;</p>
+
+<p>Which meant&#8230;</p>
+
+<p>That for whatever Traditional Chinese character code will be translated into Simplified Chinese via the font file&#8230;</p>
+
+<h3 id='wtf'>WTF?</h3>
+    </div>
+
+    
+
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#Language-ref">Language <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#Frontend-ref">Frontend <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#Web Dev-ref">Web Dev <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2014/01/02/getting-started-with-threejs-via-yeoman" title="Getting started with Threejs via Yeoman">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a>
+      
+      </ul>
+    </div>
+    <hr>
+    
+  </div>
+</div>
+
+
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2014 Denis Tsoi
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+

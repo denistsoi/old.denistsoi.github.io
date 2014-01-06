@@ -11,7 +11,18 @@ hr {
 text-transform: capitalize;
 }
 
+blockquote{
+  padding: 15px;
+  background: #d6d6d6;
+  color: #333;
+  border-radius: 10px;
+  border-left: initial;
+}
 
+img {
+  display: block;
+  margin: 0 auto;
+}
 
 /* Remove text-shadow */
 .navbar .brand, .navbar .nav>li>a {
@@ -24,12 +35,18 @@ text-transform: capitalize;
   border-bottom: #d6d6d6;
   border-radius: 0;}
 
-/* justify code block "quote block" */
-
-pre{
-  text-align: justify;}
 pre code{
-  white-space: normal;
+  color: #00C121;
+}
+pre{
+  text-align: justify;
+  margin: 10px;
+  margin-top: 20px;
+  background: #333;
+  border-color: #d6d6d6;
+}
+pre code{
+  white-space: inherit;
   word-break: break-word;}
 
 .pagination ul>li>a, .pagination ul>li>span {

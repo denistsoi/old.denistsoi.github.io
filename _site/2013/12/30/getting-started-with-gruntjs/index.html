@@ -112,24 +112,25 @@
 
 <h4 id='gruntjs_primer'>GruntJS Primer</h4>
 
-<pre><code>Built on top of Node.js, Grunt is a task-based command-line tool that speeds up workflows by reducing the effort required to prepare assets for production.  
-It does this by wrapping up jobs into tasks that are compiled automatically as you go along. Basically, you can use Grunt on most tasks that you consider to be grunt work and would normally have to manually configure and run yourself.</code></pre>
+<blockquote>
+<p>Built on top of Node.js, Grunt is a task-based command-line tool that speeds up workflows by reducing the effort required to prepare assets for production.<br />It does this by wrapping up jobs into tasks that are compiled automatically as you go along. Basically, you can use Grunt on most tasks that you consider to be grunt work and would normally have to manually configure and run yourself.</p>
+</blockquote>
 
 <p>Simply put - it helps when you&#8217;re doing commands like</p>
 
-<p><code>$ sass --watch main.sass:main.css</code></p>
+<pre><code>$ sass --watch main.sass:main.css  </code></pre>
 
 <p>or</p>
 
-<p><code>$ coffee --compile --watch main.coffee:main.js</code></p>
+<pre><code>$ coffee --compile --watch main.coffee:main.js</code></pre>
 
 <p>or even</p>
 
-<p><code>$ python -h SimpleHTTPServer</code></p>
+<pre><code>$ python -h SimpleHTTPServer</code></pre>
 
 <p>However, depending on your Gruntfile, you could just&#8230;</p>
 
-<p><code>$ grunt server</code></p>
+<pre><code>$ grunt server</code></pre>
 <hr />
 <h2 id='ok_lets_get_started_follow_the_repo_here'>Ok Let&#8217;s get started&#8230; Follow the repo <a href='https://github.com/denistsoi/port-js'>here</a></h2>
 
@@ -137,7 +138,7 @@ It does this by wrapping up jobs into tasks that are compiled automatically as y
 
 <p>OMG, This was a complete pain in the ass. Ok one of the MOST FRUSTRATING thing you should be aware about is if you have previously had node/npm install, you may need to use the command in your terminal.</p>
 
-<p><code>$ sudo npm cache clean</code></p>
+<pre><code>$ sudo npm cache clean</code></pre>
 
 <p>Why?<br />Well, apparently, if you don&#8217;t clean/clear your cache, some dependancies will give you some errors like&#8230;</p>
 
@@ -145,13 +146,14 @@ It does this by wrapping up jobs into tasks that are compiled automatically as y
 
 <p>I ended up using the yeoman generator, which I will outline below after I&#8217;ve worked tried Yeoman with Angular.<br />if you are using terminal and keep having the password prompting then the following seems to help</p>
 
-<p><code>$ sudo chown -R `whoami` ~/.npm</code><br /><code>$ sudo chown -R `whoami` /usr/local/lib/node_modules</code></p>
+<pre><code>$ sudo chown -R `whoami` ~/.npm   
+$ sudo chown -R `whoami` /usr/local/lib/node_modules</code></pre>
 
 <p>There&#8217;s another command, which I will update at a later date which also seems to the same thing.</p>
 
 <p>Update - Here is the terminal command to allow global installation via npm</p>
 
-<p><code>sudo chown -R $USER /usr/local</code></p>
+<pre><code>$ sudo chown -R $USER /usr/local</code></pre>
 
 <p><a href='http://foohack.com/2010/08/intro-to-npm/'>source</a></p>
 <hr />

@@ -72,6 +72,33 @@ task :post do
   end
 end # task :post
 
+# rake draft["Title"]
+# desc "Create a post in _drafts"
+# task :draft, :title do |t, args|
+#   title = args[:title]
+#   template = CONFIG["post"]["template"]
+#   extension = CONFIG["post"]["extension"]
+#   editor = CONFIG["editor"]
+#   check_title(title)
+#   filename = transform_to_slug(title, extension)
+#   content = read_file(template)
+#   create_file(DRAFTS, filename, content, title, editor)
+# end
+
+
+# rake draft title="A Title"
+# desc "Being a new draft in #{CONFIG['posts']}"
+# task :draft do 
+#   abort("rake aborted: '#{CONFIG['posts']}' directory not found.") unless FileTest.directory?(CONFIG['posts'])
+#   title = ENV["title"] || "new-draft"
+#   begin
+#     date = (ENV['date'] ? Time.parse(ENV['date']) : Time.now).strftime('%Y-%m-%d')
+#   end
+#   filename = File.join(CONFIG['posts'], "#{date}-#{slug}.#{CONFIG['post_ext']}")
+#   end
+# end
+
+
 # Usage: rake page name="about.html"
 # You can also specify a sub-directory path.
 # If you don't specify a file extention we create an index.html at the path specified

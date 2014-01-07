@@ -4,13 +4,97 @@
  <title>Denis Tsoi</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2014-01-06T19:30:55+08:00</updated>
+ <updated>2014-01-07T15:03:20+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name>Denis Tsoi</name>
    <email>blah@email.test</email>
  </author>
 
+ 
+ <entry>
+   <title>Getting started with QA GUI testing</title>
+   <link href="http://username.github.io/2014/01/07/getting-started-with-qa-gui-testing"/>
+   <updated>2014-01-07T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/01/07/getting-started-with-qa-gui-testing</id>
+   <content type="html">&lt;p&gt;So how do you Automate GUI testing for web applications?&lt;/p&gt;
+
+&lt;p&gt;There&amp;#8217;s an interesting site called &lt;a href='http://csste.st/tools/'&gt;csste.st&lt;/a&gt; which is a good source to find more some directions for some CSS Testing tools, however, I&amp;#8217;d like to expand this post to include some others.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We&amp;#8217;re not talking about Unit Testing here, but about consistently testing and accurately recording the the user flow of web appications, there isn&amp;#8217;t a great deal of tools available to the Dev&amp;#8230;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However, it&amp;#8217;s a great opportunity to outline a few tools that &lt;em&gt;CAN&lt;/em&gt; help to this regard.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='http://www.browserstack.com'&gt;Defacto: &amp;#8220;BrowserStack&amp;#8221;&lt;/a&gt; isn&amp;#8217;t great if you&amp;#8217;re trying to hustle, but incredibly powerful if you&amp;#8217;re able to fork $20 a month. That basic plan doesn&amp;#8217;t give you all the bells and whistles, but it will give you enough to get pretty far on your Frontend Dev.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='http://cssregressiontesting.com/'&gt;Pricey Alternative: &amp;#8220;Mogotest&amp;#8221;&lt;/a&gt; is a prety interesting site that is trying to compete against BrowserStack, though the plans are pretty expensive.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=''&gt;Soasta&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=''&gt;iMacros&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id='tools'&gt;#Tools&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href='http://cburgmer.github.io/csscritic/'&gt;CSSCritic&lt;/a&gt; is incredibly lightweight and I&amp;#8217;d only recommend it for a quick comparison during your dev cycle. It is basically a screen capture plugin to compare two versions of a site which will highlight elements which are out of alignment compared to the original picture.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='https://github.com/Huddle/PhantomCSS'&gt;Lightweight OpenSource Alt: &amp;#8220;PhantomCSS&amp;#8221;&lt;/a&gt; is an alternative to CSSCritic which offers a little more&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='http://hardy.io/'&gt;Hardy.io&lt;/a&gt; is the big brother to GhostStory&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='https://github.com/BBC-News/wraith'&gt;BBC News Wraith&lt;/a&gt; is incredibly impressive. Running on Ruby, this uses a &lt;code&gt;rake&lt;/code&gt; task to run automated screen capture tests which are saved on the local directory. I particularly like how you can run the rake task to pull the requested web pages and then save a comparision of two pages as a highlighted image within a gallery context. Another thing I particularly like is how you can specify the screen sizes of the pages that you want the screen shots to be captured.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='https://github.com/watir/watir'&gt;Watir&lt;/a&gt; &lt;a href='http://watir.com/'&gt;Official Blog site for Watir&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id='automated_recorders'&gt;#Automated Recorders&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href='http://docs.seleniumhq.org/'&gt;Selenium&lt;/a&gt; is a Firebox plugin which allows the user to run browser automation tests. You can program on a plethora of programming languages though I do dislike the fact that you are required to have firefox as a prerequesite.&lt;br /&gt; - &lt;a href='http://darrellgrainger.blogspot.hk/2010/02/selenium-101.html'&gt;Getting Started on Selenium&lt;/a&gt; - &lt;a href='http://refcardz.dzone.com/refcardz/getting-started-selenium'&gt;More in-depth Selenium&lt;/a&gt;&lt;br /&gt; - &lt;a href='http://www.youtube.com/watch?v=gsHyDIyA3dg'&gt;like Youtube Tutorials?&lt;/a&gt;&lt;br /&gt; I like how you can export to Python or Ruby via Web Driver, but I&amp;#8217;m a little disappointed that you can&amp;#8217;t import back into Selenium IDE after you&amp;#8217;ve exported out.&lt;br /&gt; - &lt;a href='https://npmjs.org/package/selenium-webdriver'&gt;Selenium-WebDriver&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='http://www.sikuli.org/'&gt;Sikuli&lt;/a&gt; is a python based IDE for automated testing. I tried to use this during my brokerage days to automate financial reporting, but the only caveat is that Sikuli doesn&amp;#8217;t play nicely when you have buttons that are incredibly small within properietary software. There hasn&amp;#8217;t been much development for a while, which leads me to consider other alternatives - &lt;a href='https://github.com/daizoru/node-sikuli'&gt;Node-Sikuli&lt;/a&gt; Here is Sikuli to be used for node.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id='cli_tools'&gt;#CLI tools&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href='https://github.com/brenden/node-webshot'&gt;node-webshot&lt;/a&gt; &lt;a href='http://docs.casperjs.org/en/latest/quickstart.html'&gt;CasperJS&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id='takeaways'&gt;#Takeaways&lt;/h3&gt;
+
+&lt;p&gt;There&amp;#8217;s some underlying similarities between the different tools currently available. The most common tools that continue to pop up are Selenium Webdriver and PhantomJS.&lt;br /&gt;Why do you need the Webdriver?&lt;br /&gt;Why do you need PhantomJs/CasperJS?&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id='tips_and_tricks_for_qa'&gt;#Tips and Tricks for Q&amp;amp;A&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Invalid HTML&lt;/li&gt;
+
+&lt;li&gt;Form Validation&lt;/li&gt;
+
+&lt;li&gt;Content Wrapping&lt;/li&gt;
+
+&lt;li&gt;Tolerance Levels against Design&lt;/li&gt;
+
+&lt;li&gt;Optimize for one browser type and fix inconsistencies for others?&lt;/li&gt;
+
+&lt;li&gt;Dynamically Generated Content?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h3 id='future_post_ideas'&gt;#Future Post Ideas&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Browser Stack API?&lt;/li&gt;
+
+&lt;li&gt;What is Web Driver&lt;/li&gt;
+
+&lt;li&gt;Indepth Look at Hardy.io&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Interview with General Assembly</title>
+   <link href="http://username.github.io/2014/01/06/interview-with-general-assembly"/>
+   <updated>2014-01-06T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/01/06/interview-with-general-assembly</id>
+   <content type="html"></content>
+ </entry>
  
  <entry>
    <title>Big Trouble in Little Chinese Language Files</title>

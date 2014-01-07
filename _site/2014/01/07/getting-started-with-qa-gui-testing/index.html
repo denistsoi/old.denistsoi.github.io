@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Getting started with QA GUI testing</title>
+    <meta name="description" content="">
+    <meta name="author" content="Denis Tsoi">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">Denis Tsoi</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>Getting started with QA GUI testing </h1>
+</div>
+
+<div class="row-fluid post-full">
+  <div class="span12">
+    <div class="date">
+      <span>07 January 2014</span>
+    </div>
+    <div class="content">
+      <p>So how do you Automate GUI testing for web applications?</p>
+
+<p>There&#8217;s an interesting site called <a href='http://csste.st/tools/'>csste.st</a> which is a good source to find more some directions for some CSS Testing tools, however, I&#8217;d like to expand this post to include some others.</p>
+
+<ul>
+<li>We&#8217;re not talking about Unit Testing here, but about consistently testing and accurately recording the the user flow of web appications, there isn&#8217;t a great deal of tools available to the Dev&#8230;</li>
+</ul>
+
+<p>However, it&#8217;s a great opportunity to outline a few tools that <em>CAN</em> help to this regard.</p>
+
+<p><a href='http://www.browserstack.com'>Defacto: &#8220;BrowserStack&#8221;</a> isn&#8217;t great if you&#8217;re trying to hustle, but incredibly powerful if you&#8217;re able to fork $20 a month. That basic plan doesn&#8217;t give you all the bells and whistles, but it will give you enough to get pretty far on your Frontend Dev.</p>
+
+<p><a href='http://cssregressiontesting.com/'>Pricey Alternative: &#8220;Mogotest&#8221;</a> is a prety interesting site that is trying to compete against BrowserStack, though the plans are pretty expensive.</p>
+
+<p><a href=''>Soasta</a></p>
+
+<p><a href=''>iMacros</a></p>
+<hr />
+<h3 id='tools'>#Tools</h3>
+<hr />
+<p><a href='http://cburgmer.github.io/csscritic/'>CSSCritic</a> is incredibly lightweight and I&#8217;d only recommend it for a quick comparison during your dev cycle. It is basically a screen capture plugin to compare two versions of a site which will highlight elements which are out of alignment compared to the original picture.</p>
+
+<p><a href='https://github.com/Huddle/PhantomCSS'>Lightweight OpenSource Alt: &#8220;PhantomCSS&#8221;</a> is an alternative to CSSCritic which offers a little more</p>
+
+<p><a href='http://hardy.io/'>Hardy.io</a> is the big brother to GhostStory</p>
+
+<p><a href='https://github.com/BBC-News/wraith'>BBC News Wraith</a> is incredibly impressive. Running on Ruby, this uses a <code>rake</code> task to run automated screen capture tests which are saved on the local directory. I particularly like how you can run the rake task to pull the requested web pages and then save a comparision of two pages as a highlighted image within a gallery context. Another thing I particularly like is how you can specify the screen sizes of the pages that you want the screen shots to be captured.</p>
+
+<p><a href='https://github.com/watir/watir'>Watir</a> <a href='http://watir.com/'>Official Blog site for Watir</a></p>
+<hr />
+<h3 id='automated_recorders'>#Automated Recorders</h3>
+<hr />
+<p><a href='http://docs.seleniumhq.org/'>Selenium</a> is a Firebox plugin which allows the user to run browser automation tests. You can program on a plethora of programming languages though I do dislike the fact that you are required to have firefox as a prerequesite.<br /> - <a href='http://darrellgrainger.blogspot.hk/2010/02/selenium-101.html'>Getting Started on Selenium</a> - <a href='http://refcardz.dzone.com/refcardz/getting-started-selenium'>More in-depth Selenium</a><br /> - <a href='http://www.youtube.com/watch?v=gsHyDIyA3dg'>like Youtube Tutorials?</a><br /> I like how you can export to Python or Ruby via Web Driver, but I&#8217;m a little disappointed that you can&#8217;t import back into Selenium IDE after you&#8217;ve exported out.<br /> - <a href='https://npmjs.org/package/selenium-webdriver'>Selenium-WebDriver</a></p>
+
+<p><a href='http://www.sikuli.org/'>Sikuli</a> is a python based IDE for automated testing. I tried to use this during my brokerage days to automate financial reporting, but the only caveat is that Sikuli doesn&#8217;t play nicely when you have buttons that are incredibly small within properietary software. There hasn&#8217;t been much development for a while, which leads me to consider other alternatives - <a href='https://github.com/daizoru/node-sikuli'>Node-Sikuli</a> Here is Sikuli to be used for node.</p>
+<hr />
+<h3 id='cli_tools'>#CLI tools</h3>
+<hr />
+<p><a href='https://github.com/brenden/node-webshot'>node-webshot</a> <a href='http://docs.casperjs.org/en/latest/quickstart.html'>CasperJS</a></p>
+<hr />
+<h3 id='takeaways'>#Takeaways</h3>
+
+<p>There&#8217;s some underlying similarities between the different tools currently available. The most common tools that continue to pop up are Selenium Webdriver and PhantomJS.<br />Why do you need the Webdriver?<br />Why do you need PhantomJs/CasperJS?</p>
+<hr />
+<h3 id='tips_and_tricks_for_qa'>#Tips and Tricks for Q&amp;A</h3>
+
+<ul>
+<li>Invalid HTML</li>
+
+<li>Form Validation</li>
+
+<li>Content Wrapping</li>
+
+<li>Tolerance Levels against Design</li>
+
+<li>Optimize for one browser type and fix inconsistencies for others?</li>
+
+<li>Dynamically Generated Content?</li>
+</ul>
+<hr />
+<h3 id='future_post_ideas'>#Future Post Ideas</h3>
+
+<ul>
+<li>Browser Stack API?</li>
+
+<li>What is Web Driver</li>
+
+<li>Indepth Look at Hardy.io</li>
+</ul>
+    </div>
+
+    
+
+    
+
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2014/01/06/interview-with-general-assembly" title="Interview with General Assembly">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a>
+      
+      </ul>
+    </div>
+    <hr>
+    
+  </div>
+</div>
+
+
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2014 Denis Tsoi
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+

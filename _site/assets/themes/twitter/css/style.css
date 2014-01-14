@@ -1,3 +1,15 @@
+.navbar .nav>li>a:focus, .navbar .nav>li>a:hover {
+  color: #d6d6d6;
+}
+
+.dashed-hr{
+  opacity: .3;
+}
+
+.navbar .navbar-inner{
+  padding: 0;
+}
+
 /* Custom container */
 body{
   background-color: #333;

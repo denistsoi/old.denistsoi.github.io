@@ -8,6 +8,7 @@ http://username.github.io/rss.xml
 http://username.github.io/sitemap.txt
 http://username.github.io/tags.html
 
+http://username.github.io/2014/01/14/getting-started-with-qa-part-2
 http://username.github.io/2014/01/07/getting-started-with-qa-gui-testing
 http://username.github.io/2014/01/06/interview-with-general-assembly
 http://username.github.io/2014/01/03/big-trouble-in-little-chinese-language-files
@@ -15,7 +16,7 @@ http://username.github.io/2014/01/02/getting-started-with-threejs-via-yeoman
 http://username.github.io/2014/01/02/agencies
 http://username.github.io/2014/01/01/getting-started-with-yeoman
 http://username.github.io/2013/12/30/getting-started-with-gruntjs
-http://username.github.io/2013/12/30/dynamic-vs-static
+http://username.github.io/2013/12/30/Dynamic-vs-static
 http://username.github.io/2013/12/29/relfection
 http://username.github.io/2013/10/12/first-post
 http://username.github.io/2013/07/02/Going-for-Gold

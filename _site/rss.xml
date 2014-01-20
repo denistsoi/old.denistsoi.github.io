@@ -5,58 +5,136 @@
         <description>Denis Tsoi - Denis Tsoi</description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-01-14T18:21:17+08:00</lastBuildDate>
-        <pubDate>2014-01-14T18:21:17+08:00</pubDate>
+        <lastBuildDate>2014-01-21T02:02:00+08:00</lastBuildDate>
+        <pubDate>2014-01-21T02:02:00+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>getting started with qa part 2</title>
+                <description>&lt;p&gt;One of the things with getting started with qa is basically the fallacy of most QA articles out there.&lt;/p&gt;
+
+&lt;p&gt;QA as a field when comparing it to software development as a whole is an additive process, which helps aid in the develop cycle. However, I believe that adding the QA process as a formal process AFTER the development cycle is complete only hinders both the development cycle and the learning experience of a junior developer.&lt;/p&gt;
+
+&lt;p&gt;The thing that I have found as a junior web developer as well as my short time as a QA, is that having the mindset of a QA actually &lt;em&gt;HELPS&lt;/em&gt; me as a developer.&lt;/p&gt;
+
+&lt;p&gt;“Why” you ask?&lt;/p&gt;
+
+&lt;p&gt;The first thing to keep in mind is that as a QA, my job was to address not only the clients issues with respect to a piece of software… but to accurately and effectively communicate the problems to the software development team.&lt;/p&gt;
+
+&lt;p&gt;Effective Communication is by far THE MOST underrated skill that a developer can gain within their career.&lt;/p&gt;
+
+&lt;p&gt;If you are a QA and can use the same language and process of breaking down a problem/bug into it’s constituent parts, YOU are increasing the effectiveness of the team at solving problems.&lt;/p&gt;
+
+&lt;p&gt;Not only does communicating well with your team help them in solving the problem, but having the language to actively find out WHERE the problem lies within the debugging tools saves an incredible amount of time for YOUR team to waste as minimal amount of time searching for the problem.&lt;/p&gt;
+
+&lt;p&gt;The biggest problem with bugtracking is reproducing the EXACT conditions of the bugs existance.&lt;/p&gt;
+
+&lt;p&gt;That might sound like a big pile of BS, but hear me out.&lt;/p&gt;
+
+&lt;p&gt;If a user/tester does NOT effectively communicate ALL ESSENTIAL aspects of their testing environment, the amount of time WASTED increases exponentially with every piece of information that was omitted.&lt;/p&gt;
+
+&lt;p&gt;Example: Web Development.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;What Browser is the tester using (and limiting to Brand does not help) - As a QA, I want to know EVERYTHING! - the OS, the Version, what Time this was run, what PAGE… Even What BRAND of PC.&lt;/li&gt;
+
+&lt;li&gt;What did you DO to get to that bug? I want to know EVERYTHING that YOU did so I don’t waste time “TRYING” to replicate the damn bug.&lt;/li&gt;
+
+&lt;li&gt;Testers should focus ONLY on the ONE ISSUE. I can’t count the number of times where testers will just whine about how “everything is broken”… Look, I don’t get paid to listen to your complaints, I ONLY get paid to find out the bugs and convey that to my team. I don’t want to hear about anything about the bad day you’re having, that’s just not being professional.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Anyways - Rant Over&lt;/p&gt;
+
+&lt;p&gt;Here’s a free quick tools you should use when you are doing some QA.&lt;/p&gt;
+
+&lt;p&gt;MAC OS X Tools&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;QuickTime Movie for Video Screen Capture&lt;/li&gt;
+
+&lt;li&gt;CMD + SHIFT + 4 (to save screen as picture which is usually saved onto your desktop)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Windows Tools&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;CamStudio (Video Capture, Pretty decent for Open Source)&lt;/li&gt;
+
+&lt;li&gt;FRAPS (Save Screen without using PrntScreen and Paint)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Takeaway Points:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Be very explicit in your description/outline of the problem. It helps if you provide a video to SHOW devs how the event occurred, and it helps capturing small bugs that you didn’t notice the first time round.&lt;/li&gt;
+
+&lt;li&gt;Be patient with your testers, they generally won’t know how to express the problem, so if you can train them before hand, that’d be an ideal situation… Otherwise, try to train them during the testing process.&lt;/li&gt;
+
+&lt;li&gt;Be bold in trying to ‘BREAK’ the application as hard as humanly possible. Alot of the times, the user won’t know how to test the application, so if you are testing out UI interactions, click on a button a thousand times, refresh the page, type stupid shit in the input and repeat. You never know what sort of unexpected behaviour you might produce unless you’re bold enough to WANT to break the app.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Anyways - Speak soon D&lt;/p&gt;</description>
+                <link>http://username.github.io/2014/01/14/getting-started-with-qa-part-2</link>
+                <guid>http://username.github.io/2014/01/14/getting-started-with-qa-part-2</guid>
+                <pubDate>2014-01-14T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>Getting started with QA GUI testing</title>
                 <description>&lt;p&gt;So how do you Automate GUI testing for web applications?&lt;/p&gt;
 
-&lt;p&gt;There&amp;#8217;s an interesting site called &lt;a href='http://csste.st/tools/'&gt;csste.st&lt;/a&gt; which is a good source to find more some directions for some CSS Testing tools, however, I&amp;#8217;d like to expand this post to include some others.&lt;/p&gt;
+&lt;p&gt;There’s an interesting site called &lt;a href=&quot;http://csste.st/tools/&quot;&gt;csste.st&lt;/a&gt; which is a good source to find more some directions for some CSS Testing tools, however, I’d like to expand this post to include some others.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;We&amp;#8217;re not talking about Unit Testing here, but about consistently testing and accurately recording the the user flow of web appications, there isn&amp;#8217;t a great deal of tools available to the Dev&amp;#8230;&lt;/li&gt;
+&lt;li&gt;We’re not talking about Unit Testing here, but about consistently testing and accurately recording the the user flow of web appications, there isn’t a great deal of tools available to the Dev&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;However, it&amp;#8217;s a great opportunity to outline a few tools that &lt;em&gt;CAN&lt;/em&gt; help to this regard.&lt;/p&gt;
+&lt;p&gt;However, it’s a great opportunity to outline a few tools that &lt;em&gt;CAN&lt;/em&gt; help to this regard.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href='http://www.browserstack.com'&gt;Defacto: &amp;#8220;BrowserStack&amp;#8221;&lt;/a&gt; isn&amp;#8217;t great if you&amp;#8217;re trying to hustle, but incredibly powerful if you&amp;#8217;re able to fork $20 a month. That basic plan doesn&amp;#8217;t give you all the bells and whistles, but it will give you enough to get pretty far on your Frontend Dev.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.browserstack.com&quot;&gt;Defacto: “BrowserStack”&lt;/a&gt; isn’t great if you’re trying to hustle, but incredibly powerful if you’re able to fork $20 a month. That basic plan doesn’t give you all the bells and whistles, but it will give you enough to get pretty far on your Frontend Dev.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href='http://cssregressiontesting.com/'&gt;Pricey Alternative: &amp;#8220;Mogotest&amp;#8221;&lt;/a&gt; is a prety interesting site that is trying to compete against BrowserStack, though the plans are pretty expensive.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=''&gt;Soasta&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=''&gt;iMacros&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cssregressiontesting.com/&quot;&gt;Pricey Alternative: “Mogotest”&lt;/a&gt; is a prety interesting site that is trying to compete against BrowserStack, though the plans are pretty expensive.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h3 id='tools'&gt;#Tools&lt;/h3&gt;
+&lt;h3 id=&quot;tools&quot;&gt;#Tools&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;a href='http://cburgmer.github.io/csscritic/'&gt;CSSCritic&lt;/a&gt; is incredibly lightweight and I&amp;#8217;d only recommend it for a quick comparison during your dev cycle. It is basically a screen capture plugin to compare two versions of a site which will highlight elements which are out of alignment compared to the original picture.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cburgmer.github.io/csscritic/&quot;&gt;CSSCritic&lt;/a&gt; is incredibly lightweight and I’d only recommend it for a quick comparison during your dev cycle. It is basically a screen capture plugin to compare two versions of a site which will highlight elements which are out of alignment compared to the original picture.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href='https://github.com/Huddle/PhantomCSS'&gt;Lightweight OpenSource Alt: &amp;#8220;PhantomCSS&amp;#8221;&lt;/a&gt; is an alternative to CSSCritic which offers a little more&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Huddle/PhantomCSS&quot;&gt;Lightweight OpenSource Alt: “PhantomCSS”&lt;/a&gt; is an alternative to CSSCritic which offers a little more&lt;/p&gt;
 
-&lt;p&gt;&lt;a href='http://hardy.io/'&gt;Hardy.io&lt;/a&gt; is the big brother to GhostStory&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://hardy.io/&quot;&gt;Hardy.io&lt;/a&gt; is the big brother to GhostStory&lt;/p&gt;
 
-&lt;p&gt;&lt;a href='https://github.com/BBC-News/wraith'&gt;BBC News Wraith&lt;/a&gt; is incredibly impressive. Running on Ruby, this uses a &lt;code&gt;rake&lt;/code&gt; task to run automated screen capture tests which are saved on the local directory. I particularly like how you can run the rake task to pull the requested web pages and then save a comparision of two pages as a highlighted image within a gallery context. Another thing I particularly like is how you can specify the screen sizes of the pages that you want the screen shots to be captured.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/BBC-News/wraith&quot;&gt;BBC News Wraith&lt;/a&gt; is incredibly impressive. Running on Ruby, this uses a &lt;code&gt;rake&lt;/code&gt; task to run automated screen capture tests which are saved on the local directory. I particularly like how you can run the rake task to pull the requested web pages and then save a comparision of two pages as a highlighted image within a gallery context. Another thing I particularly like is how you can specify the screen sizes of the pages that you want the screen shots to be captured.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href='https://github.com/watir/watir'&gt;Watir&lt;/a&gt; &lt;a href='http://watir.com/'&gt;Official Blog site for Watir&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3 id='automated_recorders'&gt;#Automated Recorders&lt;/h3&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;a href='http://docs.seleniumhq.org/'&gt;Selenium&lt;/a&gt; is a Firebox plugin which allows the user to run browser automation tests. You can program on a plethora of programming languages though I do dislike the fact that you are required to have firefox as a prerequesite.&lt;br /&gt; - &lt;a href='http://darrellgrainger.blogspot.hk/2010/02/selenium-101.html'&gt;Getting Started on Selenium&lt;/a&gt; - &lt;a href='http://refcardz.dzone.com/refcardz/getting-started-selenium'&gt;More in-depth Selenium&lt;/a&gt;&lt;br /&gt; - &lt;a href='http://www.youtube.com/watch?v=gsHyDIyA3dg'&gt;like Youtube Tutorials?&lt;/a&gt;&lt;br /&gt; I like how you can export to Python or Ruby via Web Driver, but I&amp;#8217;m a little disappointed that you can&amp;#8217;t import back into Selenium IDE after you&amp;#8217;ve exported out.&lt;br /&gt; - &lt;a href='https://npmjs.org/package/selenium-webdriver'&gt;Selenium-WebDriver&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/watir/watir&quot;&gt;Watir&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href='http://www.sikuli.org/'&gt;Sikuli&lt;/a&gt; is a python based IDE for automated testing. I tried to use this during my brokerage days to automate financial reporting, but the only caveat is that Sikuli doesn&amp;#8217;t play nicely when you have buttons that are incredibly small within properietary software. There hasn&amp;#8217;t been much development for a while, which leads me to consider other alternatives - &lt;a href='https://github.com/daizoru/node-sikuli'&gt;Node-Sikuli&lt;/a&gt; Here is Sikuli to be used for node.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://watir.com/&quot;&gt;Official Blog site for Watir&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h3 id='cli_tools'&gt;#CLI tools&lt;/h3&gt;
+&lt;h3 id=&quot;automated_recorders&quot;&gt;#Automated Recorders&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;a href='https://github.com/brenden/node-webshot'&gt;node-webshot&lt;/a&gt; &lt;a href='http://docs.casperjs.org/en/latest/quickstart.html'&gt;CasperJS&lt;/a&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3 id='takeaways'&gt;#Takeaways&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://docs.seleniumhq.org/&quot;&gt;Selenium&lt;/a&gt; is a Firebox plugin which allows the user to run browser automation tests. You can program on a plethora of programming languages though I do dislike the fact that you are required to have firefox as a prerequesite.&lt;/p&gt;
 
-&lt;p&gt;There&amp;#8217;s some underlying similarities between the different tools currently available. The most common tools that continue to pop up are Selenium Webdriver and PhantomJS.&lt;br /&gt;Why do you need the Webdriver?&lt;br /&gt;Why do you need PhantomJs/CasperJS?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://darrellgrainger.blogspot.hk/2010/02/selenium-101.html&quot;&gt;Getting Started on Selenium&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;http://refcardz.dzone.com/refcardz/getting-started-selenium&quot;&gt;More in-depth Selenium&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=gsHyDIyA3dg&quot;&gt;like Youtube Tutorials?&lt;/a&gt;&lt;br /&gt;I like how you can export to Python or Ruby via Web Driver, but I’m a little disappointed that you can’t import back into Selenium IDE after you’ve exported out.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href=&quot;https://npmjs.org/package/selenium-webdriver&quot;&gt;Selenium-WebDriver&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.sikuli.org/&quot;&gt;Sikuli&lt;/a&gt; is a python based IDE for automated testing. I tried to use this during my brokerage days to automate financial reporting, but the only caveat is that Sikuli doesn’t play nicely when you have buttons that are incredibly small within properietary software. There hasn’t been much development for a while, which leads me to consider other alternatives - &lt;a href=&quot;https://github.com/daizoru/node-sikuli&quot;&gt;Node-Sikuli&lt;/a&gt; Here is Sikuli to be used for node.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h3 id='tips_and_tricks_for_qa'&gt;#Tips and Tricks for Q&amp;amp;A&lt;/h3&gt;
+&lt;h3 id=&quot;cli_tools&quot;&gt;#CLI tools&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/brenden/node-webshot&quot;&gt;node-webshot&lt;/a&gt; &lt;a href=&quot;http://docs.casperjs.org/en/latest/quickstart.html&quot;&gt;CasperJS&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;takeaways&quot;&gt;#Takeaways&lt;/h3&gt;
+
+&lt;p&gt;There’s some underlying similarities between the different tools currently available. The most common tools that continue to pop up are Selenium Webdriver and PhantomJS.&lt;br /&gt;Why do you need the Webdriver?&lt;br /&gt;Why do you need PhantomJs/CasperJS?&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;tips_and_tricks_for_qa&quot;&gt;#Tips and Tricks for Q&amp;amp;A&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Invalid HTML&lt;/li&gt;
@@ -72,7 +150,7 @@
 &lt;li&gt;Dynamically Generated Content?&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
-&lt;h3 id='future_post_ideas'&gt;#Future Post Ideas&lt;/h3&gt;
+&lt;h3 id=&quot;future_post_ideas&quot;&gt;#Future Post Ideas&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Browser Stack API?&lt;/li&gt;
@@ -88,9 +166,9 @@
 
         <item>
                 <title>Interview with General Assembly</title>
-                <description>&lt;p&gt;It&amp;#8217;s just over three months since I had my interview with General Assembly as part of their Alumni program.&lt;/p&gt;
+                <description>&lt;p&gt;It’s just over three months since I had my interview with General Assembly as part of their Alumni program.&lt;/p&gt;
 
-&lt;p&gt;Unfortunately, I can&amp;#8217;t seem to locate my unedited original interview with General Assembly back in September 2013, but I&amp;#8217;ll give the summary with the interview included below:&lt;/p&gt;</description>
+&lt;p&gt;Unfortunately, I can’t seem to locate my unedited original interview with General Assembly back in September 2013, but I’ll give the summary with the interview included below:&lt;/p&gt;</description>
                 <link>http://username.github.io/2014/01/06/interview-with-general-assembly</link>
                 <guid>http://username.github.io/2014/01/06/interview-with-general-assembly</guid>
                 <pubDate>2014-01-06T00:00:00+08:00</pubDate>
@@ -101,11 +179,11 @@
                 <description>&lt;p&gt;Today was a bit of stange day -&lt;/p&gt;
 &lt;!-- ...I encountered  file and I hope I can outline some scenarios so you too can avoid the eventual faceplant same pitfalls that I almost faceplanted.
  --&gt;
-&lt;p&gt;Basically, from GA FEWD and in Frontend, you will want to import custom font files that are either hosted locally or on a CDN like &lt;a href='http://www.google.com/fonts'&gt;google fonts&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Basically, from GA FEWD and in Frontend, you will want to import custom font files that are either hosted locally or on a CDN like &lt;a href=&quot;http://www.google.com/fonts&quot;&gt;google fonts&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;If you want to include a open font type, you will need to include the &lt;code&gt;@font face&lt;/code&gt; within your CSS. Thereafter, you&amp;#8217;ll be able to control what elements you want that font style applied into your webpage.&lt;/p&gt;
+&lt;p&gt;If you want to include a open font type, you will need to include the &lt;code&gt;@font face&lt;/code&gt; within your CSS. Thereafter, you’ll be able to control what elements you want that font style applied into your webpage.&lt;/p&gt;
 
-&lt;p&gt;Below is an example of how you&amp;#8217;ll go about doing that.&lt;/p&gt;
+&lt;p&gt;Below is an example of how you’ll go about doing that.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;@font-face
 {
@@ -113,7 +191,7 @@ font-family: myAwesomeFont;
 src: url(awesomeFont.ttf), local(awesomeFont);  
 }&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Then in your stylesheet under your specified class, id or element, you&amp;#8217;ll need to add this onto your choice of element. (I&amp;#8217;ve used body as the example)&lt;/p&gt;
+&lt;p&gt;Then in your stylesheet under your specified class, id or element, you’ll need to add this onto your choice of element. (I’ve used body as the example)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;body
 {
@@ -122,7 +200,7 @@ font-family: myAwesomeFont;
 
 &lt;p&gt;Caveat: Font face is not supported on ie8 and under.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h4 id='so_whats_the_problem'&gt;So what&amp;#8217;s the problem?&lt;/h4&gt;
+&lt;h4 id=&quot;so_whats_the_problem&quot;&gt;So what’s the problem?&lt;/h4&gt;
 
 &lt;p&gt;Well, the problem was as follows - Traditional Chinese was being rendered onto the DOM, along with the Simplified Chinese - so what was the problem?&lt;/p&gt;
 
@@ -134,21 +212,21 @@ font-family: myAwesomeFont;
 
 &lt;p&gt;This lead me onto a deep and dark rabbit hole which would inevitably lead me to some very intereresting caveats about using font types.&lt;/p&gt;
 
-&lt;p&gt;As Web Developers, we all know that the openness of the web was not created for font foundries in mind. That being said, any font that isn&amp;#8217;t openly licensed or legally purchased will be liable to some bad times&amp;#8230;&lt;/p&gt;
+&lt;p&gt;As Web Developers, we all know that the openness of the web was not created for font foundries in mind. That being said, any font that isn’t openly licensed or legally purchased will be liable to some bad times&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt='Bad Time' src='http://cdn.memegenerator.net/instances/500x/44606316.jpg' /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://cdn.memegenerator.net/instances/500x/44606316.jpg&quot; alt=&quot;Bad Time&quot; title=&quot;Bad Time&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id='update'&gt;Update&lt;/h4&gt;
+&lt;h4 id=&quot;update&quot;&gt;Update&lt;/h4&gt;
 
 &lt;p&gt;Anyways - that Tangent aside, my colleague Ethan had a quick look around at the most popular only font foundaries about why the font files had specific naming.&lt;/p&gt;
 
-&lt;p&gt;There was a peculiar naming scheme of &amp;#8220;Simplified on Traditional&amp;#8221;&amp;#8230;&lt;/p&gt;
+&lt;p&gt;There was a peculiar naming scheme of “Simplified on Traditional”&lt;/p&gt;
 
-&lt;p&gt;Which meant&amp;#8230;&lt;/p&gt;
+&lt;p&gt;Which meant&lt;/p&gt;
 
-&lt;p&gt;That for whatever Traditional Chinese character code will be translated into Simplified Chinese via the font file&amp;#8230;&lt;/p&gt;
+&lt;p&gt;That for whatever Traditional Chinese character code will be translated into Simplified Chinese via the font file&lt;/p&gt;
 
-&lt;h3 id='wtf'&gt;WTF?&lt;/h3&gt;</description>
+&lt;h3 id=&quot;wtf&quot;&gt;WTF?&lt;/h3&gt;</description>
                 <link>http://username.github.io/2014/01/03/big-trouble-in-little-chinese-language-files</link>
                 <guid>http://username.github.io/2014/01/03/big-trouble-in-little-chinese-language-files</guid>
                 <pubDate>2014-01-03T00:00:00+08:00</pubDate>
@@ -156,17 +234,17 @@ font-family: myAwesomeFont;
 
         <item>
                 <title>Getting started with Threejs via Yeoman</title>
-                <description>&lt;h3 id='using_yeoman_to_getting_started_with_threejs'&gt;Using Yeoman to getting started with Threejs&lt;/h3&gt;
+                <description>&lt;h3 id=&quot;using_yeoman_to_getting_started_with_threejs&quot;&gt;Using Yeoman to getting started with Threejs&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href='https://github.com/timmywil/generator-threejs'&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/timmywil/generator-threejs&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id='getting_started'&gt;Getting Started&lt;/h3&gt;
+&lt;h3 id=&quot;getting_started&quot;&gt;Getting Started&lt;/h3&gt;
 
-&lt;p&gt;There isn&amp;#8217;t a lot to know if you&amp;#8217;ve followed the previous &lt;a href='http://denistsoi.github.io/2014/01/01/getting-started-with-yeoman/'&gt;&amp;#8216;Getting Started with Yeoman&amp;#8217; Post&lt;/a&gt;, however, if you haven&amp;#8217;t read that already, I&amp;#8217;ll include what you need to know below.&lt;/p&gt;
+&lt;p&gt;There isn’t a lot to know if you’ve followed the previous &lt;a href=&quot;http://denistsoi.github.io/2014/01/01/getting-started-with-yeoman/&quot;&gt;‘Getting Started with Yeoman’ Post&lt;/a&gt;, however, if you haven’t read that already, I’ll include what you need to know below.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;npm install -g yo&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;This will install yeoman globally if you haven&amp;#8217;t already.&lt;/p&gt;
+&lt;p&gt;This will install yeoman globally if you haven’t already.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;npm install -g generator-threejs&lt;/code&gt;&lt;/p&gt;
 
@@ -178,7 +256,7 @@ font-family: myAwesomeFont;
 
 &lt;p&gt;You then have the option of running allow AMD into your project.&lt;/p&gt;
 
-&lt;p&gt;Note: If you&amp;#8217;re unfamiliar with AMD, like I am at this current moment, then I implore you to read the &lt;a href='https://github.com/amdjs/amdjs-api/wiki/AMD'&gt;following.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Note: If you’re unfamiliar with AMD, like I am at this current moment, then I implore you to read the &lt;a href=&quot;https://github.com/amdjs/amdjs-api/wiki/AMD&quot;&gt;following.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;If you just want a stock threejs project, then this should get you going.&lt;/p&gt;
 
@@ -191,114 +269,114 @@ font-family: myAwesomeFont;
         <item>
                 <title>agencies</title>
                 <description>&lt;hr /&gt;
-&lt;h3 id='resources_of_digital_agencies'&gt;Resources of Digital Agencies&lt;/h3&gt;
+&lt;h3 id=&quot;resources_of_digital_agencies&quot;&gt;Resources of Digital Agencies&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='http://weareadaptable.com/'&gt;We are Adaptable&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://weareadaptable.com/&quot;&gt;We are Adaptable&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='http://www.pixopunch.com/'&gt;pixel punch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.pixopunch.com/&quot;&gt;pixel punch&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='http://www.possible.com/'&gt;Possible&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.possible.com/&quot;&gt;Possible&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='http://www.wearepapertiger.com/'&gt;We are Paper Tiger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.wearepapertiger.com/&quot;&gt;We are Paper Tiger&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='http://creative-jar.com/'&gt;Creative Jar&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://creative-jar.com/&quot;&gt;Creative Jar&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='http://www.f-i.com/fi/airlines/'&gt;Fantasy Interactive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.f-i.com/fi/airlines/&quot;&gt;Fantasy Interactive&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='http://playbook.thoughtbot.com/'&gt;Thought bot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://playbook.thoughtbot.com/&quot;&gt;Thought bot&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
-&lt;h3 id='tutorials'&gt;Tutorials&lt;/h3&gt;
+&lt;h3 id=&quot;tutorials&quot;&gt;Tutorials&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='http://www.html5rocks.com/en/tutorials/'&gt;HTML5 Rocks Tuts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.html5rocks.com/en/tutorials/&quot;&gt;HTML5 Rocks Tuts&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='http://www.html5rocks.com/en/tutorials/masking/adobe/'&gt;HTML5 Adobe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.html5rocks.com/en/tutorials/masking/adobe/&quot;&gt;HTML5 Adobe&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://twitter.com/dirkschulze'&gt;Twitter Recommendation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/dirkschulze&quot;&gt;Twitter Recommendation&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='http://www.html5rocks.com/en/tutorials/developertools/revolutions2013/'&gt;HTML5 2013 Revolutions 2013 Tutorials&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.html5rocks.com/en/tutorials/developertools/revolutions2013/&quot;&gt;HTML5 2013 Revolutions 2013 Tutorials&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='http://www.html5rocks.com/en/tutorials/canvas/inspection/'&gt;Canvas Inspection&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.html5rocks.com/en/tutorials/canvas/inspection/&quot;&gt;Canvas Inspection&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
-&lt;h3 id='inspiring_developers'&gt;Inspiring Developers&lt;/h3&gt;
+&lt;h3 id=&quot;inspiring_developers&quot;&gt;Inspiring Developers&lt;/h3&gt;
 
-&lt;h4 id='paul_lewis'&gt;Paul Lewis&lt;/h4&gt;
+&lt;h4 id=&quot;paul_lewis&quot;&gt;Paul Lewis&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='https://twitter.com/PaulLewis'&gt;Paul Lewis Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/PaulLewis&quot;&gt;Paul Lewis Twitter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='ebidel'&gt;Ebidel&lt;/h4&gt;
+&lt;h4 id=&quot;ebidel&quot;&gt;Ebidel&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-201/'&gt;Ebidel HTML5 Shadow DOM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom-201/&quot;&gt;Ebidel HTML5 Shadow DOM&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://twitter.com/ebidel'&gt;Ebidel Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/ebidel&quot;&gt;Ebidel Twitter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='addy_osmani'&gt;Addy Osmani&lt;/h4&gt;
+&lt;h4 id=&quot;addy_osmani&quot;&gt;Addy Osmani&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='http://addyosmani.com/blog/'&gt;Addy Osmani&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://addyosmani.com/blog/&quot;&gt;Addy Osmani&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://twitter.com/addyosmani'&gt;Addy Osmani Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/addyosmani&quot;&gt;Addy Osmani Twitter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='zomigi'&gt;Zomigi&lt;/h4&gt;
+&lt;h4 id=&quot;zomigi&quot;&gt;Zomigi&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='http://zomigi.com/blog/'&gt;Zomigi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://zomigi.com/blog/&quot;&gt;Zomigi&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://twitter.com/zomigi'&gt;Zomigi Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/zomigi&quot;&gt;Zomigi Twitter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='rachael_andrew'&gt;Rachael Andrew&lt;/h4&gt;
+&lt;h4 id=&quot;rachael_andrew&quot;&gt;Rachael Andrew&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='http://www.rachelandrew.co.uk/'&gt;Racheal Andrew Personal Site&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.rachelandrew.co.uk/&quot;&gt;Racheal Andrew Personal Site&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://twitter.com/rachelandrew'&gt;Racheal Andrew Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/rachelandrew&quot;&gt;Racheal Andrew Twitter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='carl_smith'&gt;Carl Smith&lt;/h4&gt;
+&lt;h4 id=&quot;carl_smith&quot;&gt;Carl Smith&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='http://www.ngenworks.com/speakers/carl-smith/'&gt;Ngen Works Carl Smith&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.ngenworks.com/speakers/carl-smith/&quot;&gt;Ngen Works Carl Smith&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://twitter.com/carlsmith'&gt;Carl Smith Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/carlsmith&quot;&gt;Carl Smith Twitter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='brad_frost'&gt;Brad Frost&lt;/h4&gt;
+&lt;h4 id=&quot;brad_frost&quot;&gt;Brad Frost&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='http://bradfrostweb.com/blog/post/float-label-pattern/'&gt;Brad Frost Float Label Pattern&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://bradfrostweb.com/blog/post/float-label-pattern/&quot;&gt;Brad Frost Float Label Pattern&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='lea_verou'&gt;Lea Verou&lt;/h4&gt;
+&lt;h4 id=&quot;lea_verou&quot;&gt;Lea Verou&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='http://lea.verou.me/'&gt;Lea Verou Personal Site&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://lea.verou.me/&quot;&gt;Lea Verou Personal Site&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://twitter.com/LeaVerou'&gt;Lea Verou Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/LeaVerou&quot;&gt;Lea Verou Twitter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='david_walsh'&gt;David Walsh&lt;/h4&gt;
+&lt;h4 id=&quot;david_walsh&quot;&gt;David Walsh&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='http://davidwalsh.name/'&gt;David Walsh Personal Site&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://davidwalsh.name/&quot;&gt;David Walsh Personal Site&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://twitter.com/davidwalshblog'&gt;David Walsh Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/davidwalshblog&quot;&gt;David Walsh Twitter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id='mr_doob'&gt;Mr doob&lt;/h4&gt;
+&lt;h4 id=&quot;mr_doob&quot;&gt;Mr doob&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href='http://www.mrdoob.com/'&gt;Mr doob Personal Site&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.mrdoob.com/&quot;&gt;Mr doob Personal Site&lt;/a&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;a href='https://twitter.com/mrdoob'&gt;Mr doob Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://twitter.com/mrdoob&quot;&gt;Mr doob Twitter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
                 <link>http://username.github.io/2014/01/02/agencies</link>
                 <guid>http://username.github.io/2014/01/02/agencies</guid>
@@ -307,9 +385,9 @@ font-family: myAwesomeFont;
 
         <item>
                 <title>Getting started with Yeoman</title>
-                <description>&lt;h3 id='continuing_onwards'&gt;Continuing onwards&lt;/h3&gt;
+                <description>&lt;h3 id=&quot;continuing_onwards&quot;&gt;Continuing onwards&lt;/h3&gt;
 
-&lt;p&gt;Using Yeoman with Angular-Generator &lt;a href='http://www.youtube.com/watch?v=iUQ1fvdO9GY#t=113'&gt;Link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Using Yeoman with Angular-Generator &lt;a href=&quot;http://www.youtube.com/watch?v=iUQ1fvdO9GY#t=113&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Install Yeoman globally with&lt;/p&gt;
 
@@ -323,15 +401,15 @@ font-family: myAwesomeFont;
 
 &lt;p&gt;&lt;code&gt;$ grunt server&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id='update_success'&gt;Update SUCCESS!&lt;/h3&gt;
+&lt;h3 id=&quot;update_success&quot;&gt;Update SUCCESS!&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;p&gt;If you&amp;#8217;d like to read more about how I got on with using Yeoman with Angular, I write an extension of this post with a relevant link later.&lt;/p&gt;
+&lt;p&gt;If you’d like to read more about how I got on with using Yeoman with Angular, I write an extension of this post with a relevant link later.&lt;/p&gt;
 
 &lt;p&gt;Thanks for reading!&lt;/p&gt;
 
-&lt;h3 id='footnotes'&gt;Footnotes:&lt;/h3&gt;
+&lt;h3 id=&quot;footnotes&quot;&gt;Footnotes:&lt;/h3&gt;
 
-&lt;h3 id='yomobile'&gt;&lt;a href='https://github.com/yeoman/generator-mobile'&gt;Yo-Mobile?&lt;/a&gt;&lt;/h3&gt;</description>
+&lt;h3 id=&quot;yomobile&quot;&gt;&lt;a href=&quot;https://github.com/yeoman/generator-mobile&quot;&gt;Yo-Mobile?&lt;/a&gt;&lt;/h3&gt;</description>
                 <link>http://username.github.io/2014/01/01/getting-started-with-yeoman</link>
                 <guid>http://username.github.io/2014/01/01/getting-started-with-yeoman</guid>
                 <pubDate>2014-01-01T00:00:00+08:00</pubDate>
@@ -339,17 +417,17 @@ font-family: myAwesomeFont;
 
         <item>
                 <title>Getting started with gruntjs</title>
-                <description>&lt;h4 id='referencing_article'&gt;Referencing Article&lt;/h4&gt;
+                <description>&lt;h4 id=&quot;referencing_article&quot;&gt;Referencing Article&lt;/h4&gt;
 
-&lt;h4 id='up_and_running_with_gruntjs'&gt;&lt;a href='http://coding.smashingmagazine.com/2013/10/29/get-up-running-grunt/'&gt;Up and Running with GruntJS&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&quot;up_and_running_with_gruntjs&quot;&gt;&lt;a href=&quot;http://coding.smashingmagazine.com/2013/10/29/get-up-running-grunt/&quot;&gt;Up and Running with GruntJS&lt;/a&gt;&lt;/h4&gt;
 
-&lt;h4 id='gruntjs_primer'&gt;GruntJS Primer&lt;/h4&gt;
+&lt;h4 id=&quot;gruntjs_primer&quot;&gt;GruntJS Primer&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Built on top of Node.js, Grunt is a task-based command-line tool that speeds up workflows by reducing the effort required to prepare assets for production.&lt;br /&gt;It does this by wrapping up jobs into tasks that are compiled automatically as you go along. Basically, you can use Grunt on most tasks that you consider to be grunt work and would normally have to manually configure and run yourself.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Simply put - it helps when you&amp;#8217;re doing commands like&lt;/p&gt;
+&lt;p&gt;Simply put - it helps when you’re doing commands like&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ sass --watch main.sass:main.css  &lt;/code&gt;&lt;/pre&gt;
 
@@ -361,11 +439,11 @@ font-family: myAwesomeFont;
 
 &lt;pre&gt;&lt;code&gt;$ python -h SimpleHTTPServer&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;However, depending on your Gruntfile, you could just&amp;#8230;&lt;/p&gt;
+&lt;p&gt;However, depending on your Gruntfile, you could just&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ grunt server&lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
-&lt;h2 id='ok_lets_get_started_follow_the_repo_here'&gt;Ok Let&amp;#8217;s get started&amp;#8230; Follow the repo &lt;a href='https://github.com/denistsoi/port-js'&gt;here&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;ok_lets_get_started_follow_the_repo_here&quot;&gt;Ok Let’s get started… Follow the repo &lt;a href=&quot;https://github.com/denistsoi/port-js&quot;&gt;here&lt;/a&gt;&lt;/h2&gt;
 
 &lt;p&gt;Update: 20:00 30-12-2013&lt;/p&gt;
 
@@ -373,24 +451,24 @@ font-family: myAwesomeFont;
 
 &lt;pre&gt;&lt;code&gt;$ sudo npm cache clean&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Why?&lt;br /&gt;Well, apparently, if you don&amp;#8217;t clean/clear your cache, some dependancies will give you some errors like&amp;#8230;&lt;/p&gt;
+&lt;p&gt;Why?&lt;br /&gt;Well, apparently, if you don’t clean/clear your cache, some dependancies will give you some errors like&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;npm ERR! cb() never called!&lt;/code&gt;&lt;br /&gt;&lt;code&gt;npm ERR! not ok code 0&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;I ended up using the yeoman generator, which I will outline below after I&amp;#8217;ve worked tried Yeoman with Angular.&lt;br /&gt;if you are using terminal and keep having the password prompting then the following seems to help&lt;/p&gt;
+&lt;p&gt;I ended up using the yeoman generator, which I will outline below after I’ve worked tried Yeoman with Angular.&lt;br /&gt;if you are using terminal and keep having the password prompting then the following seems to help&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ sudo chown -R `whoami` ~/.npm   
 $ sudo chown -R `whoami` /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;There&amp;#8217;s another command, which I will update at a later date which also seems to the same thing.&lt;/p&gt;
+&lt;p&gt;There’s another command, which I will update at a later date which also seems to the same thing.&lt;/p&gt;
 
 &lt;p&gt;Update - Here is the terminal command to allow global installation via npm&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ sudo chown -R $USER /usr/local&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;a href='http://foohack.com/2010/08/intro-to-npm/'&gt;source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://foohack.com/2010/08/intro-to-npm/&quot;&gt;source&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;I got pretty fed up with trying to generate a stand alone grunt project and ended up with using yeoman - which is further detailed in the following post&lt;br /&gt;&lt;a href='http://denistsoi.github.io/2014/01/01/getting-started-with-yeoman/'&gt;relevant post&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;I got pretty fed up with trying to generate a stand alone grunt project and ended up with using yeoman - which is further detailed in the following post&lt;br /&gt;&lt;a href=&quot;http://denistsoi.github.io/2014/01/01/getting-started-with-yeoman/&quot;&gt;relevant post&lt;/a&gt;&lt;/p&gt;</description>
                 <link>http://username.github.io/2013/12/30/getting-started-with-gruntjs</link>
                 <guid>http://username.github.io/2013/12/30/getting-started-with-gruntjs</guid>
                 <pubDate>2013-12-30T00:00:00+08:00</pubDate>
@@ -398,47 +476,47 @@ $ sudo chown -R `whoami` /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;
 
         <item>
                 <title>Dynamic vs static?</title>
-                <description>&lt;h4 id='please_read_this_article_from_smashing'&gt;&lt;a href='http://coding.smashingmagazine.com/2013/04/18/introduction-to-programming-type-systems/'&gt;Please read this article from Smashing&lt;/a&gt;&lt;/h4&gt;
+                <description>&lt;h4 id=&quot;please_read_this_article_from_smashing&quot;&gt;&lt;a href=&quot;http://coding.smashingmagazine.com/2013/04/18/introduction-to-programming-type-systems/&quot;&gt;Please read this article from Smashing&lt;/a&gt;&lt;/h4&gt;
 
-&lt;p&gt;Whilst working at Imagination as my first job as a web developer, I overheard a lot of conversations between &amp;#8220;Static vs Dynamic Languages&amp;#8221;.&lt;/p&gt;
+&lt;p&gt;Whilst working at Imagination as my first job as a web developer, I overheard a lot of conversations between “Static vs Dynamic Languages”.&lt;/p&gt;
 
 &lt;p&gt;Now what do they mean? -&lt;/p&gt;
 
-&lt;p&gt;I started programming with Visual Basic in my teens and got into my first programming language with using C (to program Arduinos)&amp;#8230;&lt;/p&gt;
+&lt;p&gt;I started programming with Visual Basic in my teens and got into my first programming language with using C (to program Arduinos)&lt;/p&gt;
 
-&lt;p&gt;but the conversation between Static and Dynamic Languages never came up&amp;#8230;&lt;/p&gt;
+&lt;p&gt;but the conversation between Static and Dynamic Languages never came up&lt;/p&gt;
 
-&lt;p&gt;What&amp;#8217;s the big deal?&lt;/p&gt;
+&lt;p&gt;What’s the big deal?&lt;/p&gt;
 
-&lt;p&gt;Well - there&amp;#8217;s a couple of good arguments for both in the article above &lt;a href='http://coding.smashingmagazine.com/2013/04/18/introduction-to-programming-type-systems/'&gt;link again&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Well - there’s a couple of good arguments for both in the article above &lt;a href=&quot;http://coding.smashingmagazine.com/2013/04/18/introduction-to-programming-type-systems/&quot;&gt;link again&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;I don&amp;#8217;t have much to add to the topic, but hope you enjoy the above article.&lt;/p&gt;</description>
-                <link>http://username.github.io/2013/12/30/dynamic-vs-static</link>
-                <guid>http://username.github.io/2013/12/30/dynamic-vs-static</guid>
+&lt;p&gt;I don’t have much to add to the topic, but hope you enjoy the above article.&lt;/p&gt;</description>
+                <link>http://username.github.io/2013/12/30/Dynamic-vs-static</link>
+                <guid>http://username.github.io/2013/12/30/Dynamic-vs-static</guid>
                 <pubDate>2013-12-30T00:00:00+08:00</pubDate>
         </item>
 
         <item>
                 <title>Reflection</title>
-                <description>&lt;h1 id='reflection'&gt;Reflection&lt;/h1&gt;
+                <description>&lt;h1 id=&quot;reflection&quot;&gt;Reflection&lt;/h1&gt;
 
-&lt;p&gt;It&amp;#8217;s been a while since my last post.&lt;/p&gt;
+&lt;p&gt;It’s been a while since my last post.&lt;/p&gt;
 
-&lt;p&gt;I&amp;#8217;ve been busy at work to the detrement of a lot of things and I&amp;#8217;m glad that I&amp;#8217;ve taken the time over the Christmas Holidays to reflect and relive the past few months since I joined Imagination.&lt;/p&gt;
+&lt;p&gt;I’ve been busy at work to the detrement of a lot of things and I’m glad that I’ve taken the time over the Christmas Holidays to reflect and relive the past few months since I joined Imagination.&lt;/p&gt;
 
 &lt;p&gt;I always knew that this job as a web dev was going to be tough, but I never knew that the final month before Christmas would ultimately test my physical and mental limit.&lt;/p&gt;
 
-&lt;p&gt;Admittantly, I began to feel exhausted before Christmas, where most of the deadlines were due. I had the mental approach of giving as much time as possible towards work, to the detrement of my social and family life. I had felt like I hadn&amp;#8217;t enjoyed my time since most of it was dedicated to work. I realised that I can&amp;#8217;t do that if I were to come back after the New Year, and my lifestyle (life choices) had to change.&lt;/p&gt;
+&lt;p&gt;Admittantly, I began to feel exhausted before Christmas, where most of the deadlines were due. I had the mental approach of giving as much time as possible towards work, to the detrement of my social and family life. I had felt like I hadn’t enjoyed my time since most of it was dedicated to work. I realised that I can’t do that if I were to come back after the New Year, and my lifestyle (life choices) had to change.&lt;/p&gt;
 
-&lt;p&gt;I&amp;#8217;ve had a lot of conversations with &lt;a href='https://twitter.com/rusintez'&gt;Vladimir&lt;/a&gt; over the past few months about what I should be focusing when it came to my learning process. And although there are a lot of things that I do not know, I realised yesterday that I have to dedicate time towards study.&lt;/p&gt;
+&lt;p&gt;I’ve had a lot of conversations with &lt;a href=&quot;https://twitter.com/rusintez&quot;&gt;Vladimir&lt;/a&gt; over the past few months about what I should be focusing when it came to my learning process. And although there are a lot of things that I do not know, I realised yesterday that I have to dedicate time towards study.&lt;/p&gt;
 
-&lt;p&gt;This means, having the same approach of &amp;#8220;going back to school&amp;#8221;, when it came to improving my programming skills.&lt;/p&gt;
+&lt;p&gt;This means, having the same approach of “going back to school”, when it came to improving my programming skills.&lt;/p&gt;
 
 &lt;p&gt;I hope this blog post can serve as a commitment to myself to seeing how much I can learn and ultimately share in the next couple of months.&lt;/p&gt;
 
-&lt;p&gt;&amp;#8230;&lt;br /&gt;&amp;#8230;&lt;br /&gt;&amp;#8230;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&amp;#8230; I hope this Christmas break has helped give you the same realisations for the new year.&lt;/p&gt;
+&lt;p&gt;… I hope this Christmas break has helped give you the same realisations for the new year.&lt;/p&gt;
 
 &lt;p&gt;D&lt;/p&gt;</description>
                 <link>http://username.github.io/2013/12/29/relfection</link>
@@ -448,9 +526,9 @@ $ sudo chown -R `whoami` /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;
 
         <item>
                 <title>First Post!</title>
-                <description>&lt;p&gt;It&amp;#8217;s been quite a hectic couple of months for me and today is probably the first time that I&amp;#8217;ve felt alone.&lt;/p&gt;
+                <description>&lt;p&gt;It’s been quite a hectic couple of months for me and today is probably the first time that I’ve felt alone.&lt;/p&gt;
 
-&lt;p&gt;I know that it sounds like a bad thing, but there hasn&amp;#8217;t been much of an opportunity for me to just sit down and reflect on what has been happening in my life.&lt;/p&gt;
+&lt;p&gt;I know that it sounds like a bad thing, but there hasn’t been much of an opportunity for me to just sit down and reflect on what has been happening in my life.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;I was a Precious Metals Dealer for Acetop Precious Metals based in Hong Kong.&lt;/li&gt;
@@ -462,49 +540,49 @@ $ sudo chown -R `whoami` /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;I joined Imagination Hong Kong a week after I left my previous job.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I&amp;#8217;m the type of person who likes to keep busy&amp;#8230;&lt;/p&gt;
+&lt;p&gt;I’m the type of person who likes to keep busy&lt;/p&gt;
 
-&lt;p&gt;Like&amp;#8230;&lt;/p&gt;
+&lt;p&gt;Like&lt;/p&gt;
 
-&lt;p&gt;&amp;#8230;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Really busy.&lt;/p&gt;
 
-&lt;p&gt;I remember a story about where James Brown got his work ethic. It was a story about how hard his father had to work, doing all kinds of jobs&amp;#8230; and he was only out of work 7 days throughout his entire life.&lt;/p&gt;
+&lt;p&gt;I remember a story about where James Brown got his work ethic. It was a story about how hard his father had to work, doing all kinds of jobs… and he was only out of work 7 days throughout his entire life.&lt;/p&gt;
 
-&lt;p&gt;Think about that&amp;#8230;&lt;/p&gt;
+&lt;p&gt;Think about that&lt;/p&gt;
 
 &lt;p&gt;7 days.&lt;/p&gt;
 
-&lt;p&gt;You might be thinking&amp;#8230;&lt;/p&gt;
+&lt;p&gt;You might be thinking&lt;/p&gt;
 
-&lt;p&gt;&amp;#8220;But&amp;#8230; I&amp;#8217;m not the father of the Godfather of Soul&amp;#8221;&lt;/p&gt;
+&lt;p&gt;“But… I’m not the father of the Godfather of Soul”&lt;/p&gt;
 
-&lt;p&gt;Yes - you might not be&amp;#8230;&lt;/p&gt;
+&lt;p&gt;Yes - you might not be&lt;/p&gt;
 
 &lt;p&gt;but YOU could BE the influence for someone to make a change.&lt;/p&gt;
 
-&lt;p&gt;&amp;#8230; &amp;#8230; &amp;#8230;&lt;/p&gt;
+&lt;p&gt;… … &lt;/p&gt;
 
-&lt;p&gt;I remembered during my times at University as a pinnicle phase of my life&amp;#8230;&lt;/p&gt;
+&lt;p&gt;I remembered during my times at University as a pinnicle phase of my life&lt;/p&gt;
 
-&lt;p&gt;&amp;#8230;where I had become disappointed at my life choices.&lt;/p&gt;
+&lt;p&gt;…where I had become disappointed at my life choices.&lt;/p&gt;
 
-&lt;p&gt;I didn&amp;#8217;t REALLY know what I was doing and didn&amp;#8217;t have the confidence to admit to myself that I was feeling lost.&lt;/p&gt;
+&lt;p&gt;I didn’t REALLY know what I was doing and didn’t have the confidence to admit to myself that I was feeling lost.&lt;/p&gt;
 
 &lt;p&gt;When I went into University, I had the feeling that I could do a degree in the fastest pace possible and that I even entertained with the idea of doing a sandwich degree (doing full year work experience inbetween my degree).&lt;/p&gt;
 
-&lt;p&gt;I had listened to professors (whenever I went to the prospective interviews) that doing work experience inbetween would not be the wisest of decisions&amp;#8230;&lt;/p&gt;
+&lt;p&gt;I had listened to professors (whenever I went to the prospective interviews) that doing work experience inbetween would not be the wisest of decisions&lt;/p&gt;
 
-&lt;p&gt;I accepted that advice as if those very professors knew WHO I was&amp;#8230;&lt;/p&gt;
+&lt;p&gt;I accepted that advice as if those very professors knew WHO I was&lt;/p&gt;
 
-&lt;p&gt;but&amp;#8230; Why did I?&lt;/p&gt;
+&lt;p&gt;but… Why did I?&lt;/p&gt;
 
-&lt;p&gt;At the time, I believed that people older than I was, whether they were teachers or my older peers knew best&amp;#8230;&lt;/p&gt;
+&lt;p&gt;At the time, I believed that people older than I was, whether they were teachers or my older peers knew best&lt;/p&gt;
 
-&lt;p&gt;but&amp;#8230; How did I come to that conclusion?&lt;/p&gt;
+&lt;p&gt;but… How did I come to that conclusion?&lt;/p&gt;
 
-&lt;p&gt;I never realised at the time that I was responsible to make the final decision&amp;#8230;&lt;/p&gt;
+&lt;p&gt;I never realised at the time that I was responsible to make the final decision&lt;/p&gt;
 
 &lt;p&gt;I had failed my year, and had to spend a summer in order to retake my year. During that summer, I had felt depressed and lost and needed motivation to get through the summer on my own.&lt;/p&gt;
 
@@ -520,45 +598,45 @@ $ sudo chown -R `whoami` /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;
 
         <item>
                 <title>Going for Gold</title>
-                <description>&lt;p&gt;Going for Gold&amp;#8230;&lt;/p&gt;
+                <description>&lt;p&gt;Going for Gold&lt;/p&gt;
 
-&lt;p&gt;Today I handed my resignation letter. I&amp;#8217;ve been spouting about doing it for ages now, probably for months. (and for the facebook community, you must be sick to death by it so I apologize in advance). I guess the thing that always frightened me was always the fear of uncertainty&amp;#8230; the fear of having nothing to do and no money coming in.&lt;/p&gt;
+&lt;p&gt;Today I handed my resignation letter. I’ve been spouting about doing it for ages now, probably for months. (and for the facebook community, you must be sick to death by it so I apologize in advance). I guess the thing that always frightened me was always the fear of uncertainty… the fear of having nothing to do and no money coming in.&lt;/p&gt;
 
 &lt;p&gt;However, this past year has been incredible.&lt;/p&gt;
 
-&lt;p&gt;I&amp;#8217;ve experienced so many obstacles and personal disappointments&amp;#8230; but they&amp;#8217;ve all lead me to appreciate the incredible relationships that I&amp;#8217;ve made; all within the Hong Kong community. From appreciating Eric, my older brother, confidant and most trusted advisor&amp;#8230; to the many inspiring people that have shown nothing but support by sharing their stories of trials and tribulations. I&amp;#8217;m not entirely sure how I feel&amp;#8230; but the closest thing would be a mix of uncertainty and fear to relief, determination and elation.&lt;/p&gt;
+&lt;p&gt;I’ve experienced so many obstacles and personal disappointments… but they’ve all lead me to appreciate the incredible relationships that I’ve made; all within the Hong Kong community. From appreciating Eric, my older brother, confidant and most trusted advisor… to the many inspiring people that have shown nothing but support by sharing their stories of trials and tribulations. I’m not entirely sure how I feel… but the closest thing would be a mix of uncertainty and fear to relief, determination and elation.&lt;/p&gt;
 
 &lt;p&gt;Last night at Hackjam, I experienced a very moving conversation with Tom Grek and how he realized that all the fear from leaving a safe job were completely unfounded. That with talent and skill, work will always come your way.&lt;/p&gt;
 
-&lt;p&gt;&amp;#8230;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;That really stuck with me.&lt;/p&gt;
 
-&lt;p&gt;I mean&amp;#8230;&lt;/p&gt;
+&lt;p&gt;I mean&lt;/p&gt;
 
-&lt;p&gt;It made me realize, that with all the projects; from PrinterLinker and receiving support from the Makible team, being a Community Organizer for Dim Sum Labs, a GA Evangelist and Hacker For hire; that they all give me PLENTY of things to do&amp;#8230; and somehow&amp;#8230; it makes perfect sense just to &amp;#8220;go for gold&amp;#8221;.&lt;/p&gt;
+&lt;p&gt;It made me realize, that with all the projects; from PrinterLinker and receiving support from the Makible team, being a Community Organizer for Dim Sum Labs, a GA Evangelist and Hacker For hire; that they all give me PLENTY of things to do… and somehow… it makes perfect sense just to “go for gold”.&lt;/p&gt;
 
 &lt;p&gt;Though I have to mention something which is a slight tangent.&lt;/p&gt;
 
-&lt;p&gt;I don&amp;#8217;t do well in crowds and whenever I&amp;#8217;m in a situation where I&amp;#8217;m in front of a group of people, I have to sum up ALL my courage and energy to try and make every word have an emotive impact.&lt;/p&gt;
+&lt;p&gt;I don’t do well in crowds and whenever I’m in a situation where I’m in front of a group of people, I have to sum up ALL my courage and energy to try and make every word have an emotive impact.&lt;/p&gt;
 
-&lt;p&gt;For someone that doesn&amp;#8217;t like to talk or appear showy&amp;#8230; it helps to assume an identity&amp;#8230; THAT being the identity of a &amp;#8220;Community Organizer&amp;#8221; for DSL.&lt;/p&gt;
+&lt;p&gt;For someone that doesn’t like to talk or appear showy… it helps to assume an identity… THAT being the identity of a “Community Organizer” for DSL.&lt;/p&gt;
 
-&lt;p&gt;I guess the &amp;#8220;Community Organizer&amp;#8221; is the guy who always gives a little more than they&amp;#8217;re normally used to. The person who offers a helping hand when someone needs it. The person who holds their tongue to avoid offending someone and having a partition of patience when they&amp;#8217;re extremely tired. The person who says &amp;#8220;hi&amp;#8221; not because they&amp;#8217;re trained to do it, but because something inside them tells them that they HAVE to.&lt;/p&gt;
+&lt;p&gt;I guess the “Community Organizer” is the guy who always gives a little more than they’re normally used to. The person who offers a helping hand when someone needs it. The person who holds their tongue to avoid offending someone and having a partition of patience when they’re extremely tired. The person who says “hi” not because they’re trained to do it, but because something inside them tells them that they HAVE to.&lt;/p&gt;
 
-&lt;p&gt;I&amp;#8217;ve seen people I admire do the above (and also have the pleasure of calling my friends). The past few months, I&amp;#8217;ve seen notable three people do this to extremes: Mart Van de Ven, Allison Baum, Graham Leach (&amp;amp; DSL).&lt;/p&gt;
+&lt;p&gt;I’ve seen people I admire do the above (and also have the pleasure of calling my friends). The past few months, I’ve seen notable three people do this to extremes: Mart Van de Ven, Allison Baum, Graham Leach (&amp;amp; DSL).&lt;/p&gt;
 
-&lt;p&gt;I&amp;#8217;ve seen Mart do this, almost to a fault, on numerous occasions and I&amp;#8217;m always impressed every time he does this. Like, it&amp;#8217;s impeccable. I mean, having a job is tough enough in HK, but to do that AND to teach at twice a week with newbies like myself? - &amp;#8230; I wonder, &amp;#8220;does the passion for learning burn so brightly that it gives people energy to extinguish negativity and doubt?&amp;#8221;&amp;#8230; It must do. I remember talking to Mart after our last FEWD class and mentioning how if I had someone with Mart&amp;#8217;s energy and positivity during my Secondary education, I would have became a Computer Scientist rather than delving into finance. It&amp;#8217;s with him agreeing to BEING that person for people now that really inspires me to do more, not just for myself, but for people like myself.&lt;/p&gt;
+&lt;p&gt;I’ve seen Mart do this, almost to a fault, on numerous occasions and I’m always impressed every time he does this. Like, it’s impeccable. I mean, having a job is tough enough in HK, but to do that AND to teach at twice a week with newbies like myself? - … I wonder, “does the passion for learning burn so brightly that it gives people energy to extinguish negativity and doubt?”… It must do. I remember talking to Mart after our last FEWD class and mentioning how if I had someone with Mart’s energy and positivity during my Secondary education, I would have became a Computer Scientist rather than delving into finance. It’s with him agreeing to BEING that person for people now that really inspires me to do more, not just for myself, but for people like myself.&lt;/p&gt;
 
-&lt;p&gt;With Allison calling herself a self-professed introvert, it amazes me how she can drive that energy and kindness when talking to people. It&amp;#8217;s hard work, for any startup, to say or even prove that your product is far superior to anything out there. It&amp;#8217;s even harder trying to convince people that the curriculum and community that GA provides has more advantages that going Solo. Whenever I go some of these GA info sessions, I sometimes get a feeling of reluctance from people&amp;#8230; I mean &amp;#8220;Why&amp;#8221; would anyone in their right mind purchase a product to learn?&amp;#8230; then I&amp;#8217;d answer with&amp;#8230; &amp;#8220;Why&amp;#8221; are people getting better paid jobs with perks in the Tech Community?&amp;#8230; Think about it this way, The current renaissance that exists is IN TECH. NOT in Finance. If you want to be EXCELLENT - then TECH is the EASIEST way to do just THAT. I&amp;#8217;m not saying you have to quit your job and start a business to make your first million. Frankly, I couldn&amp;#8217;t care less if I do or not&amp;#8230; What I AM saying is&amp;#8230; when I&amp;#8217;m long into my career, what kind of skills would I want to have I picked up that will STILL be applicable? - I will be damned if I get replaced by a factory of robotic coders.&lt;/p&gt;
+&lt;p&gt;With Allison calling herself a self-professed introvert, it amazes me how she can drive that energy and kindness when talking to people. It’s hard work, for any startup, to say or even prove that your product is far superior to anything out there. It’s even harder trying to convince people that the curriculum and community that GA provides has more advantages that going Solo. Whenever I go some of these GA info sessions, I sometimes get a feeling of reluctance from people… I mean “Why” would anyone in their right mind purchase a product to learn?… then I’d answer with… “Why” are people getting better paid jobs with perks in the Tech Community?… Think about it this way, The current renaissance that exists is IN TECH. NOT in Finance. If you want to be EXCELLENT - then TECH is the EASIEST way to do just THAT. I’m not saying you have to quit your job and start a business to make your first million. Frankly, I couldn’t care less if I do or not… What I AM saying is… when I’m long into my career, what kind of skills would I want to have I picked up that will STILL be applicable? - I will be damned if I get replaced by a factory of robotic coders.&lt;/p&gt;
 
-&lt;p&gt;Finally, with Graham Leach. He comes across as someone pretty intense and radical. Not being satisfied with the status quo - he&amp;#8217;s inspired me to be &amp;#8220;Tenacious against Complacency&amp;#8221;. Honestly&amp;#8230; It&amp;#8217;s intimidating being apart of a Hackerspace/Makerspace. People around you are Incredibly smart, more experienced at things that you&amp;#8217;ve never heard about. However, they are an incredible group of people that provide the utmost support whenever they see you struggling. They&amp;#8217;ve all gone through it&amp;#8230; and often, having the courage to just ask after experiencing some struggle will help IMMENSELY.&lt;/p&gt;
+&lt;p&gt;Finally, with Graham Leach. He comes across as someone pretty intense and radical. Not being satisfied with the status quo - he’s inspired me to be “Tenacious against Complacency”. Honestly… It’s intimidating being apart of a Hackerspace/Makerspace. People around you are Incredibly smart, more experienced at things that you’ve never heard about. However, they are an incredible group of people that provide the utmost support whenever they see you struggling. They’ve all gone through it… and often, having the courage to just ask after experiencing some struggle will help IMMENSELY.&lt;/p&gt;
 
-&lt;p&gt;I don&amp;#8217;t know a lot of people in the startup community personally. I mean, I wish I had the time to get to know people. It takes me a couple of weeks to get to hear people&amp;#8217;s stories. &amp;#8220;Why did they choose to be in Hong Kong?&amp;#8221;, &amp;#8220;What are their interests?&amp;#8221;, &amp;#8220;what problems are they trying to solve now?&amp;#8221; - I mean, stack those three questions and multiply that with the numerous people in the community&amp;#8230; That&amp;#8217;s A LOT of man hours! It isn&amp;#8217;t that I don&amp;#8217;t want to know WHO you are&amp;#8230; it&amp;#8217;s just that I can&amp;#8217;t physically do it all and STILL go for GOLD. Even though we&amp;#8217;re all in the same boat one way or another, it&amp;#8217;s deeply moving that people say a short hello or a few words of encouragement. I mean, everyone I&amp;#8217;ve mentioned today, they&amp;#8217;ve all gone through the troughs in the valley of despair&amp;#8230; but we&amp;#8217;re all in the same journey for different reasons. I think that this positivity should occur more often in the community. Don&amp;#8217;t come into the scene thinking you&amp;#8217;re gonna be the next Facebook&amp;#8230; do it because you can and it&amp;#8217;s the right thing to do.&lt;/p&gt;
+&lt;p&gt;I don’t know a lot of people in the startup community personally. I mean, I wish I had the time to get to know people. It takes me a couple of weeks to get to hear people’s stories. “Why did they choose to be in Hong Kong?”, “What are their interests?”, “what problems are they trying to solve now?” - I mean, stack those three questions and multiply that with the numerous people in the community… That’s A LOT of man hours! It isn’t that I don’t want to know WHO you are… it’s just that I can’t physically do it all and STILL go for GOLD. Even though we’re all in the same boat one way or another, it’s deeply moving that people say a short hello or a few words of encouragement. I mean, everyone I’ve mentioned today, they’ve all gone through the troughs in the valley of despair… but we’re all in the same journey for different reasons. I think that this positivity should occur more often in the community. Don’t come into the scene thinking you’re gonna be the next Facebook… do it because you can and it’s the right thing to do.&lt;/p&gt;
 
-&lt;p&gt;So in summary&amp;#8230; If you&amp;#8217;re feeling good about yourself&amp;#8230; share the gold&amp;#8230; give some positive encouragement to someone who needs it&amp;#8230; shake the hand of someone you haven&amp;#8217;t met before&amp;#8230; you never know&amp;#8230; you might need a little encouragement when you need it most.&lt;/p&gt;
+&lt;p&gt;So in summary… If you’re feeling good about yourself… share the gold… give some positive encouragement to someone who needs it… shake the hand of someone you haven’t met before… you never know… you might need a little encouragement when you need it most.&lt;/p&gt;
 
-&lt;p&gt;To the people who inspire me, to those who have said a few friendly words and to those who continue to give me support&amp;#8230; Thank You. D&lt;/p&gt;</description>
+&lt;p&gt;To the people who inspire me, to those who have said a few friendly words and to those who continue to give me support… Thank You. D&lt;/p&gt;</description>
                 <link>http://username.github.io/2013/07/02/Going-for-Gold</link>
                 <guid>http://username.github.io/2013/07/02/Going-for-Gold</guid>
                 <pubDate>2013-07-02T00:00:00+08:00</pubDate>

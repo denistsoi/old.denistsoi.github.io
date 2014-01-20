@@ -108,49 +108,57 @@
     <div class="content">
       <p>So how do you Automate GUI testing for web applications?</p>
 
-<p>There&#8217;s an interesting site called <a href='http://csste.st/tools/'>csste.st</a> which is a good source to find more some directions for some CSS Testing tools, however, I&#8217;d like to expand this post to include some others.</p>
+<p>There’s an interesting site called <a href="http://csste.st/tools/">csste.st</a> which is a good source to find more some directions for some CSS Testing tools, however, I’d like to expand this post to include some others.</p>
 
 <ul>
-<li>We&#8217;re not talking about Unit Testing here, but about consistently testing and accurately recording the the user flow of web appications, there isn&#8217;t a great deal of tools available to the Dev&#8230;</li>
+<li>We’re not talking about Unit Testing here, but about consistently testing and accurately recording the the user flow of web appications, there isn’t a great deal of tools available to the Dev</li>
 </ul>
 
-<p>However, it&#8217;s a great opportunity to outline a few tools that <em>CAN</em> help to this regard.</p>
+<p>However, it’s a great opportunity to outline a few tools that <em>CAN</em> help to this regard.</p>
 
-<p><a href='http://www.browserstack.com'>Defacto: &#8220;BrowserStack&#8221;</a> isn&#8217;t great if you&#8217;re trying to hustle, but incredibly powerful if you&#8217;re able to fork $20 a month. That basic plan doesn&#8217;t give you all the bells and whistles, but it will give you enough to get pretty far on your Frontend Dev.</p>
+<p><a href="http://www.browserstack.com">Defacto: “BrowserStack”</a> isn’t great if you’re trying to hustle, but incredibly powerful if you’re able to fork $20 a month. That basic plan doesn’t give you all the bells and whistles, but it will give you enough to get pretty far on your Frontend Dev.</p>
 
-<p><a href='http://cssregressiontesting.com/'>Pricey Alternative: &#8220;Mogotest&#8221;</a> is a prety interesting site that is trying to compete against BrowserStack, though the plans are pretty expensive.</p>
-
-<p><a href=''>Soasta</a></p>
-
-<p><a href=''>iMacros</a></p>
+<p><a href="http://cssregressiontesting.com/">Pricey Alternative: “Mogotest”</a> is a prety interesting site that is trying to compete against BrowserStack, though the plans are pretty expensive.</p>
 <hr />
-<h3 id='tools'>#Tools</h3>
+<h3 id="tools">#Tools</h3>
 <hr />
-<p><a href='http://cburgmer.github.io/csscritic/'>CSSCritic</a> is incredibly lightweight and I&#8217;d only recommend it for a quick comparison during your dev cycle. It is basically a screen capture plugin to compare two versions of a site which will highlight elements which are out of alignment compared to the original picture.</p>
+<p><a href="http://cburgmer.github.io/csscritic/">CSSCritic</a> is incredibly lightweight and I’d only recommend it for a quick comparison during your dev cycle. It is basically a screen capture plugin to compare two versions of a site which will highlight elements which are out of alignment compared to the original picture.</p>
 
-<p><a href='https://github.com/Huddle/PhantomCSS'>Lightweight OpenSource Alt: &#8220;PhantomCSS&#8221;</a> is an alternative to CSSCritic which offers a little more</p>
+<p><a href="https://github.com/Huddle/PhantomCSS">Lightweight OpenSource Alt: “PhantomCSS”</a> is an alternative to CSSCritic which offers a little more</p>
 
-<p><a href='http://hardy.io/'>Hardy.io</a> is the big brother to GhostStory</p>
+<p><a href="http://hardy.io/">Hardy.io</a> is the big brother to GhostStory</p>
 
-<p><a href='https://github.com/BBC-News/wraith'>BBC News Wraith</a> is incredibly impressive. Running on Ruby, this uses a <code>rake</code> task to run automated screen capture tests which are saved on the local directory. I particularly like how you can run the rake task to pull the requested web pages and then save a comparision of two pages as a highlighted image within a gallery context. Another thing I particularly like is how you can specify the screen sizes of the pages that you want the screen shots to be captured.</p>
+<p><a href="https://github.com/BBC-News/wraith">BBC News Wraith</a> is incredibly impressive. Running on Ruby, this uses a <code>rake</code> task to run automated screen capture tests which are saved on the local directory. I particularly like how you can run the rake task to pull the requested web pages and then save a comparision of two pages as a highlighted image within a gallery context. Another thing I particularly like is how you can specify the screen sizes of the pages that you want the screen shots to be captured.</p>
 
-<p><a href='https://github.com/watir/watir'>Watir</a> <a href='http://watir.com/'>Official Blog site for Watir</a></p>
-<hr />
-<h3 id='automated_recorders'>#Automated Recorders</h3>
-<hr />
-<p><a href='http://docs.seleniumhq.org/'>Selenium</a> is a Firebox plugin which allows the user to run browser automation tests. You can program on a plethora of programming languages though I do dislike the fact that you are required to have firefox as a prerequesite.<br /> - <a href='http://darrellgrainger.blogspot.hk/2010/02/selenium-101.html'>Getting Started on Selenium</a> - <a href='http://refcardz.dzone.com/refcardz/getting-started-selenium'>More in-depth Selenium</a><br /> - <a href='http://www.youtube.com/watch?v=gsHyDIyA3dg'>like Youtube Tutorials?</a><br /> I like how you can export to Python or Ruby via Web Driver, but I&#8217;m a little disappointed that you can&#8217;t import back into Selenium IDE after you&#8217;ve exported out.<br /> - <a href='https://npmjs.org/package/selenium-webdriver'>Selenium-WebDriver</a></p>
+<p><a href="https://github.com/watir/watir">Watir</a></p>
 
-<p><a href='http://www.sikuli.org/'>Sikuli</a> is a python based IDE for automated testing. I tried to use this during my brokerage days to automate financial reporting, but the only caveat is that Sikuli doesn&#8217;t play nicely when you have buttons that are incredibly small within properietary software. There hasn&#8217;t been much development for a while, which leads me to consider other alternatives - <a href='https://github.com/daizoru/node-sikuli'>Node-Sikuli</a> Here is Sikuli to be used for node.</p>
+<p><a href="http://watir.com/">Official Blog site for Watir</a></p>
 <hr />
-<h3 id='cli_tools'>#CLI tools</h3>
+<h3 id="automated_recorders">#Automated Recorders</h3>
 <hr />
-<p><a href='https://github.com/brenden/node-webshot'>node-webshot</a> <a href='http://docs.casperjs.org/en/latest/quickstart.html'>CasperJS</a></p>
-<hr />
-<h3 id='takeaways'>#Takeaways</h3>
+<p><a href="http://docs.seleniumhq.org/">Selenium</a> is a Firebox plugin which allows the user to run browser automation tests. You can program on a plethora of programming languages though I do dislike the fact that you are required to have firefox as a prerequesite.</p>
 
-<p>There&#8217;s some underlying similarities between the different tools currently available. The most common tools that continue to pop up are Selenium Webdriver and PhantomJS.<br />Why do you need the Webdriver?<br />Why do you need PhantomJs/CasperJS?</p>
+<ul>
+<li><a href="http://darrellgrainger.blogspot.hk/2010/02/selenium-101.html">Getting Started on Selenium</a></li>
+
+<li><a href="http://refcardz.dzone.com/refcardz/getting-started-selenium">More in-depth Selenium</a></li>
+
+<li><a href="http://www.youtube.com/watch?v=gsHyDIyA3dg">like Youtube Tutorials?</a><br />I like how you can export to Python or Ruby via Web Driver, but I’m a little disappointed that you can’t import back into Selenium IDE after you’ve exported out.</li>
+
+<li><a href="https://npmjs.org/package/selenium-webdriver">Selenium-WebDriver</a></li>
+</ul>
+
+<p><a href="http://www.sikuli.org/">Sikuli</a> is a python based IDE for automated testing. I tried to use this during my brokerage days to automate financial reporting, but the only caveat is that Sikuli doesn’t play nicely when you have buttons that are incredibly small within properietary software. There hasn’t been much development for a while, which leads me to consider other alternatives - <a href="https://github.com/daizoru/node-sikuli">Node-Sikuli</a> Here is Sikuli to be used for node.</p>
 <hr />
-<h3 id='tips_and_tricks_for_qa'>#Tips and Tricks for Q&amp;A</h3>
+<h3 id="cli_tools">#CLI tools</h3>
+<hr />
+<p><a href="https://github.com/brenden/node-webshot">node-webshot</a> <a href="http://docs.casperjs.org/en/latest/quickstart.html">CasperJS</a></p>
+<hr />
+<h3 id="takeaways">#Takeaways</h3>
+
+<p>There’s some underlying similarities between the different tools currently available. The most common tools that continue to pop up are Selenium Webdriver and PhantomJS.<br />Why do you need the Webdriver?<br />Why do you need PhantomJs/CasperJS?</p>
+<hr />
+<h3 id="tips_and_tricks_for_qa">#Tips and Tricks for Q&amp;A</h3>
 
 <ul>
 <li>Invalid HTML</li>
@@ -166,7 +174,7 @@
 <li>Dynamically Generated Content?</li>
 </ul>
 <hr />
-<h3 id='future_post_ideas'>#Future Post Ideas</h3>
+<h3 id="future_post_ideas">#Future Post Ideas</h3>
 
 <ul>
 <li>Browser Stack API?</li>
@@ -179,6 +187,22 @@
 
     
 
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#QA-ref">QA <span>2</span></a></li>
+    
+  
+
+
+
+    </ul>
     
 
     <hr class="dashed-hr">
@@ -189,7 +213,7 @@
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next disabled"><a>Next &rarr;</a>
+        <li class="next"><a href="/2014/01/14/getting-started-with-qa-part-2" title="getting started with qa part 2">Next &rarr;</a></li>
       
       </ul>
     </div>

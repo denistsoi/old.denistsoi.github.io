@@ -109,11 +109,11 @@
       <p>Today was a bit of stange day -</p>
 <!-- ...I encountered  file and I hope I can outline some scenarios so you too can avoid the eventual faceplant same pitfalls that I almost faceplanted.
  -->
-<p>Basically, from GA FEWD and in Frontend, you will want to import custom font files that are either hosted locally or on a CDN like <a href='http://www.google.com/fonts'>google fonts</a>.</p>
+<p>Basically, from GA FEWD and in Frontend, you will want to import custom font files that are either hosted locally or on a CDN like <a href="http://www.google.com/fonts">google fonts</a>.</p>
 
-<p>If you want to include a open font type, you will need to include the <code>@font face</code> within your CSS. Thereafter, you&#8217;ll be able to control what elements you want that font style applied into your webpage.</p>
+<p>If you want to include a open font type, you will need to include the <code>@font face</code> within your CSS. Thereafter, you’ll be able to control what elements you want that font style applied into your webpage.</p>
 
-<p>Below is an example of how you&#8217;ll go about doing that.</p>
+<p>Below is an example of how you’ll go about doing that.</p>
 
 <pre><code>@font-face
 {
@@ -121,7 +121,7 @@ font-family: myAwesomeFont;
 src: url(awesomeFont.ttf), local(awesomeFont);  
 }</code></pre>
 
-<p>Then in your stylesheet under your specified class, id or element, you&#8217;ll need to add this onto your choice of element. (I&#8217;ve used body as the example)</p>
+<p>Then in your stylesheet under your specified class, id or element, you’ll need to add this onto your choice of element. (I’ve used body as the example)</p>
 
 <pre><code>body
 {
@@ -130,7 +130,7 @@ font-family: myAwesomeFont;
 
 <p>Caveat: Font face is not supported on ie8 and under.</p>
 <hr />
-<h4 id='so_whats_the_problem'>So what&#8217;s the problem?</h4>
+<h4 id="so_whats_the_problem">So what’s the problem?</h4>
 
 <p>Well, the problem was as follows - Traditional Chinese was being rendered onto the DOM, along with the Simplified Chinese - so what was the problem?</p>
 
@@ -142,21 +142,21 @@ font-family: myAwesomeFont;
 
 <p>This lead me onto a deep and dark rabbit hole which would inevitably lead me to some very intereresting caveats about using font types.</p>
 
-<p>As Web Developers, we all know that the openness of the web was not created for font foundries in mind. That being said, any font that isn&#8217;t openly licensed or legally purchased will be liable to some bad times&#8230;</p>
+<p>As Web Developers, we all know that the openness of the web was not created for font foundries in mind. That being said, any font that isn’t openly licensed or legally purchased will be liable to some bad times</p>
 
-<p><img alt='Bad Time' src='http://cdn.memegenerator.net/instances/500x/44606316.jpg' /></p>
+<p><img src="http://cdn.memegenerator.net/instances/500x/44606316.jpg" alt="Bad Time" title="Bad Time" /></p>
 
-<h4 id='update'>Update</h4>
+<h4 id="update">Update</h4>
 
 <p>Anyways - that Tangent aside, my colleague Ethan had a quick look around at the most popular only font foundaries about why the font files had specific naming.</p>
 
-<p>There was a peculiar naming scheme of &#8220;Simplified on Traditional&#8221;&#8230;</p>
+<p>There was a peculiar naming scheme of “Simplified on Traditional”</p>
 
-<p>Which meant&#8230;</p>
+<p>Which meant</p>
 
-<p>That for whatever Traditional Chinese character code will be translated into Simplified Chinese via the font file&#8230;</p>
+<p>That for whatever Traditional Chinese character code will be translated into Simplified Chinese via the font file</p>
 
-<h3 id='wtf'>WTF?</h3>
+<h3 id="wtf">WTF?</h3>
     </div>
 
     

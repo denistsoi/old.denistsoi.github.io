@@ -3,7 +3,7 @@ layout: post
 title: "Getting started with QA GUI testing"
 description: ""
 category: 
-tags: []
+tags: [QA]
 excerpt: 
 ---
 {% include JB/setup %}
@@ -20,10 +20,6 @@ However, it's a great opportunity to outline a few tools that _CAN_ help to this
 
 [Pricey Alternative: "Mogotest"](http://cssregressiontesting.com/) is a prety interesting site that is trying to compete against BrowserStack, though the plans are pretty expensive.
 
-[Soasta]()
-
-[iMacros]()
-
 ---
 ### #Tools
 ---
@@ -39,6 +35,7 @@ However, it's a great opportunity to outline a few tools that _CAN_ help to this
   Another thing I particularly like is how you can specify the screen sizes of the pages that you want the screen shots to be captured.
 
 [Watir](https://github.com/watir/watir) 
+
 [Official Blog site for Watir](http://watir.com/)
 
 ---

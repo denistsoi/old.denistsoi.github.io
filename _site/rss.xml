@@ -5,13 +5,29 @@
         <description>Denis Tsoi - Denis Tsoi</description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-01-21T02:02:00+08:00</lastBuildDate>
-        <pubDate>2014-01-21T02:02:00+08:00</pubDate>
+        <lastBuildDate>2014-02-18T10:59:33+08:00</lastBuildDate>
+        <pubDate>2014-02-18T10:59:33+08:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
-                <title>getting started with qa part 2</title>
+                <title>Moving On</title>
+                <description></description>
+                <link>http://username.github.io/2014/02/18/moving-on</link>
+                <guid>http://username.github.io/2014/02/18/moving-on</guid>
+                <pubDate>2014-02-18T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>getting started with golang</title>
+                <description></description>
+                <link>http://username.github.io/2014/02/18/getting-started-with-golang</link>
+                <guid>http://username.github.io/2014/02/18/getting-started-with-golang</guid>
+                <pubDate>2014-02-18T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>getting started with Qa part 2</title>
                 <description>&lt;p&gt;One of the things with getting started with qa is basically the fallacy of most QA articles out there.&lt;/p&gt;
 
 &lt;p&gt;QA as a field when comparing it to software development as a whole is an additive process, which helps aid in the develop cycle. However, I believe that adding the QA process as a formal process AFTER the development cycle is complete only hinders both the development cycle and the learning experience of a junior developer.&lt;/p&gt;

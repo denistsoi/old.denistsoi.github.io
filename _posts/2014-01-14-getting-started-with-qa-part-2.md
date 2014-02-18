@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "getting started with qa part 2"
+title: "getting started with Qa part 2"
 description: ""
 category: 
 tags: [QA]

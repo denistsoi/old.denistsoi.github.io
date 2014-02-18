@@ -134,3 +134,19 @@ pre code{
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+
+  @media screen only and (min-width: 320px) and (max-width: 699px){
+    .container-narrow{
+      min-width: 100%;
+    }
+    .page-header h1 {
+      font-size: 24px;
+    }
+    ul.posts li {
+      font-size: 12px;
+    }
+    ul.posts li a {
+      display: block;
+      margin-bottom: .5em;
+    }
+  }

@@ -106,7 +106,41 @@
       <span>18 February 2014</span>
     </div>
     <div class="content">
-      
+      <p>If you’re just starting with GO - you’re in good hands, because the documentation for Go Lang is pretty good compared to other things I’ve seen.</p>
+
+<p>For starters - head over to <a href="http://tour.golang.org/">Tour of GO</a></p>
+
+<h3 id="lesson_4">Lesson 4</h3>
+
+<p><a href="http://tour.golang.org/#4">GO PACKAGES</a></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;math/rand&quot;
+)
+
+func main() {
+    fmt.Println(&quot;My favorite number is&quot;, rand.Intn(10))
+}</code></pre>
+
+<p>Every Go Program is made up of packages, and will init the page <code>main</code> to begin with. Within this program, we are using the following packages with import paths <code>fmt</code> and <code>math/rand</code>.</p>
+
+<p><code>fmt</code> is dealing with out input/out, much like ‘stdin’ in C.</p>
+
+<h3 id="lesson_6">Lesson 6</h3>
+
+<p><a href="http://tour.golang.org/#6">GO EXPORTED NAMES</a><br /> package main</p>
+
+<pre><code>import (
+    &quot;fmt&quot;
+    &quot;math&quot;
+)
+
+func main() {
+    fmt.Println(math.Pi)
+}</code></pre>
     </div>
 
     

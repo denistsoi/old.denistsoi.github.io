@@ -106,11 +106,205 @@
       <span>19 February 2014</span>
     </div>
     <div class="content">
-      
+      <h3 id="methods_and_interfaces">Methods and Interfaces</h3>
+
+<h3 id="lesson_52">LESSON 52</h3>
+
+<p><a href="http://tour.golang.org/#52">GO Methods and Interfaces</a></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;math&quot;
+)
+
+type Vertex struct {
+    X, Y float64
+}
+
+func (v *Vertex) Abs() float64 {
+    return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+func main() {
+    v := &amp;Vertex{3, 4}
+    fmt.Println(v.Abs())
+}</code></pre>
+
+<p>Go does not have classes. However, you can define methods on struct types. The method receiver appears in its own argument list between the func keyword and the method name.</p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;math&quot;
+)
+
+type MyFloat float64
+
+func (f MyFloat) Abs() float64 {
+    if f &lt; 0 {
+        return float64(-f)
+    }
+    return float64(f)
+}
+
+func main() {
+    f := MyFloat(-math.Sqrt2)
+    fmt.Println(f.Abs())
+}</code></pre>
+
+<p>In fact, you can define a method on any type you define in your package, not just structs. You cannot define a method on a type from another package, or on a basic type.</p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;math&quot;
+)
+
+type Vertex struct {
+    X, Y float64
+}
+
+func (v *Vertex) Scale(f float64) {
+    v.X = v.X * f
+    v.Y = v.Y * f
+}
+
+func (v *Vertex) Abs() float64 {
+    return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+func main() {
+    v := &amp;Vertex{3, 4}
+    v.Scale(5)
+    fmt.Println(v, v.Abs())
+}</code></pre>
+
+<p>Methods can be associated with a named type or a pointer to a named type.</p>
+
+<p>We just saw two Abs methods. One on the <code>*Vertex</code> pointer type and the other on the MyFloat value type.</p>
+
+<p>There are two reasons to use a pointer receiver. First, to avoid copying the value on each method call (more efficient if the value type is a large struct). Second, so that the method can modify the value that its receiver points to.</p>
+
+<p>Try changing the declarations of the Abs and Scale methods to use Vertex as the receiver, instead of <code>*Vertex.</code></p>
+
+<p>The Scale method has no effect when v is a Vertex. Scale mutates v. When v is a value (non-pointer) type, the method sees a copy of the Vertex and cannot mutate the original value.</p>
+
+<p>Abs works either way. It only reads v. It doesn’t matter whether it is reading the original value (through a pointer) or a copy of that value.</p>
+
+<h3 id="lesson_52_2">LESSON 52</h3>
+
+<p><a href="http://tour.golang.org/#52">GO Interfaces</a></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;math&quot;
+)
+
+type Abser interface {
+    Abs() float64
+}
+
+func main() {
+    var a Abser
+    f := MyFloat(-math.Sqrt2)
+    v := Vertex{3, 4}
+
+    a = f  // a MyFloat implements Abser
+    a = &amp;v // a *Vertex implements Abser
+
+    // In the following line, v is a Vertex (not *Vertex)
+    // and does NOT implement Abser.
+    a = v
+
+    fmt.Println(a.Abs())
+}
+
+type MyFloat float64
+
+func (f MyFloat) Abs() float64 {
+    if f &lt; 0 {
+        return float64(-f)
+    }
+    return float64(f)
+}
+
+type Vertex struct {
+    X, Y float64
+}
+func (v *Vertex) Abs() float64 {
+    return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}</code></pre>
+
+<p>An interface type is defined by a set of methods.<br />A value of interface type can hold any value that implements those methods.<br />Note: The code on the left fails to compile.<br />Vertex doesn’t satisfy Abser because the Abs method is defined only on <code>*Vertex, not Vertex.</code></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;os&quot;
+)
+
+type Reader interface {
+    Read(b []byte) (n int, err error)
+}
+
+type Writer interface {
+    Write(b []byte) (n int, err error)
+}
+
+type ReadWriter interface {
+    Reader
+    Writer
+}
+
+func main() {
+    var w Writer
+
+    // os.Stdout implements Writer
+    w = os.Stdout
+
+    fmt.Fprintf(w, &quot;hello, writer\n&quot;)
+}</code></pre>
+
+<p>A type implements an interface by implementing the methods.</p>
+
+<p>There is no explicit declaration of intent.</p>
+
+<p>Implicit interfaces decouple implementation packages from the packages that define the interfaces: neither depends on the other.</p>
+
+<p>It also encourages the definition of precise interfaces, because you don’t have to find every implementation and tag it with the new interface name.</p>
+
+<p>Package io defines Reader and Writer; you don’t have to.</p>
     </div>
 
     
 
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#GOLANG-ref">GOLANG <span>10</span></a></li>
+     
+    	<li><a href="/tags.html#GOLANG METHODS-ref">GOLANG METHODS <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#GOLANG INTERFACES-ref">GOLANG INTERFACES <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
     
 
     <hr class="dashed-hr">

@@ -3,7 +3,7 @@ layout: post
 title: "getting started with golang part 8"
 description: ""
 category: 
-tags: []
+tags: [GOLANG, GOLANG METHODS, GOLANG INTERFACES]
 excerpt: 
 ---
 {% include JB/setup %}
@@ -88,11 +88,11 @@ You cannot define a method on a type from another package, or on a basic type.
 
 Methods can be associated with a named type or a pointer to a named type.
 
-We just saw two Abs methods. One on the *Vertex pointer type and the other on the MyFloat value type.
+We just saw two Abs methods. One on the `*Vertex` pointer type and the other on the MyFloat value type.
 
 There are two reasons to use a pointer receiver. First, to avoid copying the value on each method call (more efficient if the value type is a large struct). Second, so that the method can modify the value that its receiver points to.
 
-Try changing the declarations of the Abs and Scale methods to use Vertex as the receiver, instead of *Vertex.
+Try changing the declarations of the Abs and Scale methods to use Vertex as the receiver, instead of `*Vertex.`
 
 The Scale method has no effect when v is a Vertex. Scale mutates v. When v is a value (non-pointer) type, the method sees a copy of the Vertex and cannot mutate the original value.
 
@@ -139,18 +139,14 @@ Abs works either way. It only reads v. It doesn't matter whether it is reading t
     type Vertex struct {
         X, Y float64
     }
-
     func (v *Vertex) Abs() float64 {
         return math.Sqrt(v.X*v.X + v.Y*v.Y)
     }
 
-An interface type is defined by a set of methods.
-
-A value of interface type can hold any value that implements those methods.
-
-Note: The code on the left fails to compile.
-
-Vertex doesn't satisfy Abser because the Abs method is defined only on *Vertex, not Vertex.
+An interface type is defined by a set of methods.  
+A value of interface type can hold any value that implements those methods.  
+Note: The code on the left fails to compile.  
+Vertex doesn't satisfy Abser because the Abs method is defined only on `*Vertex, not Vertex.`
 
     package main
 

@@ -5,10 +5,501 @@
         <description>Denis Tsoi - Denis Tsoi</description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-02-19T14:41:40+08:00</lastBuildDate>
-        <pubDate>2014-02-19T14:41:40+08:00</pubDate>
+        <lastBuildDate>2014-02-19T16:03:35+08:00</lastBuildDate>
+        <pubDate>2014-02-19T16:03:35+08:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>getting started with golang part 10</title>
+                <description>&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#65&quot;&gt;GO ROUTINES&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;time&amp;quot;
+)
+
+func say(s string) {
+    for i := 0; i &amp;lt; 5; i++ {
+        time.Sleep(100 * time.Millisecond)
+        fmt.Println(s)
+    }
+}
+
+func main() {
+    go say(&amp;quot;world&amp;quot;)
+    say(&amp;quot;hello&amp;quot;)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A goroutine is a lightweight thread managed by the Go runtime.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go f(x, y, z)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;starts a new goroutine running&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;f(x, y, z)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The evaluation of f, x, y, and z happens in the current goroutine and the execution of f happens in the new goroutine.&lt;/p&gt;
+
+&lt;p&gt;Goroutines run in the same address space, so access to shared memory must be synchronized. The sync package provides useful primitives, although you won’t need them much in Go as there are other primitives. (See the next slide.)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#66&quot;&gt;GO CHANNELS&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func sum(a []int, c chan int) {
+    sum := 0
+    for _, v := range a {
+        sum += v
+    }
+    c &amp;lt;- sum // send sum to c
+}
+
+func main() {
+    a := []int{7, 2, 8, -9, 4, 0}
+
+    c := make(chan int)
+    go sum(a[:len(a)/2], c)
+    go sum(a[len(a)/2:], c)
+    x, y := &amp;lt;-c, &amp;lt;-c // receive from c
+
+    fmt.Println(x, y, x+y)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Channels are a typed conduit through which you can send and receive values with the channel operator, &amp;lt;-.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ch &amp;lt;- v    // Send v to channel ch.
+v := &amp;lt;-ch  // Receive from ch, and
+           // assign value to v.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(The data flows in the direction of the arrow.)&lt;/p&gt;
+
+&lt;p&gt;Like maps and slices, channels must be created before use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ch := make(chan int)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;By default, sends and receives block until the other side is ready. This allows goroutines to synchronize without explicit locks or condition variables.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#67&quot;&gt;GO BUFFERED&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    c := make(chan int, 2)
+    c &amp;lt;- 13
+    c &amp;lt;- 2
+    fmt.Println(&amp;lt;-c)
+    fmt.Println(&amp;lt;-c)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Channels can be buffered. Provide the buffer length as the second argument to make to initialize a buffered channel:&lt;/p&gt;
+
+&lt;p&gt;ch := make(chan int, 100) Sends to a buffered channel block only when the buffer is full. Receives block when the buffer is empty.&lt;/p&gt;
+
+&lt;p&gt;Modify the example to overfill the buffer and see what happens.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#68&quot;&gt;GO RANGE AND CLOSE&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+)
+
+func fibonacci(n int, c chan int) {
+    x, y := 0, 1
+    for i := 0; i &amp;lt; n; i++ {
+        c &amp;lt;- x
+        x, y = y, x+y
+    }
+    close(c)
+}
+
+func main() {
+    c := make(chan int, 10)
+    go fibonacci(cap(c), c)
+    for i := range c {
+        fmt.Println(i)
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A sender can close a channel to indicate that no more values will be sent. Receivers can test whether a channel has been closed by assigning a second parameter to the receive expression: after&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;v, ok := &amp;lt;-ch&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ok is false if there are no more values to receive and the channel is closed.&lt;/p&gt;
+
+&lt;p&gt;The loop for i := range c receives values from the channel repeatedly until it is closed.&lt;/p&gt;
+
+&lt;p&gt;Note: Only the sender should close a channel, never the receiver. Sending on a closed channel will cause a panic.&lt;/p&gt;
+
+&lt;p&gt;Another note: Channels aren’t like files; you don’t usually need to close them. Closing is only necessary when the receiver must be told there are no more values coming, such as to terminate a range loop.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#69&quot;&gt;GO SELECT&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func fibonacci(c, quit chan int) {
+    x, y := 0, 1
+    for {
+        select {
+        case c &amp;lt;- x:
+            x, y = y, x+y
+        case &amp;lt;-quit:
+            fmt.Println(&amp;quot;quit&amp;quot;)
+            return
+        }
+    }
+}
+
+func main() {
+    c := make(chan int)
+    quit := make(chan int)
+    go func() {
+        for i := 0; i &amp;lt; 10; i++ {
+            fmt.Println(&amp;lt;-c)
+        }
+        quit &amp;lt;- 0
+    }()
+    fibonacci(c, quit)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The select statement lets a goroutine wait on multiple communication operations.&lt;/p&gt;
+
+&lt;p&gt;A select blocks until one of its cases can run, then it executes that case. It chooses one at random if multiple are ready.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#70&quot;&gt;GO DEFAULT SELECTION&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;time&amp;quot;
+)
+
+func main() {
+    tick := time.Tick(100 * time.Millisecond)
+    boom := time.After(500 * time.Millisecond)
+    for {
+        select {
+        case &amp;lt;-tick:
+            fmt.Println(&amp;quot;tick.&amp;quot;)
+        case &amp;lt;-boom:
+            fmt.Println(&amp;quot;BOOM!&amp;quot;)
+            return
+        default:
+            fmt.Println(&amp;quot;    .&amp;quot;)
+            time.Sleep(50 * time.Millisecond)
+        }
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The default case in a select is run if no other case is ready.&lt;/p&gt;
+
+&lt;p&gt;Use a default case to try a send or receive without blocking:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;select {
+case i := &amp;lt;-c:
+    // use i
+default:
+    // receiving from c would block
+}&lt;/code&gt;&lt;/pre&gt;</description>
+                <link>http://username.github.io/2014/02/20/getting-started-with-golang-part-10</link>
+                <guid>http://username.github.io/2014/02/20/getting-started-with-golang-part-10</guid>
+                <pubDate>2014-02-20T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>golang videos</title>
+                <description>&lt;h3 id=&quot;&quot;&gt;{}&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://vimeo.com/53221560&quot;&gt;Go: Code that Grows with Grace&lt;/a&gt; &lt;a href=&quot;http://vimeo.com/53221558&quot;&gt;Go: A Simple Programming Environment&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;_2&quot;&gt;{}&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://research.swtch.com/gotour&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=XCsL89YtqCs&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;_3&quot;&gt;{}&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=f6kdp27TYZs&quot;&gt;Google i/o 2012 Go Concurrency Patterns&lt;/a&gt; &lt;a href=&quot;https://www.youtube.com/watch?v=QDDwwePbDtw&quot;&gt;Google i/o 2013 Advanced Go Concurrency Patterns&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;_4&quot;&gt;{}&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.golang.org/&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://blog.golang.org/appengine-dec2013&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;_5&quot;&gt;{}&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://golang.org/doc/code.html&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://golang.org/doc/effective_go.html&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;_6&quot;&gt;{}&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://golang.org/doc/codewalk/functions/&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://golang.org/doc/codewalk/markov/&quot;&gt;Marchov Chain Algorithm&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;_7&quot;&gt;{}&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://golang.org/pkg/&quot;&gt;Go Packages&lt;/a&gt;&lt;/p&gt;</description>
+                <link>http://username.github.io/2014/02/19/golang-videos</link>
+                <guid>http://username.github.io/2014/02/19/golang-videos</guid>
+                <pubDate>2014-02-19T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>golang exercises</title>
+                <description>&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#50&quot;&gt;Complex Cube Roots&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot; 
+    &amp;quot;math&amp;quot;
+)
+
+func Cbrt(x float64) float64 {
+    Pow(x,y)
+    return x
+}
+
+func main() {
+    fmt.Println(Cbrt(2))
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let’s explore Go’s built-in support for complex numbers via the complex64 and complex128 types. For cube roots, Newton’s method amounts to repeating:&lt;/p&gt;
+
+&lt;p&gt;Find the cube root of 2, just to make sure the algorithm works. There is a Pow function in the math/cmplx package.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#58&quot;&gt;Errors&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+)
+
+func Sqrt(f float64) (float64, error) {
+    return 0, nil
+}
+
+func main() {
+    fmt.Println(Sqrt(2))
+    fmt.Println(Sqrt(-2))
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Copy your Sqrt function from the earlier exercises and modify it to return an error value.&lt;/p&gt;
+
+&lt;p&gt;Sqrt should return a non-nil error value when given a negative number, as it doesn’t support complex numbers.&lt;/p&gt;
+
+&lt;p&gt;Create a new type&lt;/p&gt;
+
+&lt;p&gt;type ErrNegativeSqrt float64 and make it an error by giving it a&lt;/p&gt;
+
+&lt;p&gt;func (e ErrNegativeSqrt) Error() string method such that ErrNegativeSqrt(-2).Error() returns “cannot Sqrt negative number: -2”.&lt;/p&gt;
+
+&lt;p&gt;Note: a call to fmt.Print(e) inside the Error method will send the program into an infinite loop. You can avoid this by converting e first: fmt.Print(float64(e)). Why?&lt;/p&gt;
+
+&lt;p&gt;Change your Sqrt function to return an ErrNegativeSqrt value when given a negative number.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#60&quot;&gt;HTTP Handlers&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;net/http&amp;quot;
+)
+
+func main() {
+    // your http.Handle calls here
+    http.ListenAndServe(&amp;quot;localhost:4000&amp;quot;, nil)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Implement the following types and define ServeHTTP methods on them. Register them to handle specific paths in your web server.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;type String string
+
+type Struct struct {
+    Greeting string
+    Punct    string
+    Who      string
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For example, you should be able to register handlers using:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http.Handle(&amp;quot;/string&amp;quot;, String(&amp;quot;I'm a frayed knot.&amp;quot;))
+http.Handle(&amp;quot;/struct&amp;quot;, &amp;amp;Struct{&amp;quot;Hello&amp;quot;, &amp;quot;:&amp;quot;, &amp;quot;Gophers!&amp;quot;})&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#62&quot;&gt;IMAGES&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;code.google.com/p/go-tour/pic&amp;quot;
+    &amp;quot;image&amp;quot;
+)
+
+type Image struct{}
+
+func main() {
+    m := Image{}
+    pic.ShowImage(m)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Remember the picture generator you wrote earlier? Let’s write another one, but this time it will return an implementation of image.Image instead of a slice of data.&lt;/p&gt;
+
+&lt;p&gt;Define your own Image type, implement the necessary methods, and call pic.ShowImage.&lt;/p&gt;
+
+&lt;p&gt;Bounds should return a image.Rectangle, like image.Rect(0, 0, w, h).&lt;/p&gt;
+
+&lt;p&gt;ColorModel should return color.RGBAModel.&lt;/p&gt;
+
+&lt;p&gt;At should return a color; the value v in the last picture generator corresponds to color.RGBA{v, v, 255, 255} in this one.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#72&quot;&gt;EQUIVALENT BINARY TREES&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;code.google.com/p/go-tour/tree&amp;quot;
+
+// Walk walks the tree t sending all values
+// from the tree to the channel ch.
+func Walk(t *tree.Tree, ch chan int)
+
+// Same determines whether the trees
+// t1 and t2 contain the same values.
+func Same(t1, t2 *tree.Tree) bool
+
+func main() {
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Implement the Walk function.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Test the Walk function.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The function tree.New(k) constructs a randomly-structured binary tree holding the values k, 2k, 3k, …, 10k.&lt;/p&gt;
+
+&lt;p&gt;Create a new channel ch and kick off the walker:&lt;/p&gt;
+
+&lt;p&gt;go Walk(tree.New(1), ch) Then read and print 10 values from the channel. It should be the numbers 1, 2, 3, …, 10.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Implement the Same function using Walk to determine whether t1 and t2 store the same values.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Test the Same function.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Same(tree.New(1), tree.New(1)) should return true, and Same(tree.New(1), tree.New(2)) should return false.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#73&quot;&gt;WEB CRAWLER&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+)
+
+type Fetcher interface {
+    // Fetch returns the body of URL and
+    // a slice of URLs found on that page.
+    Fetch(url string) (body string, urls []string, err error)
+}
+
+// Crawl uses fetcher to recursively crawl
+// pages starting with url, to a maximum of depth.
+func Crawl(url string, depth int, fetcher Fetcher) {
+    // TODO: Fetch URLs in parallel.
+    // TODO: Don't fetch the same URL twice.
+    // This implementation doesn't do either:
+    if depth &amp;lt;= 0 {
+        return
+    }
+    body, urls, err := fetcher.Fetch(url)
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+    fmt.Printf(&amp;quot;found: %s %q\n&amp;quot;, url, body)
+    for _, u := range urls {
+        Crawl(u, depth-1, fetcher)
+    }
+    return
+}
+
+func main() {
+    Crawl(&amp;quot;http://golang.org/&amp;quot;, 4, fetcher)
+}
+
+// fakeFetcher is Fetcher that returns canned results.
+type fakeFetcher map[string]*fakeResult
+
+type fakeResult struct {
+    body string
+    urls []string
+}
+
+func (f fakeFetcher) Fetch(url string) (string, []string, error) {
+    if res, ok := f[url]; ok {
+        return res.body, res.urls, nil
+    }
+    return &amp;quot;&amp;quot;, nil, fmt.Errorf(&amp;quot;not found: %s&amp;quot;, url)
+}
+
+// fetcher is a populated fakeFetcher.
+var fetcher = fakeFetcher{
+    &amp;quot;http://golang.org/&amp;quot;: &amp;amp;fakeResult{
+        &amp;quot;The Go Programming Language&amp;quot;,
+        []string{
+            &amp;quot;http://golang.org/pkg/&amp;quot;,
+            &amp;quot;http://golang.org/cmd/&amp;quot;,
+        },
+    },
+    &amp;quot;http://golang.org/pkg/&amp;quot;: &amp;amp;fakeResult{
+        &amp;quot;Packages&amp;quot;,
+        []string{
+            &amp;quot;http://golang.org/&amp;quot;,
+            &amp;quot;http://golang.org/cmd/&amp;quot;,
+            &amp;quot;http://golang.org/pkg/fmt/&amp;quot;,
+            &amp;quot;http://golang.org/pkg/os/&amp;quot;,
+        },
+    },
+    &amp;quot;http://golang.org/pkg/fmt/&amp;quot;: &amp;amp;fakeResult{
+        &amp;quot;Package fmt&amp;quot;,
+        []string{
+            &amp;quot;http://golang.org/&amp;quot;,
+            &amp;quot;http://golang.org/pkg/&amp;quot;,
+        },
+    },
+    &amp;quot;http://golang.org/pkg/os/&amp;quot;: &amp;amp;fakeResult{
+        &amp;quot;Package os&amp;quot;,
+        []string{
+            &amp;quot;http://golang.org/&amp;quot;,
+            &amp;quot;http://golang.org/pkg/&amp;quot;,
+        },
+    },
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this exercise you’ll use Go’s concurrency features to parallelize a web crawler.&lt;/p&gt;
+
+&lt;p&gt;Modify the Crawl function to fetch URLs in parallel without fetching the same URL twice.&lt;/p&gt;</description>
+                <link>http://username.github.io/2014/02/19/golang-exercises</link>
+                <guid>http://username.github.io/2014/02/19/golang-exercises</guid>
+                <pubDate>2014-02-19T00:00:00+08:00</pubDate>
+        </item>
 
         <item>
                 <title>getting started with golang part 9</title>
@@ -129,7 +620,181 @@ type Image interface {
 
         <item>
                 <title>getting started with golang part 8</title>
-                <description></description>
+                <description>&lt;h3 id=&quot;methods_and_interfaces&quot;&gt;Methods and Interfaces&lt;/h3&gt;
+
+&lt;h3 id=&quot;lesson_52&quot;&gt;LESSON 52&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#52&quot;&gt;GO Methods and Interfaces&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;math&amp;quot;
+)
+
+type Vertex struct {
+    X, Y float64
+}
+
+func (v *Vertex) Abs() float64 {
+    return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+func main() {
+    v := &amp;amp;Vertex{3, 4}
+    fmt.Println(v.Abs())
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Go does not have classes. However, you can define methods on struct types. The method receiver appears in its own argument list between the func keyword and the method name.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;math&amp;quot;
+)
+
+type MyFloat float64
+
+func (f MyFloat) Abs() float64 {
+    if f &amp;lt; 0 {
+        return float64(-f)
+    }
+    return float64(f)
+}
+
+func main() {
+    f := MyFloat(-math.Sqrt2)
+    fmt.Println(f.Abs())
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In fact, you can define a method on any type you define in your package, not just structs. You cannot define a method on a type from another package, or on a basic type.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;math&amp;quot;
+)
+
+type Vertex struct {
+    X, Y float64
+}
+
+func (v *Vertex) Scale(f float64) {
+    v.X = v.X * f
+    v.Y = v.Y * f
+}
+
+func (v *Vertex) Abs() float64 {
+    return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+func main() {
+    v := &amp;amp;Vertex{3, 4}
+    v.Scale(5)
+    fmt.Println(v, v.Abs())
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Methods can be associated with a named type or a pointer to a named type.&lt;/p&gt;
+
+&lt;p&gt;We just saw two Abs methods. One on the &lt;code&gt;*Vertex&lt;/code&gt; pointer type and the other on the MyFloat value type.&lt;/p&gt;
+
+&lt;p&gt;There are two reasons to use a pointer receiver. First, to avoid copying the value on each method call (more efficient if the value type is a large struct). Second, so that the method can modify the value that its receiver points to.&lt;/p&gt;
+
+&lt;p&gt;Try changing the declarations of the Abs and Scale methods to use Vertex as the receiver, instead of &lt;code&gt;*Vertex.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The Scale method has no effect when v is a Vertex. Scale mutates v. When v is a value (non-pointer) type, the method sees a copy of the Vertex and cannot mutate the original value.&lt;/p&gt;
+
+&lt;p&gt;Abs works either way. It only reads v. It doesn’t matter whether it is reading the original value (through a pointer) or a copy of that value.&lt;/p&gt;
+
+&lt;h3 id=&quot;lesson_52_2&quot;&gt;LESSON 52&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#52&quot;&gt;GO Interfaces&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;math&amp;quot;
+)
+
+type Abser interface {
+    Abs() float64
+}
+
+func main() {
+    var a Abser
+    f := MyFloat(-math.Sqrt2)
+    v := Vertex{3, 4}
+
+    a = f  // a MyFloat implements Abser
+    a = &amp;amp;v // a *Vertex implements Abser
+
+    // In the following line, v is a Vertex (not *Vertex)
+    // and does NOT implement Abser.
+    a = v
+
+    fmt.Println(a.Abs())
+}
+
+type MyFloat float64
+
+func (f MyFloat) Abs() float64 {
+    if f &amp;lt; 0 {
+        return float64(-f)
+    }
+    return float64(f)
+}
+
+type Vertex struct {
+    X, Y float64
+}
+func (v *Vertex) Abs() float64 {
+    return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;An interface type is defined by a set of methods.&lt;br /&gt;A value of interface type can hold any value that implements those methods.&lt;br /&gt;Note: The code on the left fails to compile.&lt;br /&gt;Vertex doesn’t satisfy Abser because the Abs method is defined only on &lt;code&gt;*Vertex, not Vertex.&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;os&amp;quot;
+)
+
+type Reader interface {
+    Read(b []byte) (n int, err error)
+}
+
+type Writer interface {
+    Write(b []byte) (n int, err error)
+}
+
+type ReadWriter interface {
+    Reader
+    Writer
+}
+
+func main() {
+    var w Writer
+
+    // os.Stdout implements Writer
+    w = os.Stdout
+
+    fmt.Fprintf(w, &amp;quot;hello, writer\n&amp;quot;)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A type implements an interface by implementing the methods.&lt;/p&gt;
+
+&lt;p&gt;There is no explicit declaration of intent.&lt;/p&gt;
+
+&lt;p&gt;Implicit interfaces decouple implementation packages from the packages that define the interfaces: neither depends on the other.&lt;/p&gt;
+
+&lt;p&gt;It also encourages the definition of precise interfaces, because you don’t have to find every implementation and tag it with the new interface name.&lt;/p&gt;
+
+&lt;p&gt;Package io defines Reader and Writer; you don’t have to.&lt;/p&gt;</description>
                 <link>http://username.github.io/2014/02/19/getting-started-with-golang-part-8</link>
                 <guid>http://username.github.io/2014/02/19/getting-started-with-golang-part-8</guid>
                 <pubDate>2014-02-19T00:00:00+08:00</pubDate>
@@ -222,14 +887,6 @@ func main() {
 &lt;p&gt;Switch without a condition is the same as switch true. This construct can be a clean way to write long if-then-else chains.&lt;/p&gt;</description>
                 <link>http://username.github.io/2014/02/19/getting-started-with-golang-part-7</link>
                 <guid>http://username.github.io/2014/02/19/getting-started-with-golang-part-7</guid>
-                <pubDate>2014-02-19T00:00:00+08:00</pubDate>
-        </item>
-
-        <item>
-                <title>getting started with golang part 10</title>
-                <description></description>
-                <link>http://username.github.io/2014/02/19/getting-started-with-golang-part-10</link>
-                <guid>http://username.github.io/2014/02/19/getting-started-with-golang-part-10</guid>
                 <pubDate>2014-02-19T00:00:00+08:00</pubDate>
         </item>
 
@@ -458,6 +1115,261 @@ func main() {
 &lt;p&gt;Why? -&lt;/p&gt;</description>
                 <link>http://username.github.io/2014/02/18/getting-started-with-golang-part-6</link>
                 <guid>http://username.github.io/2014/02/18/getting-started-with-golang-part-6</guid>
+                <pubDate>2014-02-18T00:00:00+08:00</pubDate>
+        </item>
+
+        <item>
+                <title>getting started with golang part 5</title>
+                <description>&lt;h3 id=&quot;lesson_31&quot;&gt;Lesson 31&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#31&quot;&gt;GO ARRAYS&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    var a [2]string
+    a[0] = &amp;quot;Hello&amp;quot;
+    a[1] = &amp;quot;World&amp;quot;
+    fmt.Println(a[0], a[1])
+    fmt.Println(a)
+}
+
+RETURNS: 
+Hello World
+[Hello World]&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The type [n]T is an array of n values of type T. The expression:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;var a [10]int&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;declares a variable a as an array of ten integers.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;An array’s length is part of its type, so arrays cannot be resized. This seems limiting, but don’t worry; Go provides a convenient way of working with arrays.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&quot;moving_on&quot;&gt;Moving On&lt;/h5&gt;
+
+&lt;h3 id=&quot;lesson_32&quot;&gt;Lesson 32&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#32&quot;&gt;GO SLICES&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    p := []int{2, 3, 5, 7, 11, 13}
+    fmt.Println(&amp;quot;p ==&amp;quot;, p)
+
+    for i := 0; i &amp;lt; len(p); i++ {
+        fmt.Printf(&amp;quot;p[%d] == %d\n&amp;quot;, i, p[i])
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A slice points to an array of values and also includes a length. []T is a slice with elements of type T.&lt;/p&gt;
+
+&lt;p&gt;THOUGHT: Can we put a function for fetching values to instantiate values for array~&lt;/p&gt;
+
+&lt;h5 id=&quot;moving_on_2&quot;&gt;Moving On&lt;/h5&gt;
+
+&lt;h3 id=&quot;lesson_33&quot;&gt;Lesson 33&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#33&quot;&gt;GO SLICIING SLICES&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    p := []int{2, 3, 5, 7, 11, 13}
+    fmt.Println(&amp;quot;p ==&amp;quot;, p)
+    fmt.Println(&amp;quot;p[1:4] ==&amp;quot;, p[1:4])
+
+    // missing low index implies 0
+    fmt.Println(&amp;quot;p[:3] ==&amp;quot;, p[:3])
+
+    // missing high index implies len(s)
+    fmt.Println(&amp;quot;p[4:] ==&amp;quot;, p[4:])
+}
+RETURNS: 
+p == [2 3 5 7 11 13]
+p[1:4] == [3 5 7]
+p[:3] == [2 3 5]
+p[4:] == [11 13]&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Slices can be re-sliced, creating a new slice value that points to the same array.&lt;/p&gt;
+
+&lt;p&gt;The expression&lt;/p&gt;
+
+&lt;p&gt;s[lo:hi] evaluates to a slice of the elements from lo through hi-1, inclusive. Thus&lt;/p&gt;
+
+&lt;p&gt;s[lo:lo] is empty and&lt;/p&gt;
+
+&lt;p&gt;s[lo:lo+1] has one element.&lt;/p&gt;
+
+&lt;p&gt;THOUGHT: SIMILAR TO PYTHON and Slice in Jquery?&lt;/p&gt;
+
+&lt;p&gt;NOTE: basically, if p[1:4], the returned values are index, 1 -&amp;gt; 3 (totalling 3 values) if p[0:3], the returned values are index, 0 -&amp;gt; 2 (totalling 3 values) if p[4:], the returned values are index, 4 -&amp;gt; end (totalling 2 values)&lt;/p&gt;
+
+&lt;h5 id=&quot;moving_on_3&quot;&gt;Moving On&lt;/h5&gt;
+
+&lt;h3 id=&quot;lesson_34&quot;&gt;Lesson 34&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#34&quot;&gt;GO MAKING MORE SLICES&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    a := make([]int, 5)
+    printSlice(&amp;quot;a&amp;quot;, a)
+    b := make([]int, 0, 5)
+    printSlice(&amp;quot;b&amp;quot;, b)
+    c := b[:2]
+    printSlice(&amp;quot;c&amp;quot;, c)
+    d := c[2:5]
+    printSlice(&amp;quot;d&amp;quot;, d)
+}
+
+func printSlice(s string, x []int) {
+    fmt.Printf(&amp;quot;%s len=%d cap=%d %v\n&amp;quot;,
+        s, len(x), cap(x), x)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Slices are created with the make function. It works by allocating a zeroed array and returning a slice that refers to that array:&lt;/p&gt;
+
+&lt;p&gt;a := make([]int, 5) // len(a)=5 To specify a capacity, pass a third argument to make:&lt;/p&gt;
+
+&lt;p&gt;b := make([]int, 0, 5) // len(b)=0, cap(b)=5&lt;/p&gt;
+
+&lt;p&gt;b = b[:cap(b)] // len(b)=5, cap(b)=5 b = b[1:] // len(b)=4, cap(b)=4&lt;/p&gt;
+
+&lt;p&gt;NOTE: Slices made via the make function can allow limit and capacity for the slices made~&lt;/p&gt;
+
+&lt;h5 id=&quot;moving_on_4&quot;&gt;Moving On&lt;/h5&gt;
+
+&lt;h3 id=&quot;lesson_35&quot;&gt;Lesson 35&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#35&quot;&gt;GO NIL SLICES&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    var z []int
+    fmt.Println(z, len(z), cap(z))
+    if z == nil {
+        fmt.Println(&amp;quot;nil!&amp;quot;)
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The zero value of a slice is nil. A nil slice has a length and capacity of 0.&lt;br /&gt;(To learn more about slices, read the &lt;a href=&quot;http://blog.golang.org/go-slices-usage-and-internals&quot;&gt;Slices: usage and internals article.&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&quot;moving_on_5&quot;&gt;Moving On&lt;/h5&gt;
+
+&lt;h3 id=&quot;lesson_36&quot;&gt;Lesson 36&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#35&quot;&gt;GO RANGE&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+
+func main() {
+    for i, v := range pow {
+        fmt.Printf(&amp;quot;2**%d = %d\n&amp;quot;, i, v)
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The range form of the for loop iterates over a slice or map.&lt;/p&gt;
+
+&lt;p&gt;NOTE:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;for range?&lt;/li&gt;
+
+&lt;li&gt;i = index&lt;/li&gt;
+
+&lt;li&gt;v = value&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Range Cont.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    pow := make([]int, 10)
+    for i := range pow {
+        pow[i] = 1 &amp;lt;&amp;lt; uint(i)
+    }
+    for _, value := range pow {
+        fmt.Printf(&amp;quot;%d\n&amp;quot;, value)
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You can skip the index or value by assigning to “_.” If you only want the index, drop the “value” entirely.&lt;/p&gt;
+
+&lt;p&gt;NOTE:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;what is ”«”?&lt;/li&gt;
+
+&lt;li&gt;what is uint( )?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#38&quot;&gt;EXERCISE&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;code.google.com/p/go-tour/pic&amp;quot;
+
+func Pic(dx, dy int) [][]uint8 {
+}
+func main() {
+    pic.Show(Pic)
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Implement Pic. It should return a slice of length dy, each element of which is a slice of dx 8-bit unsigned integers. When you run the program, it will display your picture, interpreting the integers as grayscale (well, bluescale) values. The choice of image is up to you. Interesting functions include &lt;code&gt;x^y&lt;/code&gt;, &lt;code&gt;(x+y)/2&lt;/code&gt;, and &lt;code&gt;x*y&lt;/code&gt;. (You need to use a loop to allocate each &lt;code&gt;[]uint8&lt;/code&gt; inside the &lt;code&gt;[][]uint8&lt;/code&gt;). (Use uint8(intValue) to convert between types).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#38&quot;&gt;EXERCISE&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;func Pic(dx, dy int) [][]uint8 {
+    a := make([][]uint8, dy)
+    for i := 0; i &amp;lt; dy; i++ {
+      a[i] = make([]uint8, dx)
+    }
+    for y, row := range a {
+        for x := range row {
+            row[x] = uint8(x^y)-uint8(x^2+y)+uint8(x^y^2)
+        }
+    }
+    return a
+}&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;END OF PART 5&lt;/p&gt;</description>
+                <link>http://username.github.io/2014/02/18/getting-started-with-golang-part-5</link>
+                <guid>http://username.github.io/2014/02/18/getting-started-with-golang-part-5</guid>
                 <pubDate>2014-02-18T00:00:00+08:00</pubDate>
         </item>
 
@@ -1125,13 +2037,13 @@ func main() {
 &lt;p&gt;Moving On.&lt;/p&gt;
 
 &lt;p&gt;END OF PART 1:&lt;/p&gt;</description>
-                <link>http://username.github.io/2014/02/18/getting-started-with-golang</link>
-                <guid>http://username.github.io/2014/02/18/getting-started-with-golang</guid>
+                <link>http://username.github.io/2014/02/18/getting-started-with-golang-part-1</link>
+                <guid>http://username.github.io/2014/02/18/getting-started-with-golang-part-1</guid>
                 <pubDate>2014-02-18T00:00:00+08:00</pubDate>
         </item>
 
         <item>
-                <title>getting started with Qa part 2</title>
+                <title>Getting started with QA part 2</title>
                 <description>&lt;p&gt;One of the things with getting started with qa is basically the fallacy of most QA articles out there.&lt;/p&gt;
 
 &lt;p&gt;QA as a field when comparing it to software development as a whole is an additive process, which helps aid in the develop cycle. However, I believe that adding the QA process as a formal process AFTER the development cycle is complete only hinders both the development cycle and the learning experience of a junior developer.&lt;/p&gt;

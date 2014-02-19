@@ -8,16 +8,19 @@ http://username.github.io/rss.xml
 http://username.github.io/sitemap.txt
 http://username.github.io/tags.html
 
+http://username.github.io/2014/02/20/getting-started-with-golang-part-10
+http://username.github.io/2014/02/19/golang-videos
+http://username.github.io/2014/02/19/golang-exercises
 http://username.github.io/2014/02/19/getting-started-with-golang-part-9
 http://username.github.io/2014/02/19/getting-started-with-golang-part-8
 http://username.github.io/2014/02/19/getting-started-with-golang-part-7
-http://username.github.io/2014/02/19/getting-started-with-golang-part-10
 http://username.github.io/2014/02/18/moving-on
 http://username.github.io/2014/02/18/getting-started-with-golang-part-6
+http://username.github.io/2014/02/18/getting-started-with-golang-part-5
 http://username.github.io/2014/02/18/getting-started-with-golang-part-4
 http://username.github.io/2014/02/18/getting-started-with-golang-part-3
 http://username.github.io/2014/02/18/getting-started-with-golang-part-2
-http://username.github.io/2014/02/18/getting-started-with-golang
+http://username.github.io/2014/02/18/getting-started-with-golang-part-1
 http://username.github.io/2014/01/14/getting-started-with-qa-part-2
 http://username.github.io/2014/01/07/getting-started-with-qa-gui-testing
 http://username.github.io/2014/01/06/interview-with-general-assembly

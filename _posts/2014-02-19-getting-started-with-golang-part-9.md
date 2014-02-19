@@ -3,7 +3,7 @@ layout: post
 title: "getting started with golang part 9"
 description: ""
 category: 
-tags: []
+tags: [GOLANG, GOLANG ERRORS, GOLANG WEB]
 excerpt: 
 ---
 {% include JB/setup %}

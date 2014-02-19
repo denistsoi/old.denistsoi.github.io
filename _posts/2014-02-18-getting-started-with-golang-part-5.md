@@ -28,15 +28,14 @@ excerpt:
     [Hello World]
 
 
-The type [n]T is an array of n values of type T.
+> The type [n]T is an array of n values of type T.
+> The expression:  
+    var a [10]int
+> declares a variable a as an array of ten integers.
 
-The expression
-var a [10]int
-declares a variable a as an array of ten integers.
+> An array's length is part of its type, so arrays cannot be resized. This seems limiting, but don't worry; Go provides a convenient way of working with arrays.
 
-An array's length is part of its type, so arrays cannot be resized. This seems limiting, but don't worry; Go provides a convenient way of working with arrays.
-
-Moving On
+##### Moving On...
 
 ### Lesson 32  
 [GO SLICES](http://tour.golang.org/#32)
@@ -59,7 +58,7 @@ A slice points to an array of values and also includes a length.
 
 THOUGHT: Can we put a function for fetching values to instantiate values for array~
 
-Moving On
+##### Moving On...
 
 ### Lesson 33  
 [GO SLICIING SLICES](http://tour.golang.org/#33)
@@ -105,7 +104,7 @@ if p[1:4], the returned values are index, 1 -> 3 (totalling 3 values)
 if p[0:3], the returned values are index, 0 -> 2 (totalling 3 values)
 if p[4:],  the returned values are index, 4 -> end (totalling 2 values)
 
-Moving On
+##### Moving On...
 
 ### Lesson 34  
 [GO MAKING MORE SLICES](http://tour.golang.org/#34)
@@ -142,7 +141,7 @@ b = b[1:]      // len(b)=4, cap(b)=4
 
 NOTE: Slices made via the make function can allow limit and capacity for the slices made~
 
-Moving on
+##### Moving On...
 
 ### Lesson 35  
 [GO NIL SLICES](http://tour.golang.org/#35)
@@ -159,13 +158,11 @@ Moving on
         }
     }
 
-The zero value of a slice is nil.
+> The zero value of a slice is nil. 
+> A nil slice has a length and capacity of 0.  
+> (To learn more about slices, read the [Slices: usage and internals article.](http://blog.golang.org/go-slices-usage-and-internals))
 
-A nil slice has a length and capacity of 0.
-
-(To learn more about slices, read the [Slices: usage and internals article.](http://blog.golang.org/go-slices-usage-and-internals))
-
-Moving on
+##### Moving On...
 
 ### Lesson 36  
 [GO RANGE](http://tour.golang.org/#35)
@@ -182,12 +179,12 @@ Moving on
         }
     }
 
-The range form of the for loop iterates over a slice or map.
-
-NOTE: 
-- for range? 
-- i = index
-- v = value
+> The range form of the for loop iterates over a slice or map.
+> 
+> NOTE: 
+> - for range? 
+> - i = index
+> - v = value
 
 Range Cont.
 
@@ -205,12 +202,40 @@ Range Cont.
         }
     }
 
-You can skip the index or value by assigning to _.
+> You can skip the index or value by assigning to "_."
+> If you only want the index, drop the "value" entirely.
+> 
+> NOTE:
+> - what is "<<"?
+> - what is uint( )?
 
-If you only want the index, drop the ", value" entirely.
+[EXERCISE](http://tour.golang.org/#38)
 
-NOTE:
-- what is "<<"?
-- what is uint( )?
+    package main
+
+    import "code.google.com/p/go-tour/pic"
+
+    func Pic(dx, dy int) [][]uint8 {
+    }
+    func main() {
+        pic.Show(Pic)
+    }
+
+> Implement Pic. It should return a slice of length dy, each element of which is a slice of dx 8-bit unsigned integers.  When you run the program, it will display your picture, interpreting the integers as grayscale (well, bluescale) values.  The choice of image is up to you. Interesting functions include `x^y`, `(x+y)/2`, and `x*y`. (You need to use a loop to allocate each `[]uint8` inside the `[][]uint8`). (Use uint8(intValue) to convert between types).  
+  
+[EXERCISE](http://tour.golang.org/#38)
+
+    func Pic(dx, dy int) [][]uint8 {
+        a := make([][]uint8, dy)
+        for i := 0; i < dy; i++ {
+          a[i] = make([]uint8, dx)
+        }
+        for y, row := range a {
+            for x := range row {
+                row[x] = uint8(x^y)-uint8(x^2+y)+uint8(x^y^2)
+            }
+        }
+        return a
+    }
 
 END OF PART 5

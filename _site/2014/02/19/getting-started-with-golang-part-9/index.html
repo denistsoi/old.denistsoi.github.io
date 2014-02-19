@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>getting started with golang part 9</title>
+    <meta name="description" content="">
+    <meta name="author" content="Denis Tsoi">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">Denis Tsoi</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>getting started with golang part 9 </h1>
+</div>
+
+<div class="row-fluid post-full">
+  <div class="span12">
+    <div class="date">
+      <span>19 February 2014</span>
+    </div>
+    <div class="content">
+      <h3 id="lesson_57">LESSON 57</h3>
+
+<p><a href="http://tour.golang.org/#57">GO ERRORS</a></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;time&quot;
+)
+
+type MyError struct {
+    When time.Time
+    What string
+}
+
+func (e *MyError) Error() string {
+    return fmt.Sprintf(&quot;at %v, %s&quot;,
+        e.When, e.What)
+}
+
+func run() error {
+    return &amp;MyError{
+        time.Now(),
+        &quot;it didn't work&quot;,
+    }
+}
+
+func main() {
+    if err := run(); err != nil {
+        fmt.Println(err)
+    }
+}</code></pre>
+
+<p>An error is anything that can describe itself as an error string. The idea is captured by the predefined, built-in interface type, error, with its single method, Error, returning a string:</p>
+
+<pre><code>type error interface {
+    Error() string
+}</code></pre>
+
+<p>The fmt package’s various print routines automatically know to call the method when asked to print an error.</p>
+
+<h3 id="lesson_59">LESSON 59</h3>
+
+<p><a href="http://tour.golang.org/#59">GO WEB SERVER</a></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;net/http&quot;
+)
+
+type Hello struct{}
+
+func (h Hello) ServeHTTP(
+    w http.ResponseWriter,
+    r *http.Request) {
+    fmt.Fprint(w, &quot;Hello!&quot;)
+}
+
+func main() {
+    var h Hello
+    http.ListenAndServe(&quot;localhost:4000&quot;, h)
+}</code></pre>
+
+<p>Package http serves HTTP requests using any value that implements http.Handler:</p>
+
+<pre><code>package http
+
+type Handler interface {
+    ServeHTTP(w ResponseWriter, r *Request)
+}</code></pre>
+
+<p>In this example, the type Hello implements http.Handler.</p>
+
+<p>Visit http://localhost:4000/ to see the greeting.</p>
+
+<p>Note: This example won’t run through the web-based tour user interface. To try writing web servers you may want to Install Go.</p>
+
+<h3 id="lesson_61">LESSON 61</h3>
+
+<p><a href="http://tour.golang.org/#61">GO IMAGES</a></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;image&quot;
+)
+
+func main() {
+    m := image.NewRGBA(image.Rect(0, 0, 100, 100))
+    fmt.Println(m.Bounds())
+    fmt.Println(m.At(0, 0).RGBA())
+}</code></pre>
+
+<p>Package image defines the Image interface:</p>
+
+<pre><code>package image
+
+type Image interface {
+    ColorModel() color.Model
+    Bounds() Rectangle
+    At(x, y int) color.Color
+}</code></pre>
+
+<p>(See the documentation for all the details.)</p>
+
+<p>Also, color.Color and color.Model are interfaces, but we’ll ignore that by using the predefined implementations color.RGBA and color.RGBAModel. These interfaces and types are specified by the image/color package</p>
+    </div>
+
+    
+
+    
+
+    <hr class="dashed-hr">
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2014/02/19/getting-started-with-golang-part-8" title="getting started with golang part 8">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a>
+      
+      </ul>
+    </div>
+    <hr class="dashed-hr">
+    
+  </div>
+</div>
+
+
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2014 Denis Tsoi
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+

@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Moving On</title>
+    <title>getting started with golang part 3</title>
     <meta name="description" content="">
     <meta name="author" content="Denis Tsoi">
 
@@ -97,7 +97,7 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>Moving On </h1>
+  <h1>getting started with golang part 3 </h1>
 </div>
 
 <div class="row-fluid post-full">
@@ -106,22 +106,127 @@
       <span>18 February 2014</span>
     </div>
     <div class="content">
-      
+      <h3 id="lesson_22">Lesson 22</h3>
+
+<p><a href="http://tour.golang.org/#22">GO IF</a></p>
+
+<p>Remember that the ( ) is not required~</p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;math&quot;
+)
+
+func sqrt(x float64) string {
+    if x &lt; 0 {
+        return sqrt(-x) + &quot;i&quot;
+    }
+    return fmt.Sprint(math.Sqrt(x))
+}
+
+func main() {
+    fmt.Println(sqrt(2), sqrt(-4))
+}</code></pre>
+
+<p>Shorthand IF</p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;math&quot;
+)
+
+func pow(x, n, lim float64) float64 {
+    if v := math.Pow(x, n); v &lt; lim {
+        return v
+    }
+    return lim
+}
+
+func main() {
+    fmt.Println(
+        pow(3, 2, 10),
+        pow(3, 3, 20),
+    )
+}</code></pre>
+
+<p>Like for, the if statement can start with a short statement to execute before the condition.</p>
+
+<p>Variables declared by the statement are only in scope until the end of the if.</p>
+
+<p>(Try using v in the last return statement.) NOTE: v will be returned as undefined~</p>
+
+<p>Moving On</p>
+
+<h3 id="lesson_24">Lesson 24</h3>
+
+<p><a href="http://tour.golang.org/#24">GO IF ELSE</a></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;math&quot;
+)
+
+func pow(x, n, lim float64) float64 {
+    if v := math.Pow(x, n); v &lt; lim {
+        return v
+    } else {
+        fmt.Printf(&quot;%g &gt;= %g\n&quot;, v, lim)
+    }
+    // can't use v here, though
+    return lim
+}
+
+func main() {
+    fmt.Println(
+        pow(3, 2, 10),
+        pow(3, 3, 20),
+    )
+}</code></pre>
+
+<p>Variables declared inside an if short statement are also available inside any of the else blocks.</p>
+
+<p>this function is determining if the value v is greater than the limit, and if it is less than the limit, the return value will be v and the limit. if the value is greater than the limit then the return print out will be “v &gt;= lim”</p>
+
+<p>Moving on</p>
     </div>
 
     
 
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#GOLANG-ref">GOLANG <span>5</span></a></li>
+     
+    	<li><a href="/tags.html#GOLANG IF-ref">GOLANG IF <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
     
 
     <hr class="dashed-hr">
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2014/02/18/getting-started-with-golang-part-6" title="getting started with golang part 6">&larr; Previous</a></li>
+        <li class="prev"><a href="/2014/02/18/getting-started-with-golang-part-2" title="getting started with golang part 2">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/2014/02/19/getting-started-with-golang-part-10" title="getting started with golang part 10">Next &rarr;</a></li>
+        <li class="next"><a href="/2014/02/18/getting-started-with-golang-part-4" title="getting started with golang part 4">Next &rarr;</a></li>
       
       </ul>
     </div>

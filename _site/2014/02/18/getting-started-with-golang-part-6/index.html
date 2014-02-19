@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>getting started with golang part 6</title>
+    <meta name="description" content="">
+    <meta name="author" content="Denis Tsoi">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">Denis Tsoi</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>getting started with golang part 6 </h1>
+</div>
+
+<div class="row-fluid post-full">
+  <div class="span12">
+    <div class="date">
+      <span>18 February 2014</span>
+    </div>
+    <div class="content">
+      <h3 id="lesson_39">Lesson 39</h3>
+
+<p><a href="http://tour.golang.org/#39">GO MAPS</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Vertex struct {
+    Lat, Long float64
+}
+
+var m map[string]Vertex
+
+func main() {
+    m = make(map[string]Vertex)
+    m[&quot;Bell Labs&quot;] = Vertex{
+        40.68433, -74.39967,
+    }
+    fmt.Println(m[&quot;Bell Labs&quot;])
+}</code></pre>
+
+<p>A map maps keys to values.</p>
+
+<p>Maps must be created with make (not new) before use; the nil map is empty and cannot be assigned to.</p>
+
+<h3 id="lesson_40">Lesson 40</h3>
+
+<p><a href="http://tour.golang.org/#40">GO MAP LITERALS</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Vertex struct {
+    Lat, Long float64
+}
+
+var m = map[string]Vertex{
+    &quot;Bell Labs&quot;: Vertex{
+        40.68433, -74.39967,
+    },
+    &quot;Google&quot;: Vertex{
+        37.42202, -122.08408,
+    },
+}
+
+func main() {
+    fmt.Println(m)
+}</code></pre>
+
+<p>Map literals are like struct literals, but the keys are required.</p>
+
+<h3 id="lesson_41">Lesson 41</h3>
+
+<p><a href="http://tour.golang.org/#41">GO MAP MUTATIONS</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Vertex struct {
+    Lat, Long float64
+}
+
+var m = map[string]Vertex{
+    &quot;Bell Labs&quot;: {40.68433, -74.39967},
+    &quot;Google&quot;:    {37.42202, -122.08408},
+}
+
+func main() {
+    fmt.Println(m)
+}</code></pre>
+
+<p>If the top-level type is just a type name, you can omit it from the elements of the literal.</p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    m := make(map[string]int)
+
+    m[&quot;Answer&quot;] = 42
+    fmt.Println(&quot;The value:&quot;, m[&quot;Answer&quot;])
+
+    m[&quot;Answer&quot;] = 48
+    fmt.Println(&quot;The value:&quot;, m[&quot;Answer&quot;])
+
+    delete(m, &quot;Answer&quot;)
+    fmt.Println(&quot;The value:&quot;, m[&quot;Answer&quot;])
+
+    v, ok := m[&quot;Answer&quot;]
+    fmt.Println(&quot;The value:&quot;, v, &quot;Present?&quot;, ok)
+}</code></pre>
+
+<p>Insert or update an element in map m:</p>
+
+<pre><code>m[key] = elem  </code></pre>
+
+<p>Retrieve an element:</p>
+
+<pre><code>elem = m[key]</code></pre>
+
+<p>Delete an element:</p>
+
+<pre><code>delete(m, key)</code></pre>
+
+<p>Test that a key is present with a two-value assignment:</p>
+
+<pre><code>elem, ok = m[key]</code></pre>
+
+<p>If key is in m, ok is true. If not, ok is false and elem is the zero value for the map’s element type.</p>
+
+<p>Similarly, when reading from a map if the key is not present the result is the zero value for the map’s element type.</p>
+
+<h3 id="lesson_44">Lesson 44</h3>
+
+<p><a href="http://tour.golang.org/#44">GO FUNCTION VALUES</a></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;math&quot;
+)
+
+func main() {
+    hypot := func(x, y float64) float64 {
+        return math.Sqrt(x*x + y*y)
+    }
+
+    fmt.Println(hypot(3, 4))
+}</code></pre>
+
+<h3 id="lesson_45">Lesson 45</h3>
+
+<p><a href="http://tour.golang.org/#45">GO FUNCTION CLOSURES</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func adder() func(int) int {
+    sum := 0
+    return func(x int) int {
+        sum += x
+        return sum
+    }
+}
+
+func main() {
+    pos, neg := adder(), adder()
+    for i := 0; i &lt; 10; i++ {
+        fmt.Println(
+            pos(i),
+            neg(-2*i),
+        )
+    }
+}</code></pre>
+
+<p>Go functions may be closures. A closure is a function value that references variables from outside its body. The function may access and assign to the referenced variables; in this sense the function is “bound” to the variables.</p>
+
+<p>For example, the adder function returns a closure. Each closure is bound to its own sum variable.</p>
+
+<h3 id="lesson_46">Lesson 46</h3>
+
+<p><a href="http://tour.golang.org/#46">GO FIBONACCI</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+// fibonacci is a function that returns
+// a function that returns an int.
+
+func fibonacci() func() int {
+    
+}
+
+func main() {
+    f := fibonacci()
+    for i := 0; i &lt; 10; i++ {
+    }
+}</code></pre>
+
+<h4 id="answer">Answer</h4>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+// fibonacci is a function that returns
+// a function that returns an int.
+
+func fibonacci() func() int {
+    x := 0
+    y := 1
+    
+    return func() int {
+        x,y = y,x+y
+        return x
+    }
+}
+
+func main() {
+    f := fibonacci()
+    for i := 0; i &lt; 10; i++ {
+        fmt.Println(i, f())
+    }
+}</code></pre>
+
+<p>Why? -</p>
+    </div>
+
+    
+
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#GOLANG-ref">GOLANG <span>5</span></a></li>
+     
+    	<li><a href="/tags.html#GOLANG MAPS-ref">GOLANG MAPS <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+
+    <hr class="dashed-hr">
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2014/02/18/getting-started-with-golang-part-4" title="getting started with golang part 4">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/2014/02/18/moving-on" title="Moving On">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr class="dashed-hr">
+    
+  </div>
+</div>
+
+
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2014 Denis Tsoi
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+

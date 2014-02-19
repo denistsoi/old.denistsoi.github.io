@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>getting started with golang part 2</title>
+    <meta name="description" content="">
+    <meta name="author" content="Denis Tsoi">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">Denis Tsoi</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>getting started with golang part 2 </h1>
+</div>
+
+<div class="row-fluid post-full">
+  <div class="span12">
+    <div class="date">
+      <span>18 February 2014</span>
+    </div>
+    <div class="content">
+      <p>Part 2</p>
+
+<h3 id="lesson_11">Lesson 11</h3>
+
+<p><a href="http://tour.golang.org/#11">GO VARABLES</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+var i int
+var c, python, java bool
+
+func main() {
+    fmt.Println(i, c, python, java)
+}</code></pre>
+
+<p>The <code>var</code> statement declares a list of variables; as in function argument lists, the type is last.</p>
+
+<p>ORDER: ‘var’ &gt; name &gt; ‘type’</p>
+
+<p>The above would print 0 false false false</p>
+
+<p>Moving on</p>
+
+<h3 id="lesson_12">Lesson 12</h3>
+
+<p><a href="http://tour.golang.org/#12">GO VARABLES WIT INIT</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+var i, j int = 1, 2
+var c, python, java = true, false, &quot;no!&quot;
+
+func main() {
+    fmt.Println(i, j, c, python, java)
+}</code></pre>
+
+<p>A var declaration can include initializers, one per variable.</p>
+
+<p>If an initializer is present, the type can be omitted; the variable will take the type of the initializer.</p>
+
+<p>The above would print 1 2 true false no!</p>
+
+<p>Moving on</p>
+
+<h3 id="lesson_13">Lesson 13</h3>
+
+<p><a href="http://tour.golang.org/#13">GO SHORT VARABLE DECLARATIONS</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    var i, j int = 1, 2
+    k := 3
+    c, python, java := true, false, &quot;no!&quot;
+
+    fmt.Println(i, j, k, c, python, java)
+}</code></pre>
+
+<p>Inside a function, the := short assignment statement can be used in place of a var declaration with implicit type.</p>
+
+<p>Outside a function, every construct begins with a keyword (var, func, and so on) and the := construct is not available.</p>
+
+<p>”:=” means that we can throw a var declaration INSIDE a func</p>
+
+<p>REF <a href="http://en.wikipedia.org/wiki/Type_conversion">Implicit Type</a></p>
+
+<p>Moving on</p>
+
+<h3 id="lesson_14">Lesson 14</h3>
+
+<p><a href="http://tour.golang.org/#14">GO BASIC TYPES</a></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;math/cmplx&quot;
+)
+
+var (
+    ToBe   bool       = false
+    MaxInt uint64     = 1&lt;&lt;64 - 1
+    z      complex128 = cmplx.Sqrt(-5 + 12i)
+)
+
+func main() {
+    const f = &quot;%T(%v)\n&quot;
+    fmt.Printf(f, ToBe, ToBe)
+    fmt.Printf(f, MaxInt, MaxInt)
+    fmt.Printf(f, z, z)
+}
+
+
+
+bool
+
+string
+
+int  int8  int16  int32  int64
+uint uint8 uint16 uint32 uint64 uintptr
+
+byte // alias for uint8
+
+rune // alias for int32
+     // represents a Unicode code point
+
+float32 float64
+
+complex64 complex128</code></pre>
+
+<p>Moving on</p>
+
+<h3 id="lesson_15">Lesson 15</h3>
+
+<p><a href="http://tour.golang.org/#15">GO TYPE CONVERSION</a></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;math&quot;
+)
+
+func main() {
+    var x, y int = 3, 4
+    var f float64 = math.Sqrt(float64(3*3 + 4*4))
+    var z int = int(f)
+    fmt.Println(x, y, z)
+}</code></pre>
+
+<p>The expression T(v) converts the value v to the type T.</p>
+
+<p>Some numeric conversions:</p>
+
+<pre><code>var i int = 42
+var f float64 = float64(i)
+var u uint = uint(f)</code></pre>
+
+<p>Or, put more simply:</p>
+
+<pre><code>i := 42
+f := float64(i)
+u := uint(f)</code></pre>
+
+<p>Unlike in C, in Go assignment between items of different type requires an explicit conversion. Try removing the float64 or int conversions in the example and see what happens.</p>
+
+<p>Moving on.</p>
+
+<h3 id="lesson_16">Lesson 16</h3>
+
+<p><a href="http://tour.golang.org/#16">GO CONSTANTS</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+const Pi = 3.14
+
+func main() {
+    const World = &quot;世界&quot;
+    fmt.Println(&quot;Hello&quot;, World)
+    fmt.Println(&quot;Happy&quot;, Pi, &quot;Day&quot;)
+
+    const Truth = true
+    fmt.Println(&quot;Go rules?&quot;, Truth)
+}</code></pre>
+
+<p>Constants are declared like variables, but with the const keyword. Constants can be character, string, boolean, or numeric values. Constants cannot be declared using the := syntax.</p>
+
+<p>Constants are by convention Capital cased -</p>
+
+<p>Moving on</p>
+
+<h3 id="lesson_17">Lesson 17</h3>
+
+<p><a href="http://tour.golang.org/#17">GO NUMERIC CONSTANTS</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+const (
+    Big   = 1 &lt;&lt; 100
+    Small = Big &gt;&gt; 99
+)
+
+func needInt(x int) int { return x*10 + 1 }
+func needFloat(x float64) float64 {
+    return x * 0.1
+}
+
+func main() {
+    fmt.Println(needInt(Small))
+    fmt.Println(needFloat(Small))
+    fmt.Println(needFloat(Big))
+    //fmt.Println(needInt(Big))
+}</code></pre>
+
+<p>Numeric constants are high-precision values. An untyped constant takes the type needed by its context. Try printing needInt(Big) too.</p>
+
+<p>NOTE: What are high-precision values?</p>
+
+<p>Moving On</p>
+
+<h3 id="lesson_18">Lesson 18</h3>
+
+<p><a href="http://tour.golang.org/#18">GO FOR</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    sum := 0
+    for i := 0; i &lt; 10; i++ {
+        sum += i
+    }
+    fmt.Println(sum)
+}</code></pre>
+
+<p>Go has only one looping construct, the for loop.</p>
+
+<p>The basic for loop looks as it does in C or Java, except that the ( ) are gone (they are not even optional) and the { } are required.</p>
+
+<p>NOTE: DON’T Bracket for loops</p>
+
+<p>Moving On</p>
+
+<h3 id="lesson_19">Lesson 19</h3>
+
+<p><a href="http://tour.golang.org/#19">GO FOR ++</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    sum := 1
+    for ; sum &lt; 1000; {
+        sum += sum
+    }
+    fmt.Println(sum)
+}</code></pre>
+
+<p>As in C or Java, you can leave the pre and post statements empty. NOTE: probably shouldn’t use this as this might be hard to debug or differenciate.</p>
+
+<p>Moving On</p>
+
+<h3 id="lesson_20">Lesson 20</h3>
+
+<p><a href="http://tour.golang.org/#20">GO FOR WHILE</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    sum := 1
+    for sum &lt; 1000 {
+        sum += sum
+    }
+    fmt.Println(sum)
+}</code></pre>
+
+<p>At that point you can drop the semicolons: C’s while is spelled for in Go.</p>
+
+<p>NOTE: hmmm, not really got a preference in using this while for looping right now~</p>
+
+<p>Moving On.</p>
+
+<h3 id="lesson_21">Lesson 21</h3>
+
+<p><a href="http://tour.golang.org/#21">GO FOR EVER</a></p>
+
+<pre><code>package main
+
+func main() {
+    for {
+    }
+}</code></pre>
+
+<p>If you omit the loop condition it loops forever, so an infinite loop is compactly expressed.</p>
+
+<p>Moving on~ END OF PART 2:</p>
+    </div>
+
+    
+
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#GOLANG-ref">GOLANG <span>5</span></a></li>
+     
+    	<li><a href="/tags.html#GOLANG LOOPS-ref">GOLANG LOOPS <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#GOLANG VAR-ref">GOLANG VAR <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+
+    <hr class="dashed-hr">
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2014/02/18/getting-started-with-golang" title="getting started with golang Part 1">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/2014/02/18/getting-started-with-golang-part-3" title="getting started with golang part 3">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr class="dashed-hr">
+    
+  </div>
+</div>
+
+
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2014 Denis Tsoi
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+

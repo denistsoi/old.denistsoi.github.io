@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Moving On</title>
+    <title>getting started with golang part 7</title>
     <meta name="description" content="">
     <meta name="author" content="Denis Tsoi">
 
@@ -97,31 +97,131 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>Moving On </h1>
+  <h1>getting started with golang part 7 </h1>
 </div>
 
 <div class="row-fluid post-full">
   <div class="span12">
     <div class="date">
-      <span>18 February 2014</span>
+      <span>19 February 2014</span>
     </div>
     <div class="content">
-      
+      <h3 id="lesson_47">Lesson 47</h3>
+
+<p><a href="http://tour.golang.org/#47">GO SWITCH</a></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;runtime&quot;
+)
+
+func main() {
+    fmt.Print(&quot;Go runs on &quot;)
+    switch os := runtime.GOOS; os {
+    case &quot;darwin&quot;:
+        fmt.Println(&quot;OS X.&quot;)
+    case &quot;linux&quot;:
+        fmt.Println(&quot;Linux.&quot;)
+    default:
+        // freebsd, openbsd,
+        // plan9, windows...
+        fmt.Printf(&quot;%s.&quot;, os)
+    }
+}</code></pre>
+
+<p>NO breaks in switches (they are automatic), however, if you require two cases to be the same, you could use the <strong>fallthrough</strong> statement.</p>
+
+<p>Moving on</p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;time&quot;
+)
+
+func main() {
+    fmt.Println(&quot;When's Saturday?&quot;)
+    today := time.Now().Weekday()
+    switch time.Saturday {
+    case today + 0:
+        fmt.Println(&quot;Today.&quot;)
+    case today + 1:
+        fmt.Println(&quot;Tomorrow.&quot;)
+    case today + 2:
+        fmt.Println(&quot;In two days.&quot;)
+    default:
+        fmt.Println(&quot;Too far away.&quot;)
+    }
+}</code></pre>
+
+<p>Switch cases evaluate cases from top to bottom, stopping when a case succeeds.</p>
+
+<p>(For example,</p>
+
+<pre><code>switch i {
+case 0:
+case f():
+}
+does not call f if i==0.)</code></pre>
+
+<p>Note: Time in the Go playground always appears to start at 2009-11-10 23:00:00 UTC, a value whose significance is left as an exercise for the reader.</p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;time&quot;
+)
+
+func main() {
+    t := time.Now()
+    switch {
+    case t.Hour() &lt; 12:
+        fmt.Println(&quot;Good morning!&quot;)
+    case t.Hour() &lt; 17:
+        fmt.Println(&quot;Good afternoon.&quot;)
+    default:
+        fmt.Println(&quot;Good evening.&quot;)
+    }
+}</code></pre>
+
+<p>Switch without a condition is the same as switch true. This construct can be a clean way to write long if-then-else chains.</p>
     </div>
 
     
 
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#GOLANG-ref">GOLANG <span>5</span></a></li>
+     
+    	<li><a href="/tags.html#GOLANG SWITCH-ref">GOLANG SWITCH <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
     
 
     <hr class="dashed-hr">
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2014/02/18/getting-started-with-golang-part-6" title="getting started with golang part 6">&larr; Previous</a></li>
+        <li class="prev"><a href="/2014/02/19/getting-started-with-golang-part-10" title="getting started with golang part 10">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/2014/02/19/getting-started-with-golang-part-10" title="getting started with golang part 10">Next &rarr;</a></li>
+        <li class="next"><a href="/2014/02/19/getting-started-with-golang-part-8" title="getting started with golang part 8">Next &rarr;</a></li>
       
       </ul>
     </div>

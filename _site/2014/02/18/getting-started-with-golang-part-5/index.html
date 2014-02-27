@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>getting started with golang part 5</title>
+    <meta name="description" content="">
+    <meta name="author" content="Denis Tsoi">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">Denis Tsoi</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>getting started with golang part 5 </h1>
+</div>
+
+<div class="row-fluid post-full">
+  <div class="span12">
+    <div class="date">
+      <span>18 February 2014</span>
+    </div>
+    <div class="content">
+      <h3 id="lesson_31">Lesson 31</h3>
+
+<p><a href="http://tour.golang.org/#31">GO ARRAYS</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    var a [2]string
+    a[0] = &quot;Hello&quot;
+    a[1] = &quot;World&quot;
+    fmt.Println(a[0], a[1])
+    fmt.Println(a)
+}
+
+RETURNS: 
+Hello World
+[Hello World]</code></pre>
+
+<blockquote>
+<p>The type [n]T is an array of n values of type T. The expression:</p>
+</blockquote>
+
+<pre><code>var a [10]int</code></pre>
+
+<blockquote>
+<p>declares a variable a as an array of ten integers.</p>
+</blockquote>
+
+<blockquote>
+<p>An array’s length is part of its type, so arrays cannot be resized. This seems limiting, but don’t worry; Go provides a convenient way of working with arrays.</p>
+</blockquote>
+
+<h5 id="moving_on">Moving On</h5>
+
+<h3 id="lesson_32">Lesson 32</h3>
+
+<p><a href="http://tour.golang.org/#32">GO SLICES</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    p := []int{2, 3, 5, 7, 11, 13}
+    fmt.Println(&quot;p ==&quot;, p)
+
+    for i := 0; i &lt; len(p); i++ {
+        fmt.Printf(&quot;p[%d] == %d\n&quot;, i, p[i])
+    }
+}</code></pre>
+
+<p>A slice points to an array of values and also includes a length. []T is a slice with elements of type T.</p>
+
+<p>THOUGHT: Can we put a function for fetching values to instantiate values for array~</p>
+
+<h5 id="moving_on_2">Moving On</h5>
+
+<h3 id="lesson_33">Lesson 33</h3>
+
+<p><a href="http://tour.golang.org/#33">GO SLICIING SLICES</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    p := []int{2, 3, 5, 7, 11, 13}
+    fmt.Println(&quot;p ==&quot;, p)
+    fmt.Println(&quot;p[1:4] ==&quot;, p[1:4])
+
+    // missing low index implies 0
+    fmt.Println(&quot;p[:3] ==&quot;, p[:3])
+
+    // missing high index implies len(s)
+    fmt.Println(&quot;p[4:] ==&quot;, p[4:])
+}
+RETURNS: 
+p == [2 3 5 7 11 13]
+p[1:4] == [3 5 7]
+p[:3] == [2 3 5]
+p[4:] == [11 13]</code></pre>
+
+<p>Slices can be re-sliced, creating a new slice value that points to the same array.</p>
+
+<p>The expression</p>
+
+<p>s[lo:hi] evaluates to a slice of the elements from lo through hi-1, inclusive. Thus</p>
+
+<p>s[lo:lo] is empty and</p>
+
+<p>s[lo:lo+1] has one element.</p>
+
+<p>THOUGHT: SIMILAR TO PYTHON and Slice in Jquery?</p>
+
+<p>NOTE: basically, if p[1:4], the returned values are index, 1 -&gt; 3 (totalling 3 values) if p[0:3], the returned values are index, 0 -&gt; 2 (totalling 3 values) if p[4:], the returned values are index, 4 -&gt; end (totalling 2 values)</p>
+
+<h5 id="moving_on_3">Moving On</h5>
+
+<h3 id="lesson_34">Lesson 34</h3>
+
+<p><a href="http://tour.golang.org/#34">GO MAKING MORE SLICES</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    a := make([]int, 5)
+    printSlice(&quot;a&quot;, a)
+    b := make([]int, 0, 5)
+    printSlice(&quot;b&quot;, b)
+    c := b[:2]
+    printSlice(&quot;c&quot;, c)
+    d := c[2:5]
+    printSlice(&quot;d&quot;, d)
+}
+
+func printSlice(s string, x []int) {
+    fmt.Printf(&quot;%s len=%d cap=%d %v\n&quot;,
+        s, len(x), cap(x), x)
+}</code></pre>
+
+<p>Slices are created with the make function. It works by allocating a zeroed array and returning a slice that refers to that array:</p>
+
+<p>a := make([]int, 5) // len(a)=5 To specify a capacity, pass a third argument to make:</p>
+
+<p>b := make([]int, 0, 5) // len(b)=0, cap(b)=5</p>
+
+<p>b = b[:cap(b)] // len(b)=5, cap(b)=5 b = b[1:] // len(b)=4, cap(b)=4</p>
+
+<p>NOTE: Slices made via the make function can allow limit and capacity for the slices made~</p>
+
+<h5 id="moving_on_4">Moving On</h5>
+
+<h3 id="lesson_35">Lesson 35</h3>
+
+<p><a href="http://tour.golang.org/#35">GO NIL SLICES</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    var z []int
+    fmt.Println(z, len(z), cap(z))
+    if z == nil {
+        fmt.Println(&quot;nil!&quot;)
+    }
+}</code></pre>
+
+<blockquote>
+<p>The zero value of a slice is nil. A nil slice has a length and capacity of 0.<br />(To learn more about slices, read the <a href="http://blog.golang.org/go-slices-usage-and-internals">Slices: usage and internals article.</a>)</p>
+</blockquote>
+
+<h5 id="moving_on_5">Moving On</h5>
+
+<h3 id="lesson_36">Lesson 36</h3>
+
+<p><a href="http://tour.golang.org/#35">GO RANGE</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+
+func main() {
+    for i, v := range pow {
+        fmt.Printf(&quot;2**%d = %d\n&quot;, i, v)
+    }
+}</code></pre>
+
+<blockquote>
+<p>The range form of the for loop iterates over a slice or map.</p>
+
+<p>NOTE:</p>
+
+<ul>
+<li>for range?</li>
+
+<li>i = index</li>
+
+<li>v = value</li>
+</ul>
+</blockquote>
+
+<p>Range Cont.</p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    pow := make([]int, 10)
+    for i := range pow {
+        pow[i] = 1 &lt;&lt; uint(i)
+    }
+    for _, value := range pow {
+        fmt.Printf(&quot;%d\n&quot;, value)
+    }
+}</code></pre>
+
+<blockquote>
+<p>You can skip the index or value by assigning to “_.” If you only want the index, drop the “value” entirely.</p>
+
+<p>NOTE:</p>
+
+<ul>
+<li>what is ”«”?</li>
+
+<li>what is uint( )?</li>
+</ul>
+</blockquote>
+
+<p><a href="http://tour.golang.org/#38">EXERCISE</a></p>
+
+<pre><code>package main
+
+import &quot;code.google.com/p/go-tour/pic&quot;
+
+func Pic(dx, dy int) [][]uint8 {
+}
+func main() {
+    pic.Show(Pic)
+}</code></pre>
+
+<blockquote>
+<p>Implement Pic. It should return a slice of length dy, each element of which is a slice of dx 8-bit unsigned integers. When you run the program, it will display your picture, interpreting the integers as grayscale (well, bluescale) values. The choice of image is up to you. Interesting functions include <code>x^y</code>, <code>(x+y)/2</code>, and <code>x*y</code>. (You need to use a loop to allocate each <code>[]uint8</code> inside the <code>[][]uint8</code>). (Use uint8(intValue) to convert between types).</p>
+</blockquote>
+
+<p><a href="http://tour.golang.org/#38">EXERCISE</a></p>
+
+<pre><code>func Pic(dx, dy int) [][]uint8 {
+    a := make([][]uint8, dy)
+    for i := 0; i &lt; dy; i++ {
+      a[i] = make([]uint8, dx)
+    }
+    for y, row := range a {
+        for x := range row {
+            row[x] = uint8(x^y)-uint8(x^2+y)+uint8(x^y^2)
+        }
+    }
+    return a
+}</code></pre>
+
+<p>END OF PART 5</p>
+    </div>
+
+    
+
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#GOLANG-ref">GOLANG <span>10</span></a></li>
+     
+    	<li><a href="/tags.html#GOLANG SLICES-ref">GOLANG SLICES <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+
+    <hr class="dashed-hr">
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2014/02/18/getting-started-with-golang-part-4" title="getting started with golang part 4">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/2014/02/18/getting-started-with-golang-part-6" title="getting started with golang part 6">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr class="dashed-hr">
+    
+  </div>
+</div>
+
+
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2014 Denis Tsoi
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+

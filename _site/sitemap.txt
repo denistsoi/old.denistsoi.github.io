@@ -8,6 +8,7 @@ http://username.github.io/rss.xml
 http://username.github.io/sitemap.txt
 http://username.github.io/tags.html
 
+http://username.github.io/2014/02/24/try-out-design-patterns-in-golang
 http://username.github.io/2014/02/20/getting-started-with-golang-part-10
 http://username.github.io/2014/02/19/golang-videos
 http://username.github.io/2014/02/19/golang-exercises

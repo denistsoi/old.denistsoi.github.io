@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>getting started with golang part 10</title>
+    <meta name="description" content="">
+    <meta name="author" content="Denis Tsoi">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">Denis Tsoi</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>getting started with golang part 10 </h1>
+</div>
+
+<div class="row-fluid post-full">
+  <div class="span12">
+    <div class="date">
+      <span>20 February 2014</span>
+    </div>
+    <div class="content">
+      <p><a href="http://tour.golang.org/#65">GO ROUTINES</a></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;time&quot;
+)
+
+func say(s string) {
+    for i := 0; i &lt; 5; i++ {
+        time.Sleep(100 * time.Millisecond)
+        fmt.Println(s)
+    }
+}
+
+func main() {
+    go say(&quot;world&quot;)
+    say(&quot;hello&quot;)
+}</code></pre>
+
+<p>A goroutine is a lightweight thread managed by the Go runtime.</p>
+
+<pre><code>go f(x, y, z)</code></pre>
+
+<p>starts a new goroutine running</p>
+
+<pre><code>f(x, y, z)</code></pre>
+
+<p>The evaluation of f, x, y, and z happens in the current goroutine and the execution of f happens in the new goroutine.</p>
+
+<p>Goroutines run in the same address space, so access to shared memory must be synchronized. The sync package provides useful primitives, although you won’t need them much in Go as there are other primitives. (See the next slide.)</p>
+
+<p><a href="http://tour.golang.org/#66">GO CHANNELS</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func sum(a []int, c chan int) {
+    sum := 0
+    for _, v := range a {
+        sum += v
+    }
+    c &lt;- sum // send sum to c
+}
+
+func main() {
+    a := []int{7, 2, 8, -9, 4, 0}
+
+    c := make(chan int)
+    go sum(a[:len(a)/2], c)
+    go sum(a[len(a)/2:], c)
+    x, y := &lt;-c, &lt;-c // receive from c
+
+    fmt.Println(x, y, x+y)
+}</code></pre>
+
+<p>Channels are a typed conduit through which you can send and receive values with the channel operator, &lt;-.</p>
+
+<pre><code>ch &lt;- v    // Send v to channel ch.
+v := &lt;-ch  // Receive from ch, and
+           // assign value to v.</code></pre>
+
+<p>(The data flows in the direction of the arrow.)</p>
+
+<p>Like maps and slices, channels must be created before use:</p>
+
+<pre><code>ch := make(chan int)</code></pre>
+
+<p>By default, sends and receives block until the other side is ready. This allows goroutines to synchronize without explicit locks or condition variables.</p>
+
+<p><a href="http://tour.golang.org/#67">GO BUFFERED</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    c := make(chan int, 2)
+    c &lt;- 13
+    c &lt;- 2
+    fmt.Println(&lt;-c)
+    fmt.Println(&lt;-c)
+}</code></pre>
+
+<p>Channels can be buffered. Provide the buffer length as the second argument to make to initialize a buffered channel:</p>
+
+<p>ch := make(chan int, 100) Sends to a buffered channel block only when the buffer is full. Receives block when the buffer is empty.</p>
+
+<p>Modify the example to overfill the buffer and see what happens.</p>
+
+<p><a href="http://tour.golang.org/#68">GO RANGE AND CLOSE</a></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+)
+
+func fibonacci(n int, c chan int) {
+    x, y := 0, 1
+    for i := 0; i &lt; n; i++ {
+        c &lt;- x
+        x, y = y, x+y
+    }
+    close(c)
+}
+
+func main() {
+    c := make(chan int, 10)
+    go fibonacci(cap(c), c)
+    for i := range c {
+        fmt.Println(i)
+    }
+}</code></pre>
+
+<p>A sender can close a channel to indicate that no more values will be sent. Receivers can test whether a channel has been closed by assigning a second parameter to the receive expression: after</p>
+
+<pre><code>v, ok := &lt;-ch</code></pre>
+
+<p>ok is false if there are no more values to receive and the channel is closed.</p>
+
+<p>The loop for i := range c receives values from the channel repeatedly until it is closed.</p>
+
+<p>Note: Only the sender should close a channel, never the receiver. Sending on a closed channel will cause a panic.</p>
+
+<p>Another note: Channels aren’t like files; you don’t usually need to close them. Closing is only necessary when the receiver must be told there are no more values coming, such as to terminate a range loop.</p>
+
+<p><a href="http://tour.golang.org/#69">GO SELECT</a></p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func fibonacci(c, quit chan int) {
+    x, y := 0, 1
+    for {
+        select {
+        case c &lt;- x:
+            x, y = y, x+y
+        case &lt;-quit:
+            fmt.Println(&quot;quit&quot;)
+            return
+        }
+    }
+}
+
+func main() {
+    c := make(chan int)
+    quit := make(chan int)
+    go func() {
+        for i := 0; i &lt; 10; i++ {
+            fmt.Println(&lt;-c)
+        }
+        quit &lt;- 0
+    }()
+    fibonacci(c, quit)
+}</code></pre>
+
+<p>The select statement lets a goroutine wait on multiple communication operations.</p>
+
+<p>A select blocks until one of its cases can run, then it executes that case. It chooses one at random if multiple are ready.</p>
+
+<p><a href="http://tour.golang.org/#70">GO DEFAULT SELECTION</a></p>
+
+<pre><code>package main
+
+import (
+    &quot;fmt&quot;
+    &quot;time&quot;
+)
+
+func main() {
+    tick := time.Tick(100 * time.Millisecond)
+    boom := time.After(500 * time.Millisecond)
+    for {
+        select {
+        case &lt;-tick:
+            fmt.Println(&quot;tick.&quot;)
+        case &lt;-boom:
+            fmt.Println(&quot;BOOM!&quot;)
+            return
+        default:
+            fmt.Println(&quot;    .&quot;)
+            time.Sleep(50 * time.Millisecond)
+        }
+    }
+}</code></pre>
+
+<p>The default case in a select is run if no other case is ready.</p>
+
+<p>Use a default case to try a send or receive without blocking:</p>
+
+<pre><code>select {
+case i := &lt;-c:
+    // use i
+default:
+    // receiving from c would block
+}</code></pre>
+    </div>
+
+    
+
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#GOLANG-ref">GOLANG <span>10</span></a></li>
+     
+    	<li><a href="/tags.html#GOLANG CONCURRENCY-ref">GOLANG CONCURRENCY <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+
+    <hr class="dashed-hr">
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2014/02/19/golang-videos" title="golang videos">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/2014/02/24/try-out-design-patterns-in-golang" title="Try out Design Patterns in Golang">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr class="dashed-hr">
+    
+  </div>
+</div>
+
+
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2014 Denis Tsoi
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+

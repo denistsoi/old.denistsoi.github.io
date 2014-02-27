@@ -4,13 +4,27 @@
  <title>Denis Tsoi</title>
  <link href="http://username.github.io/" rel="self"/>
  <link href="http://username.github.io"/>
- <updated>2014-02-19T16:03:35+08:00</updated>
+ <updated>2014-02-27T17:42:43+08:00</updated>
  <id>http://username.github.io</id>
  <author>
    <name>Denis Tsoi</name>
    <email>blah@email.test</email>
  </author>
 
+ 
+ <entry>
+   <title>Try out Design Patterns in Golang</title>
+   <link href="http://username.github.io/2014/02/24/try-out-design-patterns-in-golang"/>
+   <updated>2014-02-24T00:00:00+08:00</updated>
+   <id>http://username.github.io/2014/02/24/try-out-design-patterns-in-golang</id>
+   <content type="html">&lt;h4 id=&quot;shape&quot;&gt;Shape:&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://play.golang.org/p/iU8FLt3Tuf&quot;&gt;Using Functions&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;http://play.golang.org/p/Tp7tCOs30_&quot;&gt;Using Structs&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;go_concurrency&quot;&gt;Go Concurrency&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://play.golang.org/p/rGuGlrb9_E&quot;&gt;Using Timers and Goroutines&lt;/a&gt;&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>getting started with golang part 10</title>
@@ -236,19 +250,23 @@ default:
 
 &lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=f6kdp27TYZs&quot;&gt;Google i/o 2012 Go Concurrency Patterns&lt;/a&gt; &lt;a href=&quot;https://www.youtube.com/watch?v=QDDwwePbDtw&quot;&gt;Google i/o 2013 Advanced Go Concurrency Patterns&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;_4&quot;&gt;{}&lt;/h3&gt;
+&lt;h4 id=&quot;_4&quot;&gt;{}&lt;/h4&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://blog.golang.org/&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://blog.golang.org/appengine-dec2013&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=cN_DpYBzKso&quot;&gt;Concurrency is Not Parallelism&lt;/a&gt; &lt;a href=&quot;http://talks.golang.org/2012/waza.slide#53&quot;&gt;Slides: Concurrency is Not Parallelism&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;_5&quot;&gt;{}&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://golang.org/doc/code.html&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://golang.org/doc/effective_go.html&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.golang.org/&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://blog.golang.org/appengine-dec2013&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;_6&quot;&gt;{}&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://golang.org/doc/codewalk/functions/&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://golang.org/doc/codewalk/markov/&quot;&gt;Marchov Chain Algorithm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://golang.org/doc/code.html&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://golang.org/doc/effective_go.html&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;_7&quot;&gt;{}&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://golang.org/doc/codewalk/functions/&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://golang.org/doc/codewalk/markov/&quot;&gt;Marchov Chain Algorithm&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;_8&quot;&gt;{}&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://golang.org/pkg/&quot;&gt;Go Packages&lt;/a&gt;&lt;/p&gt;</content>
  </entry>
@@ -336,7 +354,7 @@ type Struct struct {
 
 &lt;p&gt;For example, you should be able to register handlers using:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;http.Handle(&amp;quot;/string&amp;quot;, String(&amp;quot;I'm a frayed knot.&amp;quot;))
+&lt;pre&gt;&lt;code&gt;http.Handle(&amp;quot;/string&amp;quot;, String(&amp;quot;I&amp;#39;m a frayed knot.&amp;quot;))
 http.Handle(&amp;quot;/struct&amp;quot;, &amp;amp;Struct{&amp;quot;Hello&amp;quot;, &amp;quot;:&amp;quot;, &amp;quot;Gophers!&amp;quot;})&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#62&quot;&gt;IMAGES&lt;/a&gt;&lt;/p&gt;
@@ -428,8 +446,8 @@ type Fetcher interface {
 // pages starting with url, to a maximum of depth.
 func Crawl(url string, depth int, fetcher Fetcher) {
     // TODO: Fetch URLs in parallel.
-    // TODO: Don't fetch the same URL twice.
-    // This implementation doesn't do either:
+    // TODO: Don&amp;#39;t fetch the same URL twice.
+    // This implementation doesn&amp;#39;t do either:
     if depth &amp;lt;= 0 {
         return
     }
@@ -532,7 +550,7 @@ func (e *MyError) Error() string {
 func run() error {
     return &amp;amp;MyError{
         time.Now(),
-        &amp;quot;it didn't work&amp;quot;,
+        &amp;quot;it didn&amp;#39;t work&amp;quot;,
     }
 }
 
@@ -714,9 +732,9 @@ func main() {
 
 &lt;p&gt;Abs works either way. It only reads v. It doesn’t matter whether it is reading the original value (through a pointer) or a copy of that value.&lt;/p&gt;
 
-&lt;h3 id=&quot;lesson_52_2&quot;&gt;LESSON 52&lt;/h3&gt;
+&lt;h3 id=&quot;lesson_55&quot;&gt;LESSON 55&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#52&quot;&gt;GO Interfaces&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://tour.golang.org/#55&quot;&gt;GO Interfaces&lt;/a&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;package main
 
@@ -844,7 +862,7 @@ import (
 )
 
 func main() {
-    fmt.Println(&amp;quot;When's Saturday?&amp;quot;)
+    fmt.Println(&amp;quot;When&amp;#39;s Saturday?&amp;quot;)
     today := time.Now().Weekday()
     switch time.Saturday {
     case today + 0:
@@ -1608,7 +1626,7 @@ func pow(x, n, lim float64) float64 {
     } else {
         fmt.Printf(&amp;quot;%g &amp;gt;= %g\n&amp;quot;, v, lim)
     }
-    // can't use v here, though
+    // can&amp;#39;t use v here, though
     return lim
 }
 
@@ -1966,9 +1984,7 @@ func main() {
 
 &lt;p&gt;It appears that ever importing a package, the dev refer to the package exports if the name begins with a Capital letter. “Foo” is an exported name, as if “FOO”. the name “foo” will not be exported. Comment: “odd - but i’ll play along”.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;fmt.Println(math.Pi)
-will run whereas 
-&lt;/code&gt;fmt.Println(math.pi) will not~&lt;/p&gt;
+&lt;p&gt;“`fmt.Println(math.Pi) will run whereas “`fmt.Println(math.pi) will not~&lt;/p&gt;
 
 &lt;p&gt;Moving On.&lt;/p&gt;
 
@@ -2551,7 +2567,7 @@ $ sudo chown -R `whoami` /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;I hope this blog post can serve as a commitment to myself to seeing how much I can learn and ultimately share in the next couple of months.&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;…&lt;br /&gt;…&lt;br /&gt;…&lt;/p&gt;
 
 &lt;p&gt;… I hope this Christmas break has helped give you the same realisations for the new year.&lt;/p&gt;
 
@@ -2581,7 +2597,7 @@ $ sudo chown -R `whoami` /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Like&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;…&lt;/p&gt;
 
 &lt;p&gt;Really busy.&lt;/p&gt;
 
@@ -2645,7 +2661,7 @@ $ sudo chown -R `whoami` /usr/local/lib/node_modules&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Last night at Hackjam, I experienced a very moving conversation with Tom Grek and how he realized that all the fear from leaving a safe job were completely unfounded. That with talent and skill, work will always come your way.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;…&lt;/p&gt;
 
 &lt;p&gt;That really stuck with me.&lt;/p&gt;
 

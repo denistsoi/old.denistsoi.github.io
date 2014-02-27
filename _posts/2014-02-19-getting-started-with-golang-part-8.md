@@ -98,8 +98,8 @@ The Scale method has no effect when v is a Vertex. Scale mutates v. When v is a 
 
 Abs works either way. It only reads v. It doesn't matter whether it is reading the original value (through a pointer) or a copy of that value.
 
-### LESSON 52
-[GO Interfaces](http://tour.golang.org/#52)
+### LESSON 55
+[GO Interfaces](http://tour.golang.org/#55)
 
     package main
 

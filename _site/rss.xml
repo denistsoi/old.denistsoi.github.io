@@ -5,8 +5,8 @@
         <description>Denis Tsoi - Denis Tsoi</description>
         <link>http://username.github.io</link>
         <link>http://username.github.io</link>
-        <lastBuildDate>2014-02-27T17:42:43+08:00</lastBuildDate>
-        <pubDate>2014-02-27T17:42:43+08:00</pubDate>
+        <lastBuildDate>2014-02-27T17:47:24+08:00</lastBuildDate>
+        <pubDate>2014-02-27T17:47:24+08:00</pubDate>
         <ttl>1800</ttl>
 
 
@@ -233,35 +233,17 @@ default:
 
         <item>
                 <title>golang videos</title>
-                <description>&lt;h3 id=&quot;&quot;&gt;{}&lt;/h3&gt;
+                <description>&lt;p&gt;&lt;a href=&quot;http://vimeo.com/53221560&quot;&gt;Go: Code that Grows with Grace&lt;/a&gt; &lt;a href=&quot;http://vimeo.com/53221558&quot;&gt;Go: A Simple Programming Environment&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://vimeo.com/53221560&quot;&gt;Go: Code that Grows with Grace&lt;/a&gt; &lt;a href=&quot;http://vimeo.com/53221558&quot;&gt;Go: A Simple Programming Environment&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://research.swtch.com/gotour&quot;&gt;Another tour of Go&lt;/a&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=XCsL89YtqCs&quot;&gt;Good Video for Go&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;_2&quot;&gt;{}&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=f6kdp27TYZs&quot;&gt;Google i/o 2012 Go Concurrency Patterns&lt;/a&gt; &lt;a href=&quot;https://www.youtube.com/watch?v=QDDwwePbDtw&quot;&gt;Google i/o 2013 Advanced Go Concurrency Patterns&lt;/a&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=cN_DpYBzKso&quot;&gt;Concurrency is Not Parallelism&lt;/a&gt; &lt;a href=&quot;http://talks.golang.org/2012/waza.slide#53&quot;&gt;Slides: Concurrency is Not Parallelism&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://research.swtch.com/gotour&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://www.youtube.com/watch?v=XCsL89YtqCs&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.golang.org/&quot;&gt;Go Lang Blog&lt;/a&gt; &lt;a href=&quot;http://blog.golang.org/appengine-dec2013&quot;&gt;Go Lang &amp;amp; App Engine&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;_3&quot;&gt;{}&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://golang.org/doc/code.html&quot;&gt;Go Lang code&lt;/a&gt; &lt;a href=&quot;http://golang.org/doc/effective_go.html&quot;&gt;Effective Go Lang&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=f6kdp27TYZs&quot;&gt;Google i/o 2012 Go Concurrency Patterns&lt;/a&gt; &lt;a href=&quot;https://www.youtube.com/watch?v=QDDwwePbDtw&quot;&gt;Google i/o 2013 Advanced Go Concurrency Patterns&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;_4&quot;&gt;{}&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=cN_DpYBzKso&quot;&gt;Concurrency is Not Parallelism&lt;/a&gt; &lt;a href=&quot;http://talks.golang.org/2012/waza.slide#53&quot;&gt;Slides: Concurrency is Not Parallelism&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;_5&quot;&gt;{}&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://blog.golang.org/&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://blog.golang.org/appengine-dec2013&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;_6&quot;&gt;{}&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://golang.org/doc/code.html&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://golang.org/doc/effective_go.html&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;_7&quot;&gt;{}&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://golang.org/doc/codewalk/functions/&quot;&gt;&lt;/a&gt; &lt;a href=&quot;http://golang.org/doc/codewalk/markov/&quot;&gt;Marchov Chain Algorithm&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;_8&quot;&gt;{}&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://golang.org/doc/codewalk/functions/&quot;&gt;Go Lang Functions&lt;/a&gt; &lt;a href=&quot;http://golang.org/doc/codewalk/markov/&quot;&gt;Marchov Chain Algorithm&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://golang.org/pkg/&quot;&gt;Go Packages&lt;/a&gt;&lt;/p&gt;</description>
                 <link>http://username.github.io/2014/02/19/golang-videos</link>
@@ -910,7 +892,7 @@ func main() {
 
         <item>
                 <title>Moving On</title>
-                <description></description>
+                <description>&lt;h1 id=&quot;ah_crap_i_forgot_to_save_my_draft_booo&quot;&gt;Ah Crap, I forgot to save my draft… BOOO!&lt;/h1&gt;</description>
                 <link>http://username.github.io/2014/02/18/moving-on</link>
                 <guid>http://username.github.io/2014/02/18/moving-on</guid>
                 <pubDate>2014-02-18T00:00:00+08:00</pubDate>
